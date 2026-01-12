@@ -8,7 +8,7 @@ import cloudflare from '@astrojs/cloudflare';
 // https://astro.build/config
 export default defineConfig({
 site: 'https://bikin.759nxrb6x4.workers.dev',
-output: 'static',
+output: 'server',
   adapter: cloudflare({
     imageService: 'cloudflare',
   }),
