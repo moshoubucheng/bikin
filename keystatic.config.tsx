@@ -1,12 +1,11 @@
 import { config, fields, collection, singleton } from '@keystatic/core';
 
 export default config({
-  // 核心修改：智能判断环境
-  // 如果是生产环境(Cloudflare)则连接 GitHub，否则使用本地硬盘
   storage: import.meta.env.PROD
     ? {
         kind: 'github',
-        repo: 'moshoubucheng/bikin', // 您的仓库地址
+        repo: 'moshoubucheng/bikin',
+        branchPrefix: 'keystatic/',
       }
     : {
         kind: 'local',
