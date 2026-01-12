@@ -1,15 +1,9 @@
 import { config, fields, collection, singleton } from '@keystatic/core';
 
 export default config({
-  storage: import.meta.env.PROD
-    ? {
-        kind: 'cloud',
-      }
-    : {
-        kind: 'local',
-      },
-  cloud: {
-    project: 'bikin/bikin',
+  storage: {
+    kind: 'github',
+    repo: 'moshoubucheng/bikin',
   },
 
   ui: {
