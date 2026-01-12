@@ -9,7 +9,7 @@ export default config({
         kind: 'local',
       },
   cloud: {
-    project: 'bikin',
+    project: 'bikin/bikin',
   },
 
   ui: {
