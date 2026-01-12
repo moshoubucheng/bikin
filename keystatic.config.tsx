@@ -3,13 +3,14 @@ import { config, fields, collection, singleton } from '@keystatic/core';
 export default config({
   storage: import.meta.env.PROD
     ? {
-        kind: 'github',
-        repo: 'moshoubucheng/bikin',
-        branchPrefix: 'keystatic/',
+        kind: 'cloud',
       }
     : {
         kind: 'local',
       },
+  cloud: {
+    project: 'bikin',
+  },
 
   ui: {
     brand: {
