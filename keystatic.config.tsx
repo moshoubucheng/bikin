@@ -1,15 +1,16 @@
 import { config, fields, collection, singleton } from '@keystatic/core';
 
 export default config({
-  // 本地开发模式使用 local storage，生产环境使用 GitHub
-  storage: {
-    kind: 'local',
-  },
-  // 生产环境配置（部署时切换）
-  // storage: {
-  //   kind: 'github',
-  //   repo: 'your-org/your-repo',
-  // },
+  // 核心修改：智能判断环境
+  // 如果是生产环境(Cloudflare)则连接 GitHub，否则使用本地硬盘
+  storage: import.meta.env.PROD
+    ? {
+        kind: 'github',
+        repo: 'moshoubucheng/bikin', // 您的仓库地址
+      }
+    : {
+        kind: 'local',
+      },
 
   ui: {
     brand: {
