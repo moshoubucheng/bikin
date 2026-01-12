@@ -1,0 +1,24 @@
+companyName:
+  zh: 美锦能源有限公司
+  ja: 美錦エネルギー株式会社
+  en: Group Corporation
+contact:
+  phone: '05068682230'
+  email: wufuxing@bikin.jp
+  wechatId: your_wechat_id
+  lineId: your_line_id
+social:
+  youtube: https://youtube.com
+  twitter: https://twitter.com
+  linkedin: https://linkedin.com
+seo:
+  defaultTitle:
+    zh: 美錦エネルギー株式会社官方网站 - 氢能源与不动产
+    ja: 美錦エネルギー株式会社公式サイト - 水素エネルギーと不動産
+    en: Group Website - Hydrogen Energy & Real Estate
+  defaultDescription:
+    zh: 致力于氢能源技术创新与高端不动产投资的综合性企业集团
+    ja: 水素エネルギー技術革新と高級不動産投資に特化した総合企業グループ
+    en: >-
+      A comprehensive enterprise group focused on hydrogen energy innovation and
+      premium real estate investment

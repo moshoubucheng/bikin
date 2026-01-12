@@ -1,0 +1,189 @@
+---
+import { getLangFromUrl, useTranslations, getLanguagePaths, type Lang } from '@/i18n';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  theme?: 'default' | 'energy' | 'estate';
+}
+
+const { title, description, image, theme = 'default' } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url) as Lang;
+const t = useTranslations(lang);
+const languagePaths = getLanguagePaths(Astro.url.pathname);
+
+// 默认 SEO 值
+const defaultTitle = '集团官网 - 氢能源与不动产';
+const defaultDescription = '致力于氢能源技术创新与高端不动产投资';
+
+const pageTitle = title || defaultTitle;
+const pageDescription = description || defaultDescription;
+
+// 主题样式
+const themeClasses = {
+  default: 'bg-white text-gray-900',
+  energy: 'bg-gradient-to-br from-energy-950 to-energy-900 text-white',
+  estate: 'bg-gradient-to-br from-neutral-900 to-neutral-800 text-white',
+};
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={pageDescription} />
+
+    <!-- SEO -->
+    <title>{pageTitle}</title>
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : lang === 'ja' ? 'ja_JP' : 'en_US'} />
+    {image && <meta property="og:image" content={image} />}
+
+    <!-- Alternate language links for SEO -->
+    <link rel="alternate" hreflang="zh" href={languagePaths.zh} />
+    <link rel="alternate" hreflang="ja" href={languagePaths.ja} />
+    <link rel="alternate" hreflang="en" href={languagePaths.en} />
+    <link rel="alternate" hreflang="x-default" href={languagePaths.zh} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class={`min-h-screen ${themeClasses[theme]} antialiased`}>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href={`/${lang}/`} class="flex items-center space-x-2">
+            <span class="text-xl font-bold text-gray-900">LOGO</span>
+          </a>
+
+          <!-- Navigation Links -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href={`/${lang}/`} class="text-gray-700 hover:text-energy-600 transition-colors">
+              {t('nav.home')}
+            </a>
+            <a href={`/${lang}/energy`} class="text-gray-700 hover:text-energy-600 transition-colors">
+              {t('nav.energy')}
+            </a>
+            <a href={`/${lang}/estate`} class="text-gray-700 hover:text-estate-600 transition-colors">
+              {t('nav.estate')}
+            </a>
+            <a href={`/${lang}/news`} class="text-gray-700 hover:text-gray-900 transition-colors">
+              {t('nav.news')}
+            </a>
+          </div>
+
+          <!-- Language Switcher -->
+          <div class="flex items-center space-x-2">
+            <a
+              href={languagePaths.zh}
+              class={`px-2 py-1 text-sm rounded ${lang === 'zh' ? 'bg-gray-900 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+            >
+              中文
+            </a>
+            <a
+              href={languagePaths.ja}
+              class={`px-2 py-1 text-sm rounded ${lang === 'ja' ? 'bg-gray-900 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+            >
+              日本語
+            </a>
+            <a
+              href={languagePaths.en}
+              class={`px-2 py-1 text-sm rounded ${lang === 'en' ? 'bg-gray-900 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+            >
+              EN
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100"
+            id="mobile-menu-button"
+            aria-label="Toggle menu"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-4 pt-2 pb-4 space-y-2 bg-white border-t">
+          <a href={`/${lang}/`} class="block py-2 text-gray-700">{t('nav.home')}</a>
+          <a href={`/${lang}/energy`} class="block py-2 text-gray-700">{t('nav.energy')}</a>
+          <a href={`/${lang}/estate`} class="block py-2 text-gray-700">{t('nav.estate')}</a>
+          <a href={`/${lang}/news`} class="block py-2 text-gray-700">{t('nav.news')}</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">LOGO</h3>
+            <p class="text-gray-400 text-sm">
+              {lang === 'zh' && '致力于氢能源技术创新与高端不动产投资'}
+              {lang === 'ja' && '水素エネルギー技術革新と高級不動産投資に注力'}
+              {lang === 'en' && 'Committed to hydrogen energy innovation and premium real estate investment'}
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">{t('nav.contact')}</h3>
+            <div class="space-y-2 text-gray-400 text-sm">
+              <p>Email: contact@example.com</p>
+              <p>Tel: +86 xxx-xxxx-xxxx</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Links</h3>
+            <div class="space-y-2">
+              <a href={`/${lang}/energy`} class="block text-gray-400 hover:text-white text-sm">{t('nav.energy')}</a>
+              <a href={`/${lang}/estate`} class="block text-gray-400 hover:text-white text-sm">{t('nav.estate')}</a>
+              <a href={`/${lang}/news`} class="block text-gray-400 hover:text-white text-sm">{t('nav.news')}</a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+          <p>&copy; {new Date().getFullYear()} Group Website. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuButton?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  /* 全局样式 */
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+</style>

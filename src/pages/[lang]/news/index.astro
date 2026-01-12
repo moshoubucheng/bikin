@@ -1,0 +1,193 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { languages, useTranslations, getLocalizedContent, type Lang } from '@/i18n';
+import { getCollection } from 'astro:content';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+
+// 获取所有新闻
+const allNews = await getCollection('news');
+const news = allNews.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+// 分类标签
+const categoryLabels = {
+  tech: { zh: '氢能技术', ja: '水素技術', en: 'H2 Tech' },
+  market: { zh: '市场动态', ja: '市場情報', en: 'Market' },
+  company: { zh: '公司新闻', ja: '企業ニュース', en: 'Company' },
+  estate: { zh: '不动产', ja: '不動産', en: 'Real Estate' },
+};
+
+const categoryColors = {
+  tech: 'bg-energy-100 text-energy-700',
+  market: 'bg-amber-100 text-amber-700',
+  company: 'bg-purple-100 text-purple-700',
+  estate: 'bg-estate-100 text-estate-700',
+};
+---
+
+<BaseLayout title={t('nav.news')}>
+  <!-- Hero Section -->
+  <section class="relative py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        {t('nav.news')}
+      </h1>
+      <p class="text-xl text-gray-300">
+        {lang === 'zh' && '了解最新行业动态与公司资讯'}
+        {lang === 'ja' && '最新の業界動向と企業情報をお届けします'}
+        {lang === 'en' && 'Stay updated with the latest industry news and company updates'}
+      </p>
+    </div>
+  </section>
+
+  <!-- 新闻列表 -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- 分类筛选 -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+        <button class="news-filter-btn active px-5 py-2 rounded-full bg-gray-900 text-white text-sm font-medium transition-all" data-category="all">
+          {lang === 'zh' ? '全部' : lang === 'ja' ? 'すべて' : 'All'}
+        </button>
+        {Object.entries(categoryLabels).map(([key, labels]) => (
+          <button
+            class="news-filter-btn px-5 py-2 rounded-full bg-white text-gray-600 hover:bg-gray-100 text-sm font-medium transition-all border"
+            data-category={key}
+          >
+            {labels[lang]}
+          </button>
+        ))}
+      </div>
+
+      <!-- 新闻网格 -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="news-grid">
+        {news.length > 0 ? (
+          news.map((item) => (
+            <article
+              class="news-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
+              data-category={item.data.category}
+            >
+              <!-- 封面图 -->
+              <div class="relative aspect-video bg-gradient-to-br from-gray-100 to-gray-200">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  {item.data.videoUrl ? (
+                    <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ) : (
+                    <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                    </svg>
+                  )}
+                </div>
+                {item.data.videoUrl && (
+                  <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                    <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                      <svg class="w-8 h-8 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <!-- 内容 -->
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class={`px-2.5 py-1 text-xs rounded-full font-medium ${categoryColors[item.data.category]}`}>
+                    {categoryLabels[item.data.category][lang]}
+                  </span>
+                  <span class="text-gray-400 text-sm">{item.data.date}</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-energy-600 transition-colors">
+                  <a href={`/${lang}/news/${item.data.slug}`}>
+                    {getLocalizedContent(item.data.title, lang)}
+                  </a>
+                </h3>
+                <p class="text-gray-600 text-sm line-clamp-2">
+                  {getLocalizedContent(item.data.excerpt || {}, lang)}
+                </p>
+
+                {/* 图片画廊预览 */}
+                {item.data.galleryImages && item.data.galleryImages.length > 0 && (
+                  <div class="mt-4 flex items-center gap-1 text-gray-400 text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span>{item.data.galleryImages.length} {lang === 'zh' ? '张图片' : lang === 'ja' ? '枚の画像' : 'images'}</span>
+                  </div>
+                )}
+              </div>
+            </article>
+          ))
+        ) : (
+          // 占位新闻
+          Array.from({ length: 6 }).map((_, i) => (
+            <article class="news-card bg-white rounded-xl overflow-hidden shadow-sm" data-category={['tech', 'market', 'company'][i % 3]}>
+              <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                </svg>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class={`px-2.5 py-1 text-xs rounded-full font-medium ${Object.values(categoryColors)[i % 3]}`}>
+                    {Object.values(categoryLabels)[i % 3][lang]}
+                  </span>
+                  <span class="text-gray-400 text-sm">2024-01-01</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                  {lang === 'zh' && `示例新闻标题 ${i + 1}`}
+                  {lang === 'ja' && `サンプルニュース ${i + 1}`}
+                  {lang === 'en' && `Sample News Title ${i + 1}`}
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  {lang === 'zh' && '这是新闻摘要的示例文本，展示文章的主要内容概述。'}
+                  {lang === 'ja' && 'これは記事の主な内容を示すニュース概要のサンプルテキストです。'}
+                  {lang === 'en' && 'This is sample text showing a brief summary of the news article content.'}
+                </p>
+              </div>
+            </article>
+          ))
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // 分类筛选
+  const filterButtons = document.querySelectorAll('.news-filter-btn');
+  const newsCards = document.querySelectorAll('.news-card');
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-category');
+
+      // 更新按钮状态
+      filterButtons.forEach((b) => {
+        b.classList.remove('active', 'bg-gray-900', 'text-white');
+        b.classList.add('bg-white', 'text-gray-600');
+      });
+      btn.classList.remove('bg-white', 'text-gray-600');
+      btn.classList.add('active', 'bg-gray-900', 'text-white');
+
+      // 筛选卡片
+      newsCards.forEach((card) => {
+        const cardCategory = card.getAttribute('data-category');
+        if (category === 'all' || cardCategory === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>

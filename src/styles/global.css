@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 基础样式 */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  /* 中文和日文字体优化 */
+  :lang(zh),
+  :lang(ja) {
+    font-feature-settings: 'kern' 1;
+    line-height: 1.8;
+  }
+}
+
+/* 组件样式 */
+@layer components {
+  /* 按钮通用样式 */
+  .btn-primary {
+    @apply px-6 py-3 bg-energy-600 text-white rounded-lg font-medium;
+    @apply hover:bg-energy-700 transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-energy-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-gray-900 rounded-lg font-medium border border-gray-200;
+    @apply hover:bg-gray-50 transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+
+  /* 卡片样式 */
+  .card {
+    @apply bg-white rounded-xl shadow-sm overflow-hidden;
+    @apply hover:shadow-lg transition-shadow duration-300;
+  }
+
+  /* 截断文本 */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* 工具类 */
+@layer utilities {
+  /* 文字渐变 */
+  .text-gradient-energy {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-energy-400 to-energy-600;
+  }
+
+  .text-gradient-estate {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-estate-400 to-estate-600;
+  }
+
+  /* 动画延迟 */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  /* 背景模糊 */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+}
+
+/* 图片优化提示 - 开发环境显示 */
+@media (hover: hover) {
+  img[data-original-size]::after {
+    content: attr(data-original-size);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,319 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { languages, useTranslations, getLocalizedContent, type Lang } from '@/i18n';
+import { getCollection } from 'astro:content';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+
+// 获取房源
+const allProperties = await getCollection('properties');
+const properties = allProperties.sort((a, b) => {
+  // 置顶优先，然后按日期排序
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  return new Date(b.data.publishDate || '').getTime() - new Date(a.data.publishDate || '').getTime();
+});
+
+// 货币格式化
+function formatPrice(price: number, currency: string) {
+  const formatter = new Intl.NumberFormat(lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US', {
+    style: 'currency',
+    currency: currency,
+    maximumFractionDigits: 0,
+  });
+  return formatter.format(price * (currency === 'CNY' ? 10000 : 1));
+}
+
+// 状态标签
+const statusLabels = {
+  available: { zh: '在售', ja: '販売中', en: 'Available' },
+  sold: { zh: '已售', ja: '売却済み', en: 'Sold' },
+  reserved: { zh: '预约中', ja: '予約中', en: 'Reserved' },
+};
+---
+
+<BaseLayout title={t('estate.hero.title')} theme="estate">
+  <!-- Hero Section - 高级感暖金色调 -->
+  <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900">
+    <!-- 金色装饰 -->
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-estate-500 to-transparent"></div>
+      <div class="absolute top-1/3 right-0 w-64 h-64 bg-estate-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-48 h-48 bg-estate-400/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 border border-estate-500/30 rounded-full px-4 py-2 mb-6">
+        <span class="w-2 h-2 bg-estate-500 rounded-full"></span>
+        <span class="text-estate-300 text-sm font-medium tracking-wider uppercase">Real Estate</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+        {t('estate.hero.title')}
+      </h1>
+      <p class="text-xl text-gray-300 mb-8">
+        {t('estate.hero.subtitle')}
+      </p>
+    </div>
+  </section>
+
+  <!-- 房源列表 Section -->
+  <section class="py-20 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- 筛选器 -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-12">
+        <button class="filter-btn active px-6 py-2 rounded-full bg-estate-600 text-white font-medium transition-all" data-filter="all">
+          {t('estate.filter.all')}
+        </button>
+        <button class="filter-btn px-6 py-2 rounded-full bg-white text-gray-600 hover:bg-estate-50 font-medium transition-all border" data-filter="available">
+          {t('estate.filter.available')}
+        </button>
+        <button class="filter-btn px-6 py-2 rounded-full bg-white text-gray-600 hover:bg-estate-50 font-medium transition-all border" data-filter="sold">
+          {t('estate.filter.sold')}
+        </button>
+      </div>
+
+      <!-- 房源卡片网格 -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="properties-grid">
+        {properties.length > 0 ? (
+          properties.map((property) => (
+            <article
+              class="property-card group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+              data-status={property.data.status}
+            >
+              <!-- 图片 -->
+              <div class="relative aspect-[4/3] bg-gradient-to-br from-estate-100 to-estate-200 overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <svg class="w-16 h-16 text-estate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                </div>
+                <!-- 状态标签 -->
+                <div class="absolute top-4 left-4">
+                  <span class={`px-3 py-1 rounded-full text-sm font-medium ${
+                    property.data.status === 'available'
+                      ? 'bg-green-500 text-white'
+                      : property.data.status === 'sold'
+                        ? 'bg-gray-500 text-white'
+                        : 'bg-estate-500 text-white'
+                  }`}>
+                    {statusLabels[property.data.status][lang]}
+                  </span>
+                </div>
+                {property.data.featured && (
+                  <div class="absolute top-4 right-4">
+                    <span class="px-3 py-1 bg-estate-500 text-white rounded-full text-sm font-medium">
+                      {lang === 'zh' ? '推荐' : lang === 'ja' ? 'おすすめ' : 'Featured'}
+                    </span>
+                  </div>
+                )}
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <a
+                    href={`/${lang}/estate/${property.data.slug}`}
+                    class="px-6 py-3 bg-white text-gray-900 rounded-lg font-medium hover:bg-estate-500 hover:text-white transition-colors"
+                  >
+                    {t('common.learnMore')}
+                  </a>
+                </div>
+              </div>
+
+              <!-- 信息 -->
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-estate-600 transition-colors">
+                  {getLocalizedContent(property.data.title, lang)}
+                </h3>
+                <p class="text-gray-500 text-sm mb-4 flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  {getLocalizedContent(property.data.location, lang)}
+                </p>
+                <div class="flex items-center justify-between">
+                  <span class="text-2xl font-bold text-estate-600">
+                    {formatPrice(property.data.price, property.data.currency)}
+                  </span>
+                  {property.data.area && (
+                    <span class="text-gray-500 text-sm">
+                      {property.data.area} m²
+                    </span>
+                  )}
+                </div>
+              </div>
+            </article>
+          ))
+        ) : (
+          // 占位房源卡片
+          Array.from({ length: 6 }).map((_, i) => (
+            <article class="property-card group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-status="available">
+              <div class="relative aspect-[4/3] bg-gradient-to-br from-estate-100 to-estate-200 overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <svg class="w-16 h-16 text-estate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                </div>
+                <div class="absolute top-4 left-4">
+                  <span class="px-3 py-1 rounded-full text-sm font-medium bg-green-500 text-white">
+                    {statusLabels.available[lang]}
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  {lang === 'zh' && `示例房源 ${i + 1}`}
+                  {lang === 'ja' && `サンプル物件 ${i + 1}`}
+                  {lang === 'en' && `Sample Property ${i + 1}`}
+                </h3>
+                <p class="text-gray-500 text-sm mb-4 flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  </svg>
+                  {lang === 'zh' ? '东京都港区' : lang === 'ja' ? '東京都港区' : 'Minato-ku, Tokyo'}
+                </p>
+                <div class="flex items-center justify-between">
+                  <span class="text-2xl font-bold text-estate-600">¥12,800,000</span>
+                  <span class="text-gray-500 text-sm">120 m²</span>
+                </div>
+              </div>
+            </article>
+          ))
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系咨询 Section -->
+  <section class="py-20 bg-gradient-to-br from-neutral-900 to-neutral-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        {t('contact.title')}
+      </h2>
+      <p class="text-gray-400 mb-8">
+        {lang === 'zh' && '扫码添加微信或 Line，获取专业置业咨询'}
+        {lang === 'ja' && 'WeChatまたはLineでお気軽にお問い合わせください'}
+        {lang === 'en' && 'Scan QR code to contact us via WeChat or Line'}
+      </p>
+      <button
+        id="open-contact-modal"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-estate-500 text-white rounded-lg font-semibold hover:bg-estate-600 transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+        {t('estate.detail.contact')}
+      </button>
+    </div>
+  </section>
+
+  <!-- 联系方式 Modal -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="modal-backdrop"></div>
+    <div class="absolute inset-0 flex items-center justify-center p-4">
+      <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-scale-in">
+        <!-- 关闭按钮 -->
+        <button id="close-contact-modal" class="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">{t('contact.title')}</h3>
+
+        <div class="grid grid-cols-2 gap-6">
+          <!-- 微信 -->
+          <div class="text-center">
+            <div class="aspect-square bg-gray-100 rounded-xl mb-3 flex items-center justify-center">
+              <div class="text-center p-4">
+                <svg class="w-12 h-12 text-green-500 mx-auto mb-2" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.045c.134 0 .24-.11.24-.245 0-.06-.024-.12-.04-.177l-.327-1.233a.49.49 0 01.177-.554C23.24 18.694 24 17.162 24 15.439c0-3.37-3.25-6.116-7.062-6.116zm-2.036 3.08c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.97-.982zm4.072 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.97-.982z"/>
+                </svg>
+                <p class="text-gray-500 text-sm">{t('contact.wechat')}</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">ID: wechat_id</p>
+          </div>
+
+          <!-- Line -->
+          <div class="text-center">
+            <div class="aspect-square bg-gray-100 rounded-xl mb-3 flex items-center justify-center">
+              <div class="text-center p-4">
+                <svg class="w-12 h-12 text-green-400 mx-auto mb-2" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                </svg>
+                <p class="text-gray-500 text-sm">{t('contact.line')}</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">ID: line_id</p>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-6 border-t text-center">
+          <p class="text-gray-500 text-sm mb-2">{t('contact.phone')}</p>
+          <a href="tel:+86123456789" class="text-xl font-semibold text-estate-600">+86 123-456-789</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  // 筛选功能
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const propertyCards = document.querySelectorAll('.property-card');
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      // 更新按钮状态
+      filterButtons.forEach((b) => {
+        b.classList.remove('active', 'bg-estate-600', 'text-white');
+        b.classList.add('bg-white', 'text-gray-600');
+      });
+      btn.classList.remove('bg-white', 'text-gray-600');
+      btn.classList.add('active', 'bg-estate-600', 'text-white');
+
+      // 筛选卡片
+      propertyCards.forEach((card) => {
+        const status = card.getAttribute('data-status');
+        if (filter === 'all' || status === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Modal 功能
+  const modal = document.getElementById('contact-modal');
+  const openBtn = document.getElementById('open-contact-modal');
+  const closeBtn = document.getElementById('close-contact-modal');
+  const backdrop = document.getElementById('modal-backdrop');
+
+  function openModal() {
+    modal?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal?.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  openBtn?.addEventListener('click', openModal);
+  closeBtn?.addEventListener('click', closeModal);
+  backdrop?.addEventListener('click', closeModal);
+
+  // ESC 键关闭
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>

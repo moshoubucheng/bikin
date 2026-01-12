@@ -1,0 +1,62 @@
+---
+/**
+ * 优化图片组件
+ * 解决 PM 提到的"行政人员上传大图"问题
+ * 自动压缩、转换格式 (WebP)、响应式尺寸
+ */
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata | string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  sizes?: string;
+  quality?: number;
+}
+
+const {
+  src,
+  alt,
+  width = 800,
+  height,
+  class: className = '',
+  loading = 'lazy',
+  sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw',
+  quality = 80,
+} = Astro.props;
+
+// 计算高度（如果未提供）
+const aspectRatio = 16 / 9;
+const calculatedHeight = height || Math.round(width / aspectRatio);
+
+// 检查是否为本地图片
+const isLocalImage = typeof src !== 'string';
+---
+
+{isLocalImage ? (
+  <Image
+    src={src}
+    alt={alt}
+    width={width}
+    height={calculatedHeight}
+    class={className}
+    loading={loading}
+    sizes={sizes}
+    quality={quality}
+    format="webp"
+    densities={[1, 2]}
+  />
+) : (
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={calculatedHeight}
+    class={className}
+    loading={loading}
+    decoding="async"
+  />
+)}
