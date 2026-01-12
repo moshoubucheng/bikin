@@ -1,12 +1,5 @@
-# Cloudflare Pages 配置
-name = "group-website"
-compatibility_date = "2024-01-01"
+name = "bikin"
+compatibility_date = "2024-11-12"
 
-# 图像优化配置（使用 Cloudflare 图像服务）
-[vars]
-ENABLE_IMAGE_OPTIMIZATION = "true"
-
-# 路由配置
-[[routes]]
-pattern = "/*"
-zone_name = "your-domain.com"  # 替换为你的域名
+[assets]
+directory = "./dist"
