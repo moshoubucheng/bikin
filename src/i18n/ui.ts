@@ -62,6 +62,9 @@ export const ui = {
     'common.viewAll': '查看全部',
     'common.back': '返回',
     'common.close': '关闭',
+
+    // 页脚
+    'footer.links': '快速链接',
   },
   ja: {
     // ナビゲーション
@@ -114,6 +117,9 @@ export const ui = {
     'common.viewAll': 'すべて見る',
     'common.back': '戻る',
     'common.close': '閉じる',
+
+    // フッター
+    'footer.links': 'リンク',
   },
   en: {
     // Navigation
@@ -166,6 +172,9 @@ export const ui = {
     'common.viewAll': 'View All',
     'common.back': 'Back',
     'common.close': 'Close',
+
+    // Footer
+    'footer.links': 'Links',
   },
 } as const;
 

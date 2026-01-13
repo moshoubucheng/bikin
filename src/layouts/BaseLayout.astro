@@ -77,7 +77,7 @@ const themeClasses = {
         <div class="flex items-center justify-between h-16">
           <!-- Logo -->
           <a href={`/${lang}/`} class="flex items-center space-x-2">
-            <span class="text-xl font-bold text-gray-900">LOGO</span>
+            <span class="text-xl font-bold text-gray-900">{companyName}</span>
           </a>
 
           <!-- Navigation Links -->
@@ -165,7 +165,7 @@ const themeClasses = {
             </div>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-4">Links</h3>
+            <h3 class="text-lg font-semibold mb-4">{t('footer.links')}</h3>
             <div class="space-y-2">
               <a href={`/${lang}/energy`} class="block text-gray-400 hover:text-white text-sm">{t('nav.energy')}</a>
               <a href={`/${lang}/estate`} class="block text-gray-400 hover:text-white text-sm">{t('nav.estate')}</a>

@@ -25,9 +25,9 @@ try {
 }
 
 const contact = settings?.data?.contact || {
-  phone: '+86 123-456-789',
-  wechatId: 'your_wechat_id',
-  lineId: 'your_line_id',
+  phone: '',
+  wechatId: '',
+  lineId: '',
 };
 ---
 
@@ -68,7 +68,7 @@ const contact = settings?.data?.contact || {
             )}
           </div>
           <p class="font-medium text-gray-900">{t('contact.wechat')}</p>
-          <p class="text-sm text-gray-500">{contact.wechatId}</p>
+          {contact.wechatId && <p class="text-sm text-gray-500">{contact.wechatId}</p>}
         </div>
 
         <!-- Line -->
@@ -90,17 +90,19 @@ const contact = settings?.data?.contact || {
             )}
           </div>
           <p class="font-medium text-gray-900">{t('contact.line')}</p>
-          <p class="text-sm text-gray-500">{contact.lineId}</p>
+          {contact.lineId && <p class="text-sm text-gray-500">{contact.lineId}</p>}
         </div>
       </div>
 
       <!-- 电话 -->
-      <div class="mt-6 pt-6 border-t text-center">
-        <p class="text-gray-500 text-sm mb-2">{t('contact.phone')}</p>
-        <a href={`tel:${contact.phone?.replace(/\s+/g, '')}`} class="text-xl font-semibold text-estate-600 hover:text-estate-700">
-          {contact.phone}
-        </a>
-      </div>
+      {contact.phone && (
+        <div class="mt-6 pt-6 border-t text-center">
+          <p class="text-gray-500 text-sm mb-2">{t('contact.phone')}</p>
+          <a href={`tel:${contact.phone?.replace(/\s+/g, '')}`} class="text-xl font-semibold text-estate-600 hover:text-estate-700">
+            {contact.phone}
+          </a>
+        </div>
+      )}
     </div>
   </div>
 </div>

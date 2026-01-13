@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { languages, useTranslations, getLocalizedContent, type Lang } from '@/i18n';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -11,6 +11,13 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params as { lang: Lang };
 const t = useTranslations(lang);
+
+// 从 CMS 读取全局设置
+const globalSettings = await getEntry('settings', 'global');
+const settings = globalSettings?.data;
+const contactPhone = settings?.contact?.phone || '';
+const contactWechatId = settings?.contact?.wechatId || '';
+const contactLineId = settings?.contact?.lineId || '';
 
 // 获取房源
 const allProperties = await getCollection('properties');
@@ -237,7 +244,7 @@ const statusLabels = {
                 <p class="text-gray-500 text-sm">{t('contact.wechat')}</p>
               </div>
             </div>
-            <p class="text-sm text-gray-600">ID: wechat_id</p>
+            {contactWechatId && <p class="text-sm text-gray-600">ID: {contactWechatId}</p>}
           </div>
 
           <!-- Line -->
@@ -250,14 +257,16 @@ const statusLabels = {
                 <p class="text-gray-500 text-sm">{t('contact.line')}</p>
               </div>
             </div>
-            <p class="text-sm text-gray-600">ID: line_id</p>
+            {contactLineId && <p class="text-sm text-gray-600">ID: {contactLineId}</p>}
           </div>
         </div>
 
-        <div class="mt-6 pt-6 border-t text-center">
-          <p class="text-gray-500 text-sm mb-2">{t('contact.phone')}</p>
-          <a href="tel:+86123456789" class="text-xl font-semibold text-estate-600">+86 123-456-789</a>
-        </div>
+        {contactPhone && (
+          <div class="mt-6 pt-6 border-t text-center">
+            <p class="text-gray-500 text-sm mb-2">{t('contact.phone')}</p>
+            <a href={`tel:${contactPhone.replace(/-/g, '')}`} class="text-xl font-semibold text-estate-600">{contactPhone}</a>
+          </div>
+        )}
       </div>
     </div>
   </div>
