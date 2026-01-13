@@ -1,0 +1,32 @@
+{
+  "companyName": {
+    "zh": "美錦エネルギー株式会社",
+    "ja": "美錦エネルギー株式会社",
+    "en": "BIKIN.Co.,Ltd."
+  },
+  "contact": {
+    "phone": "050-6868-2230",
+    "email": "wufuxing@bikin.jp",
+    "wechatQR": "",
+    "wechatId": "",
+    "lineQR": "",
+    "lineId": ""
+  },
+  "social": {
+    "youtube": "",
+    "twitter": "",
+    "linkedin": ""
+  },
+  "seo": {
+    "defaultTitle": {
+      "zh": "美錦エネルギー株式会社",
+      "ja": "美錦エネルギー株式会社",
+      "en": "BIKIN.Co.,Ltd."
+    },
+    "defaultDescription": {
+      "zh": "引领未来能源与生活方式--致力于氢能源技术创新与高端不动产投资",
+      "ja": "未来のエネルギーとライフスタイルをリード--水素エネルギー技術革新と高級不動産投資に注力",
+      "en": "Leading Future Energy & Lifestyle--Committed to hydrogen energy innovation and premium real estate investment"
+    }
+  }
+}
