@@ -1,0 +1,223 @@
+backend:
+  name: github
+  repo: moshoubucheng/bikin
+  branch: main
+  auth_type: pkce
+  app_id: Ov23liPXC7bjIARYwthL
+
+locale: 'zh_Hans'
+
+media_folder: src/assets/uploads
+public_folder: /src/assets/uploads
+
+collections:
+  # 全局设置
+  - name: settings
+    label: 全局设置
+    files:
+      - name: global
+        label: 全局设置
+        file: src/content/settings/global.json
+        fields:
+          - label: 公司名称
+            name: companyName
+            widget: object
+            fields:
+              - { label: '公司名称（中文）', name: zh, widget: string }
+              - { label: '会社名（日本語）', name: ja, widget: string }
+              - { label: 'Company Name (English)', name: en, widget: string }
+
+          - label: 联系方式
+            name: contact
+            widget: object
+            fields:
+              - { label: 联系电话, name: phone, widget: string }
+              - { label: 联系邮箱, name: email, widget: string }
+              - { label: 微信二维码, name: wechatQR, widget: image, required: false }
+              - { label: 微信号, name: wechatId, widget: string, required: false }
+              - { label: Line 二维码, name: lineQR, widget: image, required: false }
+              - { label: Line ID, name: lineId, widget: string, required: false }
+
+          - label: 社交媒体
+            name: social
+            widget: object
+            fields:
+              - { label: YouTube 频道, name: youtube, widget: string, required: false }
+              - { label: Twitter/X, name: twitter, widget: string, required: false }
+              - { label: LinkedIn, name: linkedin, widget: string, required: false }
+
+          - label: SEO 设置
+            name: seo
+            widget: object
+            fields:
+              - label: 默认标题
+                name: defaultTitle
+                widget: object
+                fields:
+                  - { label: '默认标题（中文）', name: zh, widget: string }
+                  - { label: 'デフォルトタイトル（日本語）', name: ja, widget: string }
+                  - { label: 'Default Title (English)', name: en, widget: string }
+              - label: 默认描述
+                name: defaultDescription
+                widget: object
+                fields:
+                  - { label: '默认描述（中文）', name: zh, widget: text }
+                  - { label: 'デフォルト説明（日本語）', name: ja, widget: text }
+                  - { label: 'Default Description (English)', name: en, widget: text }
+
+  # 不动产 / 房源
+  - name: properties
+    label: 不动产 / 房源
+    folder: src/content/properties
+    create: true
+    slug: '{{slug}}'
+    extension: mdx
+    format: frontmatter
+    fields:
+      - { label: URL 标识符, name: slug, widget: string }
+
+      - label: 房源标题
+        name: title
+        widget: object
+        fields:
+          - { label: '标题（中文）', name: zh, widget: string, required: true }
+          - { label: 'タイトル（日本語）', name: ja, widget: string, required: true }
+          - { label: 'Title (English)', name: en, widget: string, required: true }
+
+      - { label: '价格（万元）', name: price, widget: number, required: true }
+
+      - label: 货币
+        name: currency
+        widget: select
+        options:
+          - { label: '人民币 (CNY)', value: CNY }
+          - { label: '日元 (JPY)', value: JPY }
+          - { label: '美元 (USD)', value: USD }
+        default: CNY
+
+      - label: 房源位置
+        name: location
+        widget: object
+        fields:
+          - { label: '位置（中文）', name: zh, widget: string }
+          - { label: '所在地（日本語）', name: ja, widget: string }
+          - { label: 'Location (English)', name: en, widget: string }
+
+      - label: 状态
+        name: status
+        widget: select
+        options:
+          - { label: '在售 / Available', value: available }
+          - { label: '已售 / Sold', value: sold }
+          - { label: '预约中 / Reserved', value: reserved }
+        default: available
+
+      - label: 房源图片
+        name: images
+        widget: list
+        field: { label: 图片, name: image, widget: image }
+
+      - label: 房源特色
+        name: features
+        widget: list
+        fields:
+          - { label: '特色（中文）', name: zh, widget: string }
+          - { label: '特徴（日本語）', name: ja, widget: string }
+          - { label: 'Feature (English)', name: en, widget: string }
+
+      - { label: 户型图, name: layoutImage, widget: image, required: false }
+      - { label: '建筑面积（平方米）', name: area, widget: number, required: false }
+      - { label: 发布日期, name: publishDate, widget: datetime, time_format: false }
+      - { label: 首页推荐, name: featured, widget: boolean, default: false }
+      - { label: 详细描述, name: body, widget: markdown }
+
+  # 新闻动态
+  - name: news
+    label: 新闻动态
+    folder: src/content/news
+    create: true
+    slug: '{{slug}}'
+    extension: mdx
+    format: frontmatter
+    fields:
+      - { label: URL 标识符, name: slug, widget: string }
+
+      - label: 新闻标题
+        name: title
+        widget: object
+        fields:
+          - { label: '标题（中文）', name: zh, widget: string, required: true }
+          - { label: 'タイトル（日本語）', name: ja, widget: string, required: true }
+          - { label: 'Title (English)', name: en, widget: string, required: true }
+
+      - { label: 发布日期, name: date, widget: datetime, time_format: false, required: true }
+
+      - label: 分类
+        name: category
+        widget: select
+        options:
+          - { label: '氢能技术 / Tech', value: tech }
+          - { label: '市场动态 / Market', value: market }
+          - { label: '公司新闻 / Company', value: company }
+          - { label: '不动产 / Estate', value: estate }
+        default: tech
+
+      - { label: 封面图片, name: coverImage, widget: image, required: false }
+      - { label: 视频链接, name: videoUrl, widget: string, required: false }
+
+      - label: 图片画廊
+        name: galleryImages
+        widget: list
+        required: false
+        field: { label: 图片, name: image, widget: image }
+
+      - label: 新闻摘要
+        name: excerpt
+        widget: object
+        fields:
+          - { label: '摘要（中文）', name: zh, widget: text }
+          - { label: '要約（日本語）', name: ja, widget: text }
+          - { label: 'Excerpt (English)', name: en, widget: text }
+
+      - { label: 首页推荐, name: featured, widget: boolean, default: false }
+      - { label: 正文内容, name: body, widget: markdown }
+
+  # 氢能图库
+  - name: energyGallery
+    label: 氢能图库
+    folder: src/content/energy-gallery
+    create: true
+    slug: '{{slug}}'
+    extension: json
+    fields:
+      - { label: URL 标识符, name: slug, widget: string }
+
+      - label: 图片标题
+        name: title
+        widget: object
+        fields:
+          - { label: '标题（中文）', name: zh, widget: string }
+          - { label: 'タイトル（日本語）', name: ja, widget: string }
+          - { label: 'Title (English)', name: en, widget: string }
+
+      - { label: 图片, name: image, widget: image, required: true }
+
+      - label: 分类
+        name: category
+        widget: select
+        options:
+          - { label: '加氢站 / Station', value: station }
+          - { label: '展会活动 / Exhibition', value: exhibition }
+          - { label: '技术设备 / Equipment', value: equipment }
+          - { label: '合作伙伴 / Partners', value: partners }
+        default: station
+
+      - label: 图片描述
+        name: description
+        widget: object
+        fields:
+          - { label: '描述（中文）', name: zh, widget: text }
+          - { label: '説明（日本語）', name: ja, widget: text }
+          - { label: 'Description (English)', name: en, widget: text }
+
+      - { label: 排序, name: order, widget: number, default: 0 }

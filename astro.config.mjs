@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
-import keystatic from '@keystatic/astro';
 import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
@@ -11,6 +10,11 @@ site: 'https://bikin.759nxrb6x4.workers.dev',
 output: 'server',
   adapter: cloudflare({
     imageService: 'cloudflare',
+    routes: {
+      extend: {
+        exclude: [{ pattern: '/admin/*' }],
+      },
+    },
   }),
 
   // i18n 国际化配置
@@ -65,6 +69,5 @@ output: 'server',
     }),
     react(),
     markdoc(),
-    keystatic(),
   ],
 });
