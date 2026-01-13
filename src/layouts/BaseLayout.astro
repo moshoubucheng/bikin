@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations, getLanguagePaths, type Lang } from '@/i18n';
+import { getEntry } from 'astro:content';
 
 interface Props {
   title?: string;
@@ -14,9 +15,20 @@ const lang = getLangFromUrl(Astro.url) as Lang;
 const t = useTranslations(lang);
 const languagePaths = getLanguagePaths(Astro.url.pathname);
 
+// 从 CMS 读取全局设置
+const globalSettings = await getEntry('settings', 'global');
+const settings = globalSettings?.data;
+
+// 获取当前语言的设置值
+const companyName = settings?.companyName?.[lang] || settings?.companyName?.zh || 'Group Website';
+const contactPhone = settings?.contact?.phone || '';
+const contactEmail = settings?.contact?.email || '';
+const seoTitle = settings?.seo?.defaultTitle?.[lang] || settings?.seo?.defaultTitle?.zh || '';
+const seoDescription = settings?.seo?.defaultDescription?.[lang] || settings?.seo?.defaultDescription?.zh || '';
+
 // 默认 SEO 值
-const defaultTitle = '集团官网 - 氢能源与不动产';
-const defaultDescription = '致力于氢能源技术创新与高端不动产投资';
+const defaultTitle = seoTitle || '集团官网 - 氢能源与不动产';
+const defaultDescription = seoDescription || '致力于氢能源技术创新与高端不动产投资';
 
 const pageTitle = title || defaultTitle;
 const pageDescription = description || defaultDescription;
@@ -140,18 +152,16 @@ const themeClasses = {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 class="text-lg font-semibold mb-4">LOGO</h3>
+            <h3 class="text-lg font-semibold mb-4">{companyName}</h3>
             <p class="text-gray-400 text-sm">
-              {lang === 'zh' && '致力于氢能源技术创新与高端不动产投资'}
-              {lang === 'ja' && '水素エネルギー技術革新と高級不動産投資に注力'}
-              {lang === 'en' && 'Committed to hydrogen energy innovation and premium real estate investment'}
+              {seoDescription || (lang === 'zh' ? '致力于氢能源技术创新与高端不动产投资' : lang === 'ja' ? '水素エネルギー技術革新と高級不動産投資に注力' : 'Committed to hydrogen energy innovation and premium real estate investment')}
             </p>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-4">{t('nav.contact')}</h3>
             <div class="space-y-2 text-gray-400 text-sm">
-              <p>Email: contact@example.com</p>
-              <p>Tel: +86 xxx-xxxx-xxxx</p>
+              {contactEmail && <p>Email: {contactEmail}</p>}
+              {contactPhone && <p>Tel: {contactPhone}</p>}
             </div>
           </div>
           <div>
@@ -164,7 +174,7 @@ const themeClasses = {
           </div>
         </div>
         <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Group Website. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {companyName}. All rights reserved.</p>
         </div>
       </div>
     </footer>
