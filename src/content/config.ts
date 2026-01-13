@@ -37,7 +37,7 @@ const newsCollection = defineCollection({
       date: z.string(),
       category: z.enum(['tech', 'market', 'company', 'estate']).default('tech'),
       coverImage: image().optional(),
-      videoUrl: z.string().url().optional(),
+      videoUrl: z.union([z.string().url(), z.literal('')]).optional(),
       galleryImages: z.array(image()).optional(),
       excerpt: multilingualText.optional(),
       featured: z.boolean().default(false),
@@ -67,7 +67,7 @@ const settingsCollection = defineCollection({
       contact: z
         .object({
           phone: z.string().optional(),
-          email: z.string().email().optional(),
+          email: z.union([z.string().email(), z.literal('')]).optional(),
           wechatQR: image().optional(),
           wechatId: z.string().optional(),
           lineQR: image().optional(),
@@ -76,9 +76,9 @@ const settingsCollection = defineCollection({
         .optional(),
       social: z
         .object({
-          youtube: z.string().url().optional(),
-          twitter: z.string().url().optional(),
-          linkedin: z.string().url().optional(),
+          youtube: z.union([z.string().url(), z.literal('')]).optional(),
+          twitter: z.union([z.string().url(), z.literal('')]).optional(),
+          linkedin: z.union([z.string().url(), z.literal('')]).optional(),
         })
         .optional(),
       seo: z
