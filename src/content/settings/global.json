@@ -7,10 +7,10 @@
   "contact": {
     "phone": "050-6868-2230",
     "email": "wufuxing@bikin.jp",
-    "wechatQR": "",
-    "wechatId": "wufuxing",
-    "lineQR": "",
-    "lineId": "moshoubucheng"
+    "wechatQR": "/src/assets/uploads/1234.jpg",
+    "wechatId": "",
+    "lineQR": "/src/assets/uploads/64564.jpg",
+    "lineId": ""
   },
   "social": {
     "youtube": "",
