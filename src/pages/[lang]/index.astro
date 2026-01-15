@@ -1,12 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { languages, useTranslations, type Lang } from '@/i18n';
-
-export function getStaticPaths() {
-  return Object.keys(languages).map((lang) => ({
-    params: { lang },
-  }));
-}
+import { useTranslations, type Lang } from '@/i18n';
 
 const { lang } = Astro.params as { lang: Lang };
 const t = useTranslations(lang);
@@ -100,14 +94,10 @@ const t = useTranslations(lang);
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          {lang === 'zh' && '关于我们'}
-          {lang === 'ja' && '私たちについて'}
-          {lang === 'en' && 'About Us'}
+          {t('home.about.title')}
         </h2>
         <p class="text-lg text-gray-600 leading-relaxed">
-          {lang === 'zh' && '我们是一家专注于氢能源技术创新与高端不动产投资的综合性企业集团。凭借前瞻性的战略眼光和专业的运营团队，我们致力于为客户创造可持续的价值。'}
-          {lang === 'ja' && '私たちは、水素エネルギー技術革新と高級不動産投資に特化した総合企業グループです。先見性のある戦略的視点と専門的な運営チームにより、お客様に持続可能な価値を創造することに努めています。'}
-          {lang === 'en' && 'We are a comprehensive enterprise group focused on hydrogen energy technology innovation and premium real estate investment. With forward-thinking strategic vision and professional operations team, we are committed to creating sustainable value for our clients.'}
+          {t('home.about.desc')}
         </p>
       </div>
     </div>

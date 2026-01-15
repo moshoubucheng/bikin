@@ -41,21 +41,6 @@
     @apply bg-white rounded-xl shadow-sm overflow-hidden;
     @apply hover:shadow-lg transition-shadow duration-300;
   }
-
-  /* 截断文本 */
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
 }
 
 /* 工具类 */

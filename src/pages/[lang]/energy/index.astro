@@ -1,13 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { languages, useTranslations, getLocalizedContent, type Lang } from '@/i18n';
+import { useTranslations, getLocalizedContent, type Lang } from '@/i18n';
 import { getCollection } from 'astro:content';
-
-export function getStaticPaths() {
-  return Object.keys(languages).map((lang) => ({
-    params: { lang },
-  }));
-}
 
 const { lang } = Astro.params as { lang: Lang };
 const t = useTranslations(lang);
@@ -55,9 +49,7 @@ const energyNews = allNews
         {t('energy.gallery.title')}
       </h2>
       <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-        {lang === 'zh' && '加氢站建设、行业展会、技术创新成果展示'}
-        {lang === 'ja' && '水素ステーション建設、業界展示会、技術革新成果の紹介'}
-        {lang === 'en' && 'Hydrogen stations, industry exhibitions, and technology innovation showcase'}
+        {t('energy.gallery.desc')}
       </p>
 
       <!-- Gallery Grid -->

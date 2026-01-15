@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <defs>
+    <linearGradient id="m1" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3d6a35"/>
+      <stop offset="100%" stop-color="#4a7a42"/>
+    </linearGradient>
+    <linearGradient id="m2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a7a42"/>
+      <stop offset="100%" stop-color="#5c8a3e"/>
+    </linearGradient>
+    <linearGradient id="m3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6a9a3c"/>
+      <stop offset="100%" stop-color="#7eb035"/>
+    </linearGradient>
+    <linearGradient id="m4" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8cb33e"/>
+      <stop offset="100%" stop-color="#a4c23e"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(5, 2)">
+    <!-- Bar 1 (darkest, shortest) -->
+    <rect x="0" y="22" width="5.5" height="12" rx="2.75" fill="url(#m1)" transform="rotate(-35, 2.75, 28)"/>
+    <!-- Bar 2 -->
+    <rect x="8" y="14" width="5.5" height="20" rx="2.75" fill="url(#m2)" transform="rotate(-35, 10.75, 24)"/>
+    <!-- Bar 3 -->
+    <rect x="16" y="6" width="5.5" height="28" rx="2.75" fill="url(#m3)" transform="rotate(-35, 18.75, 20)"/>
+    <!-- Bar 4 (lightest, tallest) -->
+    <rect x="24" y="-2" width="5.5" height="36" rx="2.75" fill="url(#m4)" transform="rotate(-35, 26.75, 16)"/>
+  </g>
+</svg>

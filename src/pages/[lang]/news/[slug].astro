@@ -1,0 +1,185 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { useTranslations, getLocalizedContent, type Lang } from '@/i18n';
+import { getCollection } from 'astro:content';
+
+const { lang, slug } = Astro.params as { lang: Lang; slug: string };
+const t = useTranslations(lang);
+
+// 获取所有新闻
+const allNews = await getCollection('news');
+const newsItem = allNews.find((n) => n.data.slug === slug);
+
+// 如果找不到新闻，返回 404
+if (!newsItem) {
+  return Astro.redirect(`/${lang}/news`);
+}
+
+// 分类标签
+const categoryLabels: Record<string, Record<Lang, string>> = {
+  tech: { zh: '氢能技术', ja: '水素技術', en: 'H2 Tech' },
+  market: { zh: '市场动态', ja: '市場情報', en: 'Market' },
+  company: { zh: '公司新闻', ja: '企業ニュース', en: 'Company' },
+  estate: { zh: '不动产', ja: '不動産', en: 'Real Estate' },
+};
+
+const categoryColors: Record<string, string> = {
+  tech: 'bg-energy-100 text-energy-700',
+  market: 'bg-amber-100 text-amber-700',
+  company: 'bg-purple-100 text-purple-700',
+  estate: 'bg-estate-100 text-estate-700',
+};
+
+const title = getLocalizedContent(newsItem.data.title, lang) || '';
+const excerpt = getLocalizedContent(newsItem.data.excerpt || {}, lang) || '';
+
+// 获取相关新闻（同分类）
+const relatedNews = allNews
+  .filter((n) => n.data.category === newsItem.data.category && n.data.slug !== slug)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
+
+// 解析 YouTube 视频 ID
+function getYouTubeId(url: string): string | null {
+  const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+  const match = url.match(regex);
+  return match ? match[1] : null;
+}
+
+const youtubeId = newsItem.data.videoUrl ? getYouTubeId(newsItem.data.videoUrl) : null;
+---
+
+<BaseLayout title={title}>
+  <!-- 返回按钮 -->
+  <section class="bg-gray-900 pt-20 pb-4">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a
+        href={`/${lang}/news`}
+        class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        {t('common.back')}
+      </a>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-900 pb-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class={`px-3 py-1 rounded-full text-sm font-medium ${categoryColors[newsItem.data.category]}`}>
+          {categoryLabels[newsItem.data.category]?.[lang] || newsItem.data.category}
+        </span>
+        <span class="text-gray-400">{newsItem.data.date}</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">{title}</h1>
+      {excerpt && (
+        <p class="text-xl text-gray-300">{excerpt}</p>
+      )}
+    </div>
+  </section>
+
+  <!-- 封面图/视频 -->
+  <section class="bg-gray-50 py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {youtubeId ? (
+        <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeId}`}
+            title={title}
+            class="w-full h-full"
+            style="border: 0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      ) : newsItem.data.coverImage ? (
+        <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
+          <img
+            src={typeof newsItem.data.coverImage === 'string' ? newsItem.data.coverImage : newsItem.data.coverImage.src}
+            alt={title}
+            class="w-full h-full object-cover"
+          />
+        </div>
+      ) : (
+        <div class="aspect-video rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+          <svg class="w-20 h-20 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+          </svg>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- 正文内容 -->
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article class="prose prose-lg prose-gray max-w-none">
+        {newsItem.body ? (
+          <Fragment set:html={newsItem.body} />
+        ) : (
+          <p class="text-gray-600">{t('news.noContent')}</p>
+        )}
+      </article>
+    </div>
+  </section>
+
+  <!-- 图片画廊 -->
+  {newsItem.data.galleryImages && newsItem.data.galleryImages.length > 0 && (
+    <section class="py-12 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">{t('news.gallery')}</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {newsItem.data.galleryImages.map((img, i) => (
+            <div class="aspect-[4/3] rounded-lg overflow-hidden shadow-sm">
+              <img
+                src={typeof img === 'string' ? img : img.src}
+                alt={`${title} - ${i + 1}`}
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- 相关新闻 -->
+  {relatedNews.length > 0 && (
+    <section class="py-12 bg-white border-t">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">{t('news.related')}</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {relatedNews.map((item) => (
+            <a
+              href={`/${lang}/news/${item.data.slug}`}
+              class="group bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                {item.data.coverImage ? (
+                  <img
+                    src={typeof item.data.coverImage === 'string' ? item.data.coverImage : item.data.coverImage.src}
+                    alt={getLocalizedContent(item.data.title, lang) || ''}
+                    class="w-full h-full object-cover"
+                  />
+                ) : (
+                  <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                  </svg>
+                )}
+              </div>
+              <div class="p-4">
+                <p class="text-gray-400 text-sm mb-1">{item.data.date}</p>
+                <h3 class="font-semibold text-gray-900 group-hover:text-energy-600 transition-colors line-clamp-2">
+                  {getLocalizedContent(item.data.title, lang)}
+                </h3>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

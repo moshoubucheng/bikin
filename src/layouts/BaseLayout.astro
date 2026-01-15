@@ -14,6 +14,14 @@ const { title, description, image, theme = 'default' } = Astro.props;
 const lang = getLangFromUrl(Astro.url) as Lang;
 const t = useTranslations(lang);
 const languagePaths = getLanguagePaths(Astro.url.pathname);
+const currentPath = Astro.url.pathname;
+
+// 判断当前页面是否为指定路径
+function isCurrentPage(path: string): boolean {
+  const normalizedCurrent = currentPath.replace(/\/$/, '');
+  const normalizedPath = path.replace(/\/$/, '');
+  return normalizedCurrent === normalizedPath;
+}
 
 // 从 CMS 读取全局设置
 const globalSettings = await getEntry('settings', 'global');
@@ -75,44 +83,67 @@ const themeClasses = {
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
-          <a href={`/${lang}/`} class="flex items-center space-x-2">
-            <span class="text-xl font-bold text-gray-900">{companyName}</span>
+          <!-- Logo - Responsive: Icon only on mobile, Icon + Text on desktop -->
+          <a href={`/${lang}/`} class="flex items-center gap-2 shrink-0">
+            <img src="/logo-icon.svg" alt="" class="h-8 w-8" aria-hidden="true" />
+            <span class="hidden sm:inline text-lg font-semibold text-gray-900 whitespace-nowrap">{companyName}</span>
           </a>
 
           <!-- Navigation Links -->
-          <div class="hidden md:flex items-center space-x-8">
-            <a href={`/${lang}/`} class="text-gray-700 hover:text-energy-600 transition-colors">
+          <nav class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
+            <a
+              href={`/${lang}/`}
+              class={`transition-colors ${isCurrentPage(`/${lang}`) ? 'text-energy-600 font-medium' : 'text-gray-700 hover:text-energy-600'}`}
+              aria-current={isCurrentPage(`/${lang}`) ? 'page' : undefined}
+            >
               {t('nav.home')}
             </a>
-            <a href={`/${lang}/energy`} class="text-gray-700 hover:text-energy-600 transition-colors">
+            <a
+              href={`/${lang}/energy`}
+              class={`transition-colors ${isCurrentPage(`/${lang}/energy`) ? 'text-energy-600 font-medium' : 'text-gray-700 hover:text-energy-600'}`}
+              aria-current={isCurrentPage(`/${lang}/energy`) ? 'page' : undefined}
+            >
               {t('nav.energy')}
             </a>
-            <a href={`/${lang}/estate`} class="text-gray-700 hover:text-estate-600 transition-colors">
+            <a
+              href={`/${lang}/estate`}
+              class={`transition-colors ${isCurrentPage(`/${lang}/estate`) ? 'text-estate-600 font-medium' : 'text-gray-700 hover:text-estate-600'}`}
+              aria-current={isCurrentPage(`/${lang}/estate`) ? 'page' : undefined}
+            >
               {t('nav.estate')}
             </a>
-            <a href={`/${lang}/news`} class="text-gray-700 hover:text-gray-900 transition-colors">
+            <a
+              href={`/${lang}/news`}
+              class={`transition-colors ${isCurrentPage(`/${lang}/news`) ? 'text-gray-900 font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+              aria-current={isCurrentPage(`/${lang}/news`) ? 'page' : undefined}
+            >
               {t('nav.news')}
             </a>
-          </div>
+          </nav>
 
           <!-- Language Switcher -->
-          <div class="flex items-center space-x-2">
+          <div class="flex items-center space-x-2" role="navigation" aria-label="Language selection">
             <a
               href={languagePaths.zh}
               class={`px-2 py-1 text-sm rounded ${lang === 'zh' ? 'bg-gray-900 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+              aria-current={lang === 'zh' ? 'true' : undefined}
+              lang="zh"
             >
               中文
             </a>
             <a
               href={languagePaths.ja}
               class={`px-2 py-1 text-sm rounded ${lang === 'ja' ? 'bg-gray-900 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+              aria-current={lang === 'ja' ? 'true' : undefined}
+              lang="ja"
             >
               日本語
             </a>
             <a
               href={languagePaths.en}
               class={`px-2 py-1 text-sm rounded ${lang === 'en' ? 'bg-gray-900 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+              aria-current={lang === 'en' ? 'true' : undefined}
+              lang="en"
             >
               EN
             </a>
@@ -152,7 +183,10 @@ const themeClasses = {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 class="text-lg font-semibold mb-4">{companyName}</h3>
+            <div class="flex items-center gap-2 mb-4">
+              <img src="/logo-icon.svg" alt="" class="h-6 w-6 brightness-0 invert" aria-hidden="true" />
+              <h3 class="text-lg font-semibold">{companyName}</h3>
+            </div>
             <p class="text-gray-400 text-sm">
               {seoDescription || (lang === 'zh' ? '致力于氢能源技术创新与高端不动产投资' : lang === 'ja' ? '水素エネルギー技術革新と高級不動産投資に注力' : 'Committed to hydrogen energy innovation and premium real estate investment')}
             </p>
@@ -191,9 +225,3 @@ const themeClasses = {
   </body>
 </html>
 
-<style is:global>
-  /* 全局样式 */
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-</style>

@@ -29,11 +29,14 @@ export const ui = {
     'home.estate.title': '不动产投资',
     'home.estate.desc': '精选全球优质物业，专业投资管理服务',
     'home.estate.cta': '查看房源',
+    'home.about.title': '关于我们',
+    'home.about.desc': '我们是一家专注于氢能源技术创新与高端不动产投资的综合性企业集团。凭借前瞻性的战略眼光和专业的运营团队，我们致力于为客户创造可持续的价值。',
 
     // 氢能源
     'energy.hero.title': '氢能源解决方案',
     'energy.hero.subtitle': '推动绿色能源革命，构建低碳未来',
     'energy.gallery.title': '项目展示',
+    'energy.gallery.desc': '加氢站建设、行业展会、技术创新成果展示',
     'energy.news.title': '行业动态',
     'energy.tech.title': '技术创新',
     'energy.market.title': '市场资讯',
@@ -44,11 +47,22 @@ export const ui = {
     'estate.filter.all': '全部',
     'estate.filter.available': '在售',
     'estate.filter.sold': '已售',
+    'estate.featured': '推荐',
+    'estate.sample.title': '示例房源',
+    'estate.sample.location': '东京都港区',
     'estate.detail.price': '价格',
     'estate.detail.location': '位置',
     'estate.detail.features': '特色',
     'estate.detail.layout': '户型图',
     'estate.detail.contact': '联系咨询',
+    'estate.detail.description': '详细描述',
+    'estate.detail.noDescription': '暂无详细描述',
+    'estate.detail.publishedAt': '发布日期',
+
+    // 新闻
+    'news.noContent': '暂无内容',
+    'news.gallery': '图片画廊',
+    'news.related': '相关新闻',
 
     // 联系方式
     'contact.title': '联系我们',
@@ -56,6 +70,9 @@ export const ui = {
     'contact.line': 'Line 咨询',
     'contact.phone': '电话咨询',
     'contact.scan': '扫码添加',
+    'contact.estateDesc': '扫码添加微信或 Line，获取专业置业咨询',
+    'contact.interested': '对这套房源感兴趣？',
+    'contact.interestedDesc': '联系我们获取更多信息和专业咨询服务',
 
     // 通用
     'common.learnMore': '了解更多',
@@ -84,11 +101,14 @@ export const ui = {
     'home.estate.title': '不動産投資',
     'home.estate.desc': '世界の優良物件を厳選、専門的な投資管理サービス',
     'home.estate.cta': '物件を見る',
+    'home.about.title': '私たちについて',
+    'home.about.desc': '私たちは、水素エネルギー技術革新と高級不動産投資に特化した総合企業グループです。先見性のある戦略的視点と専門的な運営チームにより、お客様に持続可能な価値を創造することに努めています。',
 
     // 水素エネルギー
     'energy.hero.title': '水素エネルギーソリューション',
     'energy.hero.subtitle': 'グリーンエネルギー革命を推進し、低炭素の未来を構築',
     'energy.gallery.title': 'プロジェクト紹介',
+    'energy.gallery.desc': '水素ステーション建設、業界展示会、技術革新成果の紹介',
     'energy.news.title': '業界ニュース',
     'energy.tech.title': '技術革新',
     'energy.market.title': '市場情報',
@@ -99,11 +119,22 @@ export const ui = {
     'estate.filter.all': 'すべて',
     'estate.filter.available': '販売中',
     'estate.filter.sold': '売却済み',
+    'estate.featured': 'おすすめ',
+    'estate.sample.title': 'サンプル物件',
+    'estate.sample.location': '東京都港区',
     'estate.detail.price': '価格',
     'estate.detail.location': '所在地',
     'estate.detail.features': '特徴',
     'estate.detail.layout': '間取り図',
     'estate.detail.contact': 'お問い合わせ',
+    'estate.detail.description': '詳細説明',
+    'estate.detail.noDescription': '詳細説明はありません',
+    'estate.detail.publishedAt': '掲載日',
+
+    // ニュース
+    'news.noContent': 'コンテンツがありません',
+    'news.gallery': 'フォトギャラリー',
+    'news.related': '関連ニュース',
 
     // 連絡先
     'contact.title': 'お問い合わせ',
@@ -111,6 +142,9 @@ export const ui = {
     'contact.line': 'Line',
     'contact.phone': '電話',
     'contact.scan': 'QRコードをスキャン',
+    'contact.estateDesc': 'WeChatまたはLineでお気軽にお問い合わせください',
+    'contact.interested': 'この物件に興味がありますか？',
+    'contact.interestedDesc': 'お問い合わせいただくと、詳細情報と専門的なアドバイスをご提供します',
 
     // 共通
     'common.learnMore': '詳細を見る',
@@ -139,11 +173,14 @@ export const ui = {
     'home.estate.title': 'Real Estate Investment',
     'home.estate.desc': 'Curated global properties with professional management',
     'home.estate.cta': 'View Properties',
+    'home.about.title': 'About Us',
+    'home.about.desc': 'We are a comprehensive enterprise group focused on hydrogen energy technology innovation and premium real estate investment. With forward-thinking strategic vision and professional operations team, we are committed to creating sustainable value for our clients.',
 
     // Hydrogen Energy
     'energy.hero.title': 'Hydrogen Energy Solutions',
     'energy.hero.subtitle': 'Driving the green energy revolution for a low-carbon future',
     'energy.gallery.title': 'Project Gallery',
+    'energy.gallery.desc': 'Hydrogen stations, industry exhibitions, and technology innovation showcase',
     'energy.news.title': 'Industry News',
     'energy.tech.title': 'Technology Innovation',
     'energy.market.title': 'Market Insights',
@@ -154,11 +191,22 @@ export const ui = {
     'estate.filter.all': 'All',
     'estate.filter.available': 'Available',
     'estate.filter.sold': 'Sold',
+    'estate.featured': 'Featured',
+    'estate.sample.title': 'Sample Property',
+    'estate.sample.location': 'Minato-ku, Tokyo',
     'estate.detail.price': 'Price',
     'estate.detail.location': 'Location',
     'estate.detail.features': 'Features',
     'estate.detail.layout': 'Floor Plan',
     'estate.detail.contact': 'Contact Us',
+    'estate.detail.description': 'Description',
+    'estate.detail.noDescription': 'No description available',
+    'estate.detail.publishedAt': 'Published',
+
+    // News
+    'news.noContent': 'No content available',
+    'news.gallery': 'Photo Gallery',
+    'news.related': 'Related News',
 
     // Contact
     'contact.title': 'Contact Us',
@@ -166,6 +214,9 @@ export const ui = {
     'contact.line': 'Line',
     'contact.phone': 'Phone',
     'contact.scan': 'Scan QR Code',
+    'contact.estateDesc': 'Scan QR code to contact us via WeChat or Line',
+    'contact.interested': 'Interested in this property?',
+    'contact.interestedDesc': 'Contact us for more information and professional consultation',
 
     // Common
     'common.learnMore': 'Learn More',
