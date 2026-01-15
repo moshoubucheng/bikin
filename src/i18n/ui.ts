@@ -60,9 +60,14 @@ export const ui = {
     'estate.detail.publishedAt': '发布日期',
 
     // 新闻
+    'news.hero.subtitle': '了解最新行业动态与公司资讯',
     'news.noContent': '暂无内容',
     'news.gallery': '图片画廊',
     'news.related': '相关新闻',
+    'news.filter.all': '全部',
+    'news.images': '张图片',
+    'news.sample.title': '示例新闻标题',
+    'news.sample.excerpt': '这是新闻摘要的示例文本，展示文章的主要内容概述。',
 
     // 联系方式
     'contact.title': '联系我们',
@@ -132,9 +137,14 @@ export const ui = {
     'estate.detail.publishedAt': '掲載日',
 
     // ニュース
+    'news.hero.subtitle': '最新の業界動向と企業情報をお届けします',
     'news.noContent': 'コンテンツがありません',
     'news.gallery': 'フォトギャラリー',
     'news.related': '関連ニュース',
+    'news.filter.all': 'すべて',
+    'news.images': '枚の画像',
+    'news.sample.title': 'サンプルニュース',
+    'news.sample.excerpt': 'これは記事の主な内容を示すニュース概要のサンプルテキストです。',
 
     // 連絡先
     'contact.title': 'お問い合わせ',
@@ -204,9 +214,14 @@ export const ui = {
     'estate.detail.publishedAt': 'Published',
 
     // News
+    'news.hero.subtitle': 'Stay updated with the latest industry news and company updates',
     'news.noContent': 'No content available',
     'news.gallery': 'Photo Gallery',
     'news.related': 'Related News',
+    'news.filter.all': 'All',
+    'news.images': 'images',
+    'news.sample.title': 'Sample News Title',
+    'news.sample.excerpt': 'This is sample text showing a brief summary of the news article content.',
 
     // Contact
     'contact.title': 'Contact Us',

@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ContactModal from '@/components/ContactModal.astro';
-import { useTranslations, getLocalizedContent, type Lang } from '@/i18n';
+import { useTranslations, getLocalizedContent, type Lang, isValidLang } from '@/i18n';
 import { getCollection } from 'astro:content';
+import { sanitizeHtml, formatDate } from '@/utils/sanitize';
 
-const { lang, slug } = Astro.params as { lang: Lang; slug: string };
+const { lang: paramLang, slug } = Astro.params;
+
+// 验证语言参数
+if (!paramLang || !isValidLang(paramLang)) {
+  return Astro.redirect('/zh/estate');
+}
+const lang = paramLang as Lang;
 const t = useTranslations(lang);
 
 // 获取所有房源
@@ -13,7 +20,7 @@ const property = allProperties.find((p) => p.data.slug === slug);
 
 // 如果找不到房源，返回 404
 if (!property) {
-  return Astro.redirect(`/${lang}/estate`);
+  return new Response(null, { status: 404, statusText: 'Not Found' });
 }
 
 // 货币格式化
@@ -184,7 +191,7 @@ const features = property.data.features || [];
             <h2 class="text-2xl font-bold text-gray-900 mb-4">{t('estate.detail.description')}</h2>
             <div class="prose prose-gray max-w-none">
               {property.body ? (
-                <Fragment set:html={property.body} />
+                <Fragment set:html={sanitizeHtml(property.body)} />
               ) : (
                 <p class="text-gray-600">{t('estate.detail.noDescription')}</p>
               )}
@@ -210,7 +217,7 @@ const features = property.data.features || [];
             <!-- 发布日期 -->
             {property.data.publishDate && (
               <p class="text-gray-400 text-sm mt-6 text-center">
-                {t('estate.detail.publishedAt')}: {property.data.publishDate}
+                {t('estate.detail.publishedAt')}: {formatDate(property.data.publishDate, lang)}
               </p>
             )}
           </div>

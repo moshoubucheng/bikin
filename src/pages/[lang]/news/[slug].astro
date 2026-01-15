@@ -1,9 +1,16 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { useTranslations, getLocalizedContent, type Lang } from '@/i18n';
+import { useTranslations, getLocalizedContent, type Lang, isValidLang } from '@/i18n';
 import { getCollection } from 'astro:content';
+import { sanitizeHtml, formatDate } from '@/utils/sanitize';
 
-const { lang, slug } = Astro.params as { lang: Lang; slug: string };
+const { lang: paramLang, slug } = Astro.params;
+
+// 验证语言参数
+if (!paramLang || !isValidLang(paramLang)) {
+  return Astro.redirect('/zh/news');
+}
+const lang = paramLang as Lang;
 const t = useTranslations(lang);
 
 // 获取所有新闻
@@ -12,7 +19,7 @@ const newsItem = allNews.find((n) => n.data.slug === slug);
 
 // 如果找不到新闻，返回 404
 if (!newsItem) {
-  return Astro.redirect(`/${lang}/news`);
+  return new Response(null, { status: 404, statusText: 'Not Found' });
 }
 
 // 分类标签
@@ -72,7 +79,7 @@ const youtubeId = newsItem.data.videoUrl ? getYouTubeId(newsItem.data.videoUrl) 
         <span class={`px-3 py-1 rounded-full text-sm font-medium ${categoryColors[newsItem.data.category]}`}>
           {categoryLabels[newsItem.data.category]?.[lang] || newsItem.data.category}
         </span>
-        <span class="text-gray-400">{newsItem.data.date}</span>
+        <span class="text-gray-400">{formatDate(newsItem.data.date, lang)}</span>
       </div>
       <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">{title}</h1>
       {excerpt && (
@@ -118,7 +125,7 @@ const youtubeId = newsItem.data.videoUrl ? getYouTubeId(newsItem.data.videoUrl) 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <article class="prose prose-lg prose-gray max-w-none">
         {newsItem.body ? (
-          <Fragment set:html={newsItem.body} />
+          <Fragment set:html={sanitizeHtml(newsItem.body)} />
         ) : (
           <p class="text-gray-600">{t('news.noContent')}</p>
         )}
@@ -171,7 +178,7 @@ const youtubeId = newsItem.data.videoUrl ? getYouTubeId(newsItem.data.videoUrl) 
                 )}
               </div>
               <div class="p-4">
-                <p class="text-gray-400 text-sm mb-1">{item.data.date}</p>
+                <p class="text-gray-400 text-sm mb-1">{formatDate(item.data.date, lang)}</p>
                 <h3 class="font-semibold text-gray-900 group-hover:text-energy-600 transition-colors line-clamp-2">
                   {getLocalizedContent(item.data.title, lang)}
                 </h3>
