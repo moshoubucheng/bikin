@@ -27,8 +27,8 @@ export const ui = {
     'home.energy.desc': '清洁能源解决方案，助力可持续发展',
     'home.energy.cta': '了解更多',
     'home.estate.title': '不动产投资',
-    'home.estate.desc': '精选全球优质物业，专业投资管理服务',
-    'home.estate.cta': '查看房源',
+    'home.estate.desc': '专注日本优质不动产资产的投资与经营管理',
+    'home.estate.cta': '了解更多',
     'home.about.title': '关于我们',
     'home.about.desc': '我们是一家专注于氢能源技术创新与高端不动产投资的综合性企业集团。凭借前瞻性的战略眼光和专业的运营团队，我们致力于为客户创造可持续的价值。',
 
@@ -149,8 +149,8 @@ export const ui = {
     'home.energy.desc': 'クリーンエネルギーソリューションで持続可能な発展を支援',
     'home.energy.cta': '詳細を見る',
     'home.estate.title': '不動産投資',
-    'home.estate.desc': '世界の優良物件を厳選、専門的な投資管理サービス',
-    'home.estate.cta': '物件を見る',
+    'home.estate.desc': '日本における優良不動産資産の投資・経営・管理に特化',
+    'home.estate.cta': '詳細を見る',
     'home.about.title': '私たちについて',
     'home.about.desc': '私たちは、水素エネルギー技術革新と高級不動産投資に特化した総合企業グループです。先見性のある戦略的視点と専門的な運営チームにより、お客様に持続可能な価値を創造することに努めています。',
 
@@ -271,8 +271,8 @@ export const ui = {
     'home.energy.desc': 'Clean energy solutions for sustainable development',
     'home.energy.cta': 'Learn More',
     'home.estate.title': 'Real Estate Investment',
-    'home.estate.desc': 'Curated global properties with professional management',
-    'home.estate.cta': 'View Properties',
+    'home.estate.desc': 'Focused on quality real estate investment and asset management in Japan',
+    'home.estate.cta': 'Learn More',
     'home.about.title': 'About Us',
     'home.about.desc': 'We are a comprehensive enterprise group focused on hydrogen energy technology innovation and premium real estate investment. With forward-thinking strategic vision and professional operations team, we are committed to creating sustainable value for our clients.',
 
