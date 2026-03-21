@@ -138,6 +138,13 @@ const themeClasses = {
             >
               {t('nav.news')}
             </a>
+            <a
+              href={`/${lang}/about`}
+              class={`transition-colors ${isCurrentPage(`/${lang}/about`) ? 'text-gray-900 font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+              aria-current={isCurrentPage(`/${lang}/about`) ? 'page' : undefined}
+            >
+              {t('nav.about')}
+            </a>
           </nav>
 
           <!-- Language Switcher -->
@@ -193,6 +200,7 @@ const themeClasses = {
           <a href={`/${lang}/energy`} class="block py-3 px-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">{t('nav.energy')}</a>
           <a href={`/${lang}/estate`} class="block py-3 px-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">{t('nav.estate')}</a>
           <a href={`/${lang}/news`} class="block py-3 px-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">{t('nav.news')}</a>
+          <a href={`/${lang}/about`} class="block py-3 px-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">{t('nav.about')}</a>
         </div>
       </div>
     </nav>

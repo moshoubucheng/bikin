@@ -1,0 +1,252 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { useTranslations, type Lang } from '@/i18n';
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+
+const businessDesc = {
+  zh: {
+    b1: '以低碳甲醇燃料电池为核心，为日本AI数据中心提供不依赖大电网的兆瓦级零碳基载电力，助力客户把握GX补贴政策红利。',
+    b2: '在日本市场开展优质不动产资产的直接投资、运营管理及资产增值，构建稳健的长期投资组合。',
+  },
+  ja: {
+    b1: '低炭素メタノール燃料電池を中核とし、大規模電力網に依存しないメガワット級ゼロカーボンベース電力を日本のAIデータセンターに供給。GX補助金政策の恩恵を最大限に活かします。',
+    b2: '日本市場において優良不動産資産への直接投資、運営管理および資産価値向上を推進し、安定した長期投資ポートフォリオを構築します。',
+  },
+  en: {
+    b1: "Leveraging low-carbon methanol fuel cell technology to deliver megawatt-scale, grid-independent zero-carbon baseload power for AI data centers in Japan — maximizing clients' access to GX subsidy incentives.",
+    b2: 'Direct investment in quality real estate assets across the Japan market, with active operational management and value enhancement, building a resilient long-term investment portfolio.',
+  },
+};
+
+const d = businessDesc[lang];
+---
+
+<BaseLayout title={t('about.hero.title')}>
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-energy-600/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-estate-500/10 rounded-full blur-3xl"></div>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2 mb-6">
+        <span class="w-1.5 h-1.5 bg-white/60 rounded-full"></span>
+        <span class="text-white/70 text-sm font-medium tracking-widest uppercase">BIKIN Co., Ltd.</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        {t('about.hero.title')}
+      </h1>
+      <p class="text-gray-400 text-lg">美錦エネルギー株式会社</p>
+    </div>
+  </section>
+
+  <!-- 会社概要テーブル -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-3 mb-10">
+        <div class="w-1 h-8 bg-gray-900 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-gray-900">{t('about.profile.title')}</h2>
+      </div>
+
+      <div class="border border-gray-200 rounded-2xl overflow-hidden">
+        <table class="w-full">
+          <tbody class="divide-y divide-gray-100">
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <th class="text-left text-sm font-semibold text-gray-500 px-6 py-5 w-1/3 align-top bg-gray-50/50">
+                {t('about.profile.name')}
+              </th>
+              <td class="px-6 py-5 text-gray-900 text-sm leading-relaxed">
+                <div class="font-semibold text-base">美錦エネルギー株式会社</div>
+                <div class="text-gray-500 mt-0.5">BIKIN Co., Ltd.</div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <th class="text-left text-sm font-semibold text-gray-500 px-6 py-5 align-top bg-gray-50/50">
+                {t('about.profile.address')}
+              </th>
+              <td class="px-6 py-5 text-gray-900 text-sm leading-relaxed">
+                〒556-0001 大阪市浪速区下寺3-18-7
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <th class="text-left text-sm font-semibold text-gray-500 px-6 py-5 align-top bg-gray-50/50">
+                {t('about.profile.tel')}
+              </th>
+              <td class="px-6 py-5 text-sm">
+                <a href="tel:0506868-2230" class="text-gray-900 hover:text-energy-600 transition-colors">
+                  050-6868-2230
+                </a>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <th class="text-left text-sm font-semibold text-gray-500 px-6 py-5 align-top bg-gray-50/50">
+                {t('about.profile.email')}
+              </th>
+              <td class="px-6 py-5 text-sm">
+                <a href="mailto:wufuxing@bikin.jp" class="text-gray-900 hover:text-energy-600 transition-colors">
+                  wufuxing@bikin.jp
+                </a>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <th class="text-left text-sm font-semibold text-gray-500 px-6 py-5 align-top bg-gray-50/50">
+                {t('about.profile.ceo')}
+              </th>
+              <td class="px-6 py-5 text-gray-900 text-sm leading-relaxed">
+                <div>姚 錦城</div>
+                <div>呉 福興</div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <th class="text-left text-sm font-semibold text-gray-500 px-6 py-5 align-top bg-gray-50/50">
+                {t('about.profile.established')}
+              </th>
+              <td class="px-6 py-5 text-gray-900 text-sm">
+                2022年2月7日
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <th class="text-left text-sm font-semibold text-gray-500 px-6 py-5 align-top bg-gray-50/50">
+                {t('about.profile.capital')}
+              </th>
+              <td class="px-6 py-5 text-gray-900 text-sm">
+                10,000,000円
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <th class="text-left text-sm font-semibold text-gray-500 px-6 py-5 align-top bg-gray-50/50">
+                {t('about.profile.affiliate')}
+              </th>
+              <td class="px-6 py-5 text-sm">
+                <div class="text-gray-900">美錦集團</div>
+                <div class="text-gray-400 text-xs mt-0.5">
+                  {lang === 'zh' && '中国上市企业（深交所 000723）'}
+                  {lang === 'ja' && '中国上場企業（深証コード：000723）'}
+                  {lang === 'en' && 'China Listed Company (Shenzhen: 000723)'}
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <th class="text-left text-sm font-semibold text-gray-500 px-6 py-5 align-top bg-gray-50/50">
+                {t('about.profile.invoice')}
+              </th>
+              <td class="px-6 py-5 text-gray-900 text-sm font-mono tracking-wide">
+                T5120001243787
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <th class="text-left text-sm font-semibold text-gray-500 px-6 py-5 align-top bg-gray-50/50">
+                {t('about.profile.business')}
+              </th>
+              <td class="px-6 py-5 text-gray-900 text-sm leading-relaxed">
+                <div class="space-y-3">
+                  <div>
+                    <span class="font-semibold">
+                      {lang === 'zh' && '一、'}
+                      {lang === 'ja' && '一、'}
+                      {lang === 'en' && '1. '}
+                    </span>
+                    {lang === 'zh' && '数据中心零碳自立电源解决方案的提供'}
+                    {lang === 'ja' && 'データセンター向けゼロカーボン自立電源ソリューションの提供'}
+                    {lang === 'en' && 'Zero-carbon independent power solutions for data centers'}
+                  </div>
+                  <div>
+                    <span class="font-semibold">
+                      {lang === 'zh' && '二、'}
+                      {lang === 'ja' && '二、'}
+                      {lang === 'en' && '2. '}
+                    </span>
+                    {lang === 'zh' && '不动产投资的经营与管理'}
+                    {lang === 'ja' && '不動産の投資・経営・管理'}
+                    {lang === 'en' && 'Real estate investment, operations and asset management'}
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 事業内容 詳細 -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-3 mb-10">
+        <div class="w-1 h-8 bg-gray-900 rounded-full"></div>
+        <h2 class="text-2xl font-bold text-gray-900">{t('about.business.title')}</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Business 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+          <div class="bg-gradient-to-br from-energy-600 to-energy-800 p-6">
+            <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div class="text-energy-200 text-xs font-semibold tracking-widest uppercase mb-2">
+              {lang === 'zh' ? '事业一' : lang === 'ja' ? '事業 01' : 'Business 01'}
+            </div>
+            <h3 class="text-white font-bold text-base leading-snug">
+              {t('about.business1.title')}
+            </h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 text-sm leading-relaxed">{d.b1}</p>
+            <a href={`/${lang}/energy`} class="inline-flex items-center gap-1.5 text-energy-600 text-sm font-medium mt-4 hover:text-energy-700 transition-colors">
+              {t('common.learnMore')}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Business 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+          <div class="bg-gradient-to-br from-neutral-700 to-neutral-900 p-6">
+            <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </div>
+            <div class="text-neutral-300 text-xs font-semibold tracking-widest uppercase mb-2">
+              {lang === 'zh' ? '事业二' : lang === 'ja' ? '事業 02' : 'Business 02'}
+            </div>
+            <h3 class="text-white font-bold text-base leading-snug">
+              {t('about.business2.title')}
+            </h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 text-sm leading-relaxed">{d.b2}</p>
+            <a href={`/${lang}/estate`} class="inline-flex items-center gap-1.5 text-neutral-600 text-sm font-medium mt-4 hover:text-neutral-800 transition-colors">
+              {t('common.learnMore')}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

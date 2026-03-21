@@ -111,6 +111,25 @@ export const ui = {
     'common.back': '返回',
     'common.close': '关闭',
 
+    // 会社概要
+    'about.hero.title': '会社概要',
+    'about.profile.title': '会社概要',
+    'about.profile.name': '会社名',
+    'about.profile.address': '所在地',
+    'about.profile.tel': '電話',
+    'about.profile.email': 'メールアドレス',
+    'about.profile.ceo': '代表取締役',
+    'about.profile.established': '設立',
+    'about.profile.capital': '資本金',
+    'about.profile.affiliate': '関連会社',
+    'about.profile.invoice': 'インボイス登録番号',
+    'about.profile.business': '事業内容',
+    'about.business.title': '事業内容',
+    'about.business1.title': 'データセンター向けゼロカーボン自立電源',
+    'about.business1.desc': '以低碳甲醇燃料电池为核心，为日本AI数据中心提供不依赖大电网的兆瓦级零碳基载电力，助力客户把握GX补贴政策红利。',
+    'about.business2.title': '不动产投资的经营与管理',
+    'about.business2.desc': '在日本市场开展优质不动产资产的直接投资、运营管理及资产增值，构建稳健的长期投资组合。',
+
     // 页脚
     'footer.links': '快速链接',
   },
@@ -214,6 +233,25 @@ export const ui = {
     'common.back': '戻る',
     'common.close': '閉じる',
 
+    // 会社概要
+    'about.hero.title': '会社概要',
+    'about.profile.title': '会社概要',
+    'about.profile.name': '会社名',
+    'about.profile.address': '所在地',
+    'about.profile.tel': '電話',
+    'about.profile.email': 'メールアドレス',
+    'about.profile.ceo': '代表取締役',
+    'about.profile.established': '設立',
+    'about.profile.capital': '資本金',
+    'about.profile.affiliate': '関連会社',
+    'about.profile.invoice': 'インボイス登録番号',
+    'about.profile.business': '事業内容',
+    'about.business.title': '事業内容',
+    'about.business1.title': 'データセンター向けゼロカーボン自立電源ソリューション',
+    'about.business1.desc': '低炭素メタノール燃料電池を中核とし、大規模電力網に依存しないメガワット級ゼロカーボンベース電力を日本のAIデータセンターに供給。GX補助金政策の恩恵を最大限に活かします。',
+    'about.business2.title': '不動産の投資・経営・管理',
+    'about.business2.desc': '日本市場において優良不動産資産への直接投資、運営管理および資産価値向上を推進し、安定した長期投資ポートフォリオを構築します。',
+
     // フッター
     'footer.links': 'リンク',
   },
@@ -316,6 +354,25 @@ export const ui = {
     'common.viewAll': 'View All',
     'common.back': 'Back',
     'common.close': 'Close',
+
+    // About
+    'about.hero.title': 'Company Profile',
+    'about.profile.title': 'Company Profile',
+    'about.profile.name': 'Company Name',
+    'about.profile.address': 'Address',
+    'about.profile.tel': 'Phone',
+    'about.profile.email': 'Email',
+    'about.profile.ceo': 'Representative Director',
+    'about.profile.established': 'Established',
+    'about.profile.capital': 'Capital',
+    'about.profile.affiliate': 'Affiliate',
+    'about.profile.invoice': 'Invoice Registration No.',
+    'about.profile.business': 'Business Description',
+    'about.business.title': 'Business Description',
+    'about.business1.title': 'Zero-Carbon Independent Power Solutions for Data Centers',
+    'about.business1.desc': 'Leveraging low-carbon methanol fuel cell technology to deliver megawatt-scale, grid-independent zero-carbon baseload power for AI data centers in Japan — maximizing clients\' access to GX subsidy incentives.',
+    'about.business2.title': 'Real Estate Investment, Operations & Asset Management',
+    'about.business2.desc': 'Direct investment in quality real estate assets across the Japan market, with active operational management and value enhancement, building a resilient long-term investment portfolio.',
 
     // Footer
     'footer.links': 'Links',
