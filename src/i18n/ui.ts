@@ -34,7 +34,7 @@ export const ui = {
 
     // 氢能源
     'energy.hero.title': '为AI时代，注入零碳动力。',
-    'energy.hero.subtitle': '算力等不起电力。我们让数据中心先于电网并网。',
+    'energy.hero.subtitle': '算力等不起电力，我们让数据中心先于电网并网。',
     'energy.hero.cta': '探索解决方案',
     'energy.tagline': '数据中心零碳自立电源解决方案',
     'energy.pain.title': '算力时代的能源困境',
