@@ -68,8 +68,8 @@ export const ui = {
     'energy.market.title': '市场资讯',
 
     // 不动产
-    'estate.hero.title': '全球精选物业',
-    'estate.hero.subtitle': '专业投资顾问，助您把握置业良机',
+    'estate.hero.title': '不动产投资组合',
+    'estate.hero.subtitle': '投资组合详情正在整理中，敬请期待',
     'estate.filter.all': '全部',
     'estate.filter.available': '在售',
     'estate.filter.sold': '已售',
@@ -171,8 +171,8 @@ export const ui = {
     'energy.market.title': '市場情報',
 
     // 不動産
-    'estate.hero.title': '世界厳選物件',
-    'estate.hero.subtitle': '専門投資アドバイザーがお客様の不動産投資をサポート',
+    'estate.hero.title': '不動産投資ポートフォリオ',
+    'estate.hero.subtitle': '投資ポートフォリオの詳細は準備中です。しばらくお待ちください',
     'estate.filter.all': 'すべて',
     'estate.filter.available': '販売中',
     'estate.filter.sold': '売却済み',
@@ -274,8 +274,8 @@ export const ui = {
     'energy.market.title': 'Market Insights',
 
     // Real Estate
-    'estate.hero.title': 'Global Premium Properties',
-    'estate.hero.subtitle': 'Professional advisors helping you seize investment opportunities',
+    'estate.hero.title': 'Real Estate Portfolio',
+    'estate.hero.subtitle': 'Our investment portfolio is currently being compiled. Stay tuned.',
     'estate.filter.all': 'All',
     'estate.filter.available': 'Available',
     'estate.filter.sold': 'Sold',
