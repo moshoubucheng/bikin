@@ -156,7 +156,7 @@ export const ui = {
 
     // 水素エネルギー
     'energy.hero.title': 'AI時代に、ゼロカーボンの動力を注入する。',
-    'energy.hero.subtitle': 'データセンターはグリッドを待てない。電力網より先に電力を届ける。',
+    'energy.hero.subtitle': 'データセンターはグリッドを待てない、電力網より先に電力を届ける。',
     'energy.hero.cta': 'ソリューションを見る',
     'energy.tagline': 'データセンター向けゼロカーボン自立電源ソリューション',
     'energy.pain.title': 'AI時代のエネルギー課題',
@@ -278,7 +278,7 @@ export const ui = {
 
     // Hydrogen Energy
     'energy.hero.title': 'Empowering the AI Era with Zero-Carbon Energy.',
-    'energy.hero.subtitle': "AI can't wait for the grid. We bring power to data centers first.",
+    'energy.hero.subtitle': "AI can't wait for the grid, we bring power to data centers first.",
     'energy.hero.cta': 'Explore Solutions',
     'energy.tagline': 'Zero-Carbon Grid-Independent Power for Data Centers',
     'energy.pain.title': 'The Energy Challenge of the AI Era',
