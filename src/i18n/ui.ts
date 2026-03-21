@@ -86,7 +86,7 @@ export const ui = {
     'estate.detail.publishedAt': '发布日期',
 
     // 新闻
-    'news.hero.subtitle': '了解最新行业动态与公司资讯',
+    'news.hero.subtitle': '最新资讯正在整理中，敬请期待',
     'news.noContent': '暂无内容',
     'news.gallery': '图片画廊',
     'news.related': '相关新闻',
@@ -208,7 +208,7 @@ export const ui = {
     'estate.detail.publishedAt': '掲載日',
 
     // ニュース
-    'news.hero.subtitle': '最新の業界動向と企業情報をお届けします',
+    'news.hero.subtitle': '最新情報は準備中です。近日公開予定ですので、しばらくお待ちください',
     'news.noContent': 'コンテンツがありません',
     'news.gallery': 'フォトギャラリー',
     'news.related': '関連ニュース',
@@ -330,7 +330,7 @@ export const ui = {
     'estate.detail.publishedAt': 'Published',
 
     // News
-    'news.hero.subtitle': 'Stay updated with the latest industry news and company updates',
+    'news.hero.subtitle': 'News and updates are coming soon. Stay tuned.',
     'news.noContent': 'No content available',
     'news.gallery': 'Photo Gallery',
     'news.related': 'Related News',
