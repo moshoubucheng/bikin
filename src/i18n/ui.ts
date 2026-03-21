@@ -33,7 +33,7 @@ export const ui = {
     'home.about.desc': '我们是一家专注于氢能源技术创新与高端不动产投资的综合性企业集团。凭借前瞻性的战略眼光和专业的运营团队，我们致力于为客户创造可持续的价值。',
 
     // 氢能源
-    'energy.hero.title': '为智算时代，注入零碳动力。',
+    'energy.hero.title': '为AI时代，注入零碳动力。',
     'energy.hero.subtitle': '算力等不起电力。我们让数据中心先于电网并网。',
     'energy.hero.cta': '探索解决方案',
     'energy.tagline': '数据中心零碳自立电源解决方案',
