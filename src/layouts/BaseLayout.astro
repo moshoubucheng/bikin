@@ -38,6 +38,14 @@ const seoDescription = settings?.seo?.defaultDescription?.[lang] || settings?.se
 const defaultTitle = seoTitle || '集团官网 - 氢能源与不动产';
 const defaultDescription = seoDescription || '致力于氢能源技术创新与高端不动产投资';
 
+// Organization alternateName: collect non-current-language name variants
+const allCompanyNames = [
+  settings?.companyName?.zh,
+  settings?.companyName?.ja,
+  settings?.companyName?.en,
+].filter(Boolean) as string[];
+const orgAlternateNames = [...new Set(allCompanyNames.filter(n => n !== companyName))];
+
 const pageTitle = title || defaultTitle;
 const pageDescription = description || defaultDescription;
 
@@ -50,7 +58,7 @@ const themeClasses = {
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-smooth">
+<html lang={lang === 'zh' ? 'zh-CN' : lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,33 +69,50 @@ const themeClasses = {
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={`${Astro.url.origin}${Astro.url.pathname}`} />
+    <meta property="og:site_name" content={companyName} />
     <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : lang === 'ja' ? 'ja_JP' : 'en_US'} />
     {image && <meta property="og:image" content={image} />}
 
     <!-- Canonical URL -->
-    <link rel="canonical" href={Astro.url.href} />
+    <link rel="canonical" href={`${Astro.url.origin}${Astro.url.pathname}`} />
 
-    <!-- Alternate language links for SEO -->
-    <link rel="alternate" hreflang="zh" href={languagePaths.zh} />
-    <link rel="alternate" hreflang="ja" href={languagePaths.ja} />
-    <link rel="alternate" hreflang="en" href={languagePaths.en} />
-    <link rel="alternate" hreflang="x-default" href={languagePaths.zh} />
+    <!-- Alternate language links for SEO (absolute URLs required by Google) -->
+    <link rel="alternate" hreflang="zh-Hans" href={`${Astro.url.origin}${languagePaths.zh}`} />
+    <link rel="alternate" hreflang="ja" href={`${Astro.url.origin}${languagePaths.ja}`} />
+    <link rel="alternate" hreflang="en" href={`${Astro.url.origin}${languagePaths.en}`} />
+    <link rel="alternate" hreflang="x-default" href={`${Astro.url.origin}${languagePaths.zh}`} />
+
+    <!-- og:locale:alternate for other language versions -->
+    {lang !== 'zh' && <meta property="og:locale:alternate" content="zh_CN" />}
+    {lang !== 'ja' && <meta property="og:locale:alternate" content="ja_JP" />}
+    {lang !== 'en' && <meta property="og:locale:alternate" content="en_US" />}
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": `${(Astro.site?.href || Astro.url.origin).replace(/\/$/, '')}/#organization`,
       "name": companyName,
+      ...(orgAlternateNames.length > 0 ? { "alternateName": orgAlternateNames } : {}),
       "url": Astro.site?.href || Astro.url.origin,
-      "logo": `${Astro.url.origin}/logo.svg`,
-      "description": pageDescription,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${Astro.url.origin}/logo.svg`,
+        "contentUrl": `${Astro.url.origin}/logo.svg`
+      },
+      "inLanguage": lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en',
+      "description": seoDescription || defaultDescription,
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": contactPhone,
-        "email": contactEmail,
-        "contactType": "customer service"
+        ...(contactPhone ? { "telephone": contactPhone } : {}),
+        ...(contactEmail ? { "email": contactEmail } : {}),
+        "contactType": "customer support"
       }
     })} />
+
+    <!-- Page-specific head content (schema, meta overrides) -->
+    <slot name="head" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -220,7 +245,7 @@ const themeClasses = {
               <h3 class="text-lg font-semibold">{companyName}</h3>
             </div>
             <p class="text-gray-400 text-sm">
-              {seoDescription || (lang === 'zh' ? '致力于氢能源技术创新与高端不动产投资' : lang === 'ja' ? '水素エネルギー技術革新と高級不動産投資に注力' : 'Committed to hydrogen energy innovation and premium real estate investment')}
+              {seoDescription || (lang === 'zh' ? '为日本AI数据中心提供甲醇重整制氢+PEMFC零碳自立电源，同时专注日本优质不动产投资' : lang === 'ja' ? 'メタノール改質水素＋PEMFCによる日本AIデータセンター向けゼロカーボン自立電源と不動産投資' : 'Zero-carbon methanol reforming + PEMFC power for Japan AI data centers, plus real estate investment')}
             </p>
           </div>
           <div>

@@ -11,9 +11,9 @@ const content = {
     heroDesc: '随着AI算力需求的爆发，日本数据中心正面临残酷现实：东京和大阪的电网接入等待期长达5至10年，而超大型云服务商的资本已经到位。算力的尽头，是电力。美錦エネルギー让数据中心先于电网并网。',
     aboutP1: '美錦エネルギー株式会社立足日本市场，背靠中国美锦能源集团——中国最大的独立商品焦和炼焦煤生产商之一、氢能全产业链布局的头部企业（深交所上市，代码000723）。集团旗下飞驰科技是中国领先的氢燃料电池商用车制造商，产品已出口至以色列、智利等全球市场。',
     aboutP2: '核心壁垒：母集团宁夏灵武30万吨/年低碳甲醇一体化项目（总投资109.8亿元人民币），采用全球独创的「生物质气化+焦炉副产氢+碳捕集（CCUS）」耦合路线，实现全球最低分位的低碳甲醇生产成本。从中国北方港口至日本仅需5至10天短途海运，到岸成本远低于欧洲和澳大利亚竞品。',
-    sol1Desc: '通过「低碳甲醇供应+甲醇蒸汽重整制氢+质子交换膜燃料电池（PEMFC）发电」的端到端架构，为数据中心提供不依赖大电网的兆瓦级零碳基载电力。系统从250kW模块化起步，可扩展至数十兆瓦。',
-    sol1Points: ['甲醇常温常压储运，安全性远优于锂电池和高压氢气', '重整温度仅200–300°C，数分钟内达满负荷出力', '250kW 模块起步，可扩展至数十兆瓦'],
-    sol2Desc: '以低碳甲醇燃料电池系统全面替代传统柴油发电机，消除安全隐患和废气污染，让数据中心最后一环也实现真正的零碳排放。燃料电池10秒内启动响应，同时可参与电网平衡（Balancing Market），为运营商创造额外收益。',
+    sol1Desc: '通过「低碳甲醇供应+甲醇蒸汽重整制氢+质子交换膜燃料电池（PEMFC）发电」的端到端架构，为数据中心提供不依赖大电网的兆瓦级零碳基载电力。以250kW为单模组，多模组并联可组成兆瓦级发电机组，可扩展至数十兆瓦。',
+    sol1Points: ['甲醇常温常压储运，安全性远优于锂电池和高压氢气', '重整温度仅200–300°C，数分钟内达满负荷出力', '250kW 单模组，并联扩展至数十兆瓦'],
+    sol2Desc: '以低碳甲醇重整制氢+PEMFC系统全面替代传统柴油发电机，消除安全隐患和废气污染，让数据中心最后一环也实现真正的零碳排放。系统10秒内启动响应，同时可参与电网平衡（Balancing Market），为运营商创造额外收益。',
     sol2Points: ['10秒内启动响应，满足数据中心苛刻要求', '可参与电网平衡市场，创造额外收益', '已在本田、德山、三菱商事联合示范项目中验证'],
     sol3Desc: '为客户打通日本《氢能社会推进法》下GX CfD补贴申请全流程：从METI的事业计划认定到JOGMEC的补贴拨付，提供ISCC PLUS碳认证追溯、绿证及绿电PPA交易链路对接，帮助运营商将补贴后度电成本降至低于商业网电价格。',
     sol3Points: ['从METI事业计划认定到JOGMEC补贴拨付全程护航', 'ISCC PLUS认证可溯源碳中和合规报告', '补贴后度电成本约 0.147–0.157 美元/kWh'],
@@ -36,14 +36,39 @@ const content = {
       ['ISCC 认证路径', 'ISCC PLUS（Bio-Circular Methanol），符合日本GX CI阈值'],
     ],
     ctaDesc: '联系我们，获取专属方案咨询',
+    metaTitle: '零碳自立电源 | 甲醇重整制氢+PEMFC | 日本数据中心解决方案 — 美錦エネルギー',
+    metaDescription: '美錦エネルギー为日本AI数据中心提供甲醇现场重整制氢+PEMFC零碳自立电源解决方案。250kW单模组，多模组并联扩展至数十兆瓦，无需电网接入，支持GX CfD补贴申报，度电成本约$0.147–0.157/kWh。',
+    faqTitle: '常见问题',
+    faqs: [
+      {
+        q: '日本AI数据中心为什么需要离网自立电源？',
+        a: '东京和大阪的电网新接入等待期长达5至10年，而AI数据中心的算力需求迫切，无法等待。美錦エネルギー以甲醇现场重整制氢+PEMFC方案，使数据中心无需等待电网接入，即可获得兆瓦级稳定零碳电力。',
+      },
+      {
+        q: '甲醇重整制氢+PEMFC发电系统是如何工作的？',
+        a: '系统通过甲醇蒸汽重整（200–300°C）在现场将低碳甲醇转化为氢气，再经质子交换膜燃料电池（PEMFC）将氢气转化为电能。单模组输出250kW，多模组并联可组成兆瓦级发电机组，可扩展至数十兆瓦，同时支持完全离网和并网两种运行模式。',
+      },
+      {
+        q: '该方案的度电成本是多少？',
+        a: '叠加日本GX CfD补贴后，度电成本约0.147–0.157美元/kWh，低于日本商业电网价格。GX CfD补贴总额3万亿日元，期限15年。',
+      },
+      {
+        q: '甲醇储运是否安全？',
+        a: '甲醇在常温常压下以液态储运，安全性远优于高压氢气或大型锂电池储能，符合日本《消防法》危化品管理规定。',
+      },
+      {
+        q: '从方案确认到开始发电需要多长时间？',
+        a: '采用模块化集装箱式部署方案，目标从方案确认到首批电力输出压缩至数月级别，远快于传统方案数年的建设周期。',
+      },
+    ],
   },
   ja: {
     heroDesc: 'AIの急速な普及に伴い、日本のデータセンターは深刻な現実に直面しています。東京・大阪での系統接続待機期間は5〜10年に及ぶ一方、ハイパースケーラーの投資資金はすでに揃っています。算力の限界は、電力です。美錦エネルギーはデータセンターを電力網より先に稼働させます。',
     aboutP1: '美錦エネルギー株式会社は日本市場を拠点とし、中国の美錦エネルギーグループ（深証上場、証券コード000723）を母体としています。グループは中国最大規模の独立系冶金コークス・原料炭生産企業の一つであり、水素エネルギー全産業チェーンをカバーするリーディングカンパニーです。グループ傘下の飛馳科技は中国トップの水素燃料電池商用車メーカーで、製品はイスラエル、チリなどのグローバル市場に輸出されています。',
     aboutP2: '中核的な競争優位性：母グループの寧夏霊武30万トン/年低炭素メタノール一体化プロジェクト（総投資額109.8億元）は、世界独自の「バイオマスガス化＋コークス炉副生水素＋炭素回収（CCUS）」カップリング技術を採用し、世界最低水準の低炭素メタノール製造コストを実現。中国北部港から日本まで5〜10日の近海輸送で到着します。',
-    sol1Desc: '「低炭素メタノール供給＋メタノール水蒸気改質水素製造＋PEM燃料電池発電」のエンドツーエンドアーキテクチャにより、大規模電力網に依存しないメガワット級ゼロカーボンベース電力をデータセンターに供給します。250kWのモジュール式から開始し、数十MWまでスケール可能です。',
-    sol1Points: ['常温常圧でのメタノール貯蔵・輸送、リチウム電池や高圧水素より安全', '改質温度200〜300°C、数分でフル出力到達', '250kW モジュールから数十MW までスケーラブル'],
-    sol2Desc: '低炭素メタノール燃料電池システムで従来のディーゼル発電機を全面代替します。安全リスクと排気汚染を解消し、データセンターの最後の領域でも真のゼロカーボンを実現。燃料電池は10秒以内に起動し、系統調整市場にも参加可能です。',
+    sol1Desc: '「低炭素メタノール供給＋メタノール水蒸気改質水素製造＋PEM燃料電池発電」のエンドツーエンドアーキテクチャにより、大規模電力網に依存しないメガワット級ゼロカーボンベース電力をデータセンターに供給します。250kWを1モジュールとし、複数台を並列接続することで数十MW級の発電機組を構成できます。',
+    sol1Points: ['常温常圧でのメタノール貯蔵・輸送、リチウム電池や高圧水素より安全', '改質温度200〜300°C、数分でフル出力到達', '250kW 単モジュール、並列接続で数十MW にスケール'],
+    sol2Desc: '低炭素メタノール改質水素製造＋PEMFCシステムで従来のディーゼル発電機を全面代替します。安全リスクと排気汚染を解消し、データセンターの最後の領域でも真のゼロカーボンを実現。システムは10秒以内に起動し、系統調整市場にも参加可能です。',
     sol2Points: ['10秒以内に起動応答、データセンターの厳しい要求に対応', '系統調整（バランシングマーケット）参加で追加収益を創出', '本田・徳山・三菱商事の合同実証プロジェクトで検証済み'],
     sol3Desc: '水素社会推進法に基づくGX CfD補助金申請の全プロセスをサポート。METIの事業計画認定からJOGMECの補助金支払いまで、ISCC PLUS炭素認証、グリーン証書、グリーン電力PPA取引リンクを提供し、補助金後の電力コストを商業系統電力価格以下に抑えます。',
     sol3Points: ['METIの事業計画認定からJOGMECの補助金支払いまで完全サポート', 'ISCC PLUS認証による追跡可能なコンプライアンスレポート', '補助金後の電力コスト約0.147〜0.157米ドル/kWh'],
@@ -66,14 +91,39 @@ const content = {
       ['ISCC 認証パス', 'ISCC PLUS（Bio-Circular Methanol）、日本GX CI基準適合'],
     ],
     ctaDesc: 'お気軽にお問い合わせください。専用ソリューションをご提案します。',
+    metaTitle: 'ゼロカーボン自立電源 | メタノール改質水素+PEMFC | 日本データセンター — 美錦エネルギー',
+    metaDescription: '美錦エネルギーは日本のAIデータセンター向けに、メタノール現場改質水素製造＋PEMFC発電によるゼロカーボン自立電源ソリューションを提供。250kW単モジュール、並列接続で数十MW規模、系統接続不要、GX CfD補助金対応、補助金後の電力コスト約$0.147–0.157/kWh。',
+    faqTitle: 'よくある質問',
+    faqs: [
+      {
+        q: 'なぜ日本のAIデータセンターにはオフグリッド自立電源が必要なのですか？',
+        a: '東京・大阪での系統接続新規申込の待機期間は5〜10年に及ぶ一方、AIデータセンターの電力需要は今すぐ必要です。美錦エネルギーのメタノール現場改質水素製造＋PEMFC発電ソリューションにより、系統接続を待たずにメガワット級のゼロカーボン電力をデータセンターに供給できます。',
+      },
+      {
+        q: 'メタノール改質水素製造＋PEMFC発電システムはどのように機能しますか？',
+        a: 'メタノール水蒸気改質（200〜300°C）により現場で低炭素メタノールから水素を製造し、PEM燃料電池（PEMFC）で発電します。1モジュール250kWで、複数モジュールを並列接続することで数十MWまでスケール可能。完全オフグリッドと系統連系の両モードに対応します。',
+      },
+      {
+        q: '補助金適用後の電力コストはどのくらいですか？',
+        a: '日本GX CfD補助金（総額3兆円・15年間）適用後の電力コストは約0.147〜0.157米ドル/kWhで、商業系統電力より低コストです。',
+      },
+      {
+        q: 'メタノールの貯蔵・輸送は安全ですか？',
+        a: 'メタノールは常温常圧で液体のまま貯蔵・輸送できるため、高圧水素や大型リチウムイオン電池と比べて安全性が大幅に優れており、消防法の危険物管理規定にも準拠しています。',
+      },
+      {
+        q: '契約から発電開始まで何ヶ月かかりますか？',
+        a: 'モジュール式コンテナ型展開により、方案確定から最初の電力出力まで数ヶ月を目標としており、従来ソリューションの数年と比べて大幅に短縮されます。',
+      },
+    ],
   },
   en: {
     heroDesc: "As AI computing demand explodes, Japan's data centers face a brutal reality: grid connection wait times in Tokyo and Osaka stretch 5 to 10 years, while hyperscaler capital is already deployed. The limit of compute is power. Meijin Energy brings data centers online before the grid does.",
     aboutP1: "Meijin Energy Co., Ltd. operates from Japan, backed by China's Meijin Energy Group — one of China's largest independent met coke and coking coal producers with a full hydrogen value chain footprint (Shenzhen Exchange: 000723). The group's Feichi Technology is China's leading hydrogen fuel cell commercial vehicle maker, with exports to Israel, Chile, and beyond.",
     aboutP2: "Our core moat: the parent group's Ningxia Lingwu 300,000-ton/year low-carbon methanol integrated project (total investment CNY 10.98 billion) uses a globally unique biomass gasification + coke oven by-product hydrogen + CCUS coupling process — achieving world-leading-low production costs at roughly half the cost of pure electrolysis-based green methanol.",
-    sol1Desc: "An end-to-end architecture of low-carbon methanol supply → on-site steam reforming → PEMFC power generation delivers megawatt-scale zero-carbon baseload power without grid dependency. Modular from 250kW, scalable to tens of megawatts.",
-    sol1Points: ['Ambient-pressure methanol storage — safer than large-scale batteries or high-pressure H₂', 'Reforming at just 200–300°C; full output reached within minutes', 'Scales from 250kW module to tens of megawatts'],
-    sol2Desc: "Fully replace diesel generators with low-carbon methanol fuel cell systems. Eliminate fuel storage hazards and exhaust emissions, achieving genuine zero-carbon operations at the last mile. Fuel cells start in under 10 seconds and can participate in the balancing market to generate additional revenue.",
+    sol1Desc: "An end-to-end architecture of low-carbon methanol supply → on-site steam reforming → PEMFC power generation delivers megawatt-scale zero-carbon baseload power without grid dependency. Each unit outputs 250kW; multiple modules in parallel form megawatt-scale power plants, scalable to tens of megawatts.",
+    sol1Points: ['Ambient-pressure methanol storage — safer than large-scale batteries or high-pressure H₂', 'Reforming at just 200–300°C; full output reached within minutes', '250kW per module; parallel arrays scale to tens of megawatts'],
+    sol2Desc: "Fully replace diesel generators with low-carbon methanol reforming + PEMFC systems. Eliminate fuel storage hazards and exhaust emissions, achieving genuine zero-carbon operations at the last mile. The system starts in under 10 seconds and can participate in the balancing market to generate additional revenue.",
     sol2Points: ['10-second startup meets data center SLA requirements', 'Balancing market participation creates additional revenue streams', 'Validated in Honda / Tokuyama / Mitsubishi Corporation joint demonstration'],
     sol3Desc: "Full-service support for Japan's GX CfD subsidy applications under the Hydrogen Society Promotion Act — from METI project certification to JOGMEC disbursement, with ISCC PLUS carbon certification, green certificates, and green power PPA trading links. Bringing post-subsidy levelized cost below commercial grid rates.",
     sol3Points: ['End-to-end support from METI certification to JOGMEC disbursement', 'ISCC PLUS-certified traceable carbon-neutral compliance reporting', 'Post-subsidy levelized cost ~$0.147–0.157/kWh'],
@@ -96,13 +146,121 @@ const content = {
       ['ISCC Certification Path', 'ISCC PLUS (Bio-Circular Methanol), meets Japan GX CI threshold'],
     ],
     ctaDesc: 'Contact us for a customized solution consultation.',
+    metaTitle: 'Zero-Carbon Independent Power | Methanol Reforming + PEMFC | Japan Data Centers — Meijin Energy',
+    metaDescription: 'Meijin Energy delivers zero-carbon off-grid power for Japan AI data centers: on-site methanol steam reforming + PEMFC, 250kW per module with parallel arrays to tens of MW, GX CfD subsidy eligible, post-subsidy LCOE ~$0.147–0.157/kWh.',
+    faqTitle: 'Frequently Asked Questions',
+    faqs: [
+      {
+        q: 'Why do Japan AI data centers need grid-independent power?',
+        a: 'Grid connection wait times in Tokyo and Osaka stretch 5–10 years, while AI data center demand cannot wait. Meijin Energy\'s on-site methanol steam reforming + PEMFC solution delivers megawatt-scale zero-carbon power without any grid dependency.',
+      },
+      {
+        q: 'How does the methanol reforming + PEMFC power system work?',
+        a: 'Low-carbon methanol is converted to hydrogen on-site via steam reforming at 200–300°C, then fed into proton exchange membrane fuel cells (PEMFC) for power generation. Each module outputs 250kW; parallel arrays of modules scale to tens of MW, supporting both off-grid and grid-parallel operation modes.',
+      },
+      {
+        q: 'What is the levelized cost of electricity?',
+        a: "With Japan's GX CfD subsidies applied (¥3 trillion pool, 15-year term), the levelized cost of electricity is approximately $0.147–0.157/kWh — below commercial grid rates.",
+      },
+      {
+        q: 'Is methanol safe to store and transport?',
+        a: "Methanol is stored and transported as a liquid at ambient temperature and pressure, making it significantly safer than high-pressure hydrogen or large-scale lithium battery systems, and fully compliant with Japan's Fire Services Act hazmat regulations.",
+      },
+      {
+        q: 'How quickly can the system be deployed?',
+        a: 'Modular containerized deployment targets months from contract to first power output — far faster than the years-long timelines of traditional grid-connected solutions.',
+      },
+    ],
   },
 };
 
 const c = content[lang];
 ---
 
-<BaseLayout title={t('energy.hero.title')} theme="energy">
+<BaseLayout title={c.metaTitle} description={c.metaDescription} theme="energy">
+
+  <Fragment slot="head">
+    <!-- Service Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${Astro.url.origin}/#zero-carbon-power-service`,
+      "url": `${Astro.url.origin}${Astro.url.pathname}`,
+      "name": lang === 'zh' ? '数据中心零碳自立电源解决方案' : lang === 'ja' ? 'データセンター向けゼロカーボン自立電源ソリューション' : 'Zero-Carbon Grid-Independent Power Solution for Data Centers',
+      "provider": {
+        "@type": "Organization",
+        "@id": `${Astro.url.origin}/#organization`
+      },
+      "areaServed": { "@type": "Country", "name": "Japan" },
+      "description": lang === 'zh'
+        ? '以低碳甲醇现场重整制氢+质子交换膜燃料电池（PEMFC）发电为核心，为日本AI数据中心提供零碳自立电源。单模组250kW，多模组并联可组成兆瓦级发电机组，可扩展至数十兆瓦，支持离网和并网两种模式，符合GX CfD补贴资格。'
+        : lang === 'ja'
+        ? '低炭素メタノール現場改質水素製造＋PEMFC発電により、日本のAIデータセンターにゼロカーボン自立電源を提供。250kW単モジュールを並列接続して数十MW級の発電機組を構成。オフグリッド・系統連系両対応、GX CfD補助金適格。'
+        : 'On-site methanol steam reforming + PEMFC delivering zero-carbon baseload power for Japan AI data centers. 250kW per module; parallel multi-module arrays form megawatt-scale power plants up to tens of MW. Off-grid and grid-parallel modes. GX CfD subsidy eligible.',
+      "serviceType": lang === 'zh' ? '零碳分布式电源' : lang === 'ja' ? 'ゼロカーボン分散電源' : 'Zero-Carbon Distributed Power Generation',
+      "inLanguage": lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en',
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Fuel",
+          "value": lang === 'zh' ? '低碳甲醇（ISCC PLUS认证）' : lang === 'ja' ? '低炭素メタノール（ISCC PLUS認証）' : 'Low-carbon methanol (ISCC PLUS certified)'
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Hydrogen Production",
+          "value": lang === 'zh' ? '现场甲醇蒸汽重整（200–300°C）' : lang === 'ja' ? '現場メタノール水蒸気改質（200〜300°C）' : 'On-site methanol steam reforming (200–300°C)'
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Power Generation Technology",
+          "value": lang === 'zh' ? '质子交换膜燃料电池（PEMFC）' : lang === 'ja' ? 'PEM燃料電池（PEMFC）' : 'Proton Exchange Membrane Fuel Cell (PEMFC)'
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Module Capacity",
+          "value": "250 kW"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Maximum Scalability",
+          "value": lang === 'zh' ? '数十兆瓦（多模组并联）' : lang === 'ja' ? '数十MW（複数モジュール並列接続）' : 'Tens of megawatts (parallel multi-module arrays)'
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Operation Mode",
+          "value": lang === 'zh' ? '离网（自立）/ 并网双模式' : lang === 'ja' ? 'オフグリッド（自立）/系統連系デュアルモード' : 'Off-grid (self-sustaining) / Grid-parallel dual mode'
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Startup Time",
+          "value": lang === 'zh' ? '10秒内' : lang === 'ja' ? '10秒以内' : 'Under 10 seconds'
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Post-Subsidy Levelized Cost",
+          "value": "$0.147–$0.157 /kWh"
+        }
+      ]
+    })} />
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${Astro.url.origin}${Astro.url.pathname}#faq`,
+      "url": `${Astro.url.origin}${Astro.url.pathname}`,
+      "name": c.faqTitle,
+      "inLanguage": lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en',
+      "mainEntity": c.faqs.map(({ q, a }) => ({
+        "@type": "Question",
+        "name": q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": a
+        }
+      }))
+    })} />
+  </Fragment>
 
   <!-- ═══════════════════════════════════════════
        HERO SECTION
@@ -489,6 +647,29 @@ const c = content[lang];
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ SECTION
+  ═══════════════════════════════════════════ -->
+  <section id="faq" class="py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+          {c.faqTitle}
+        </h2>
+        <div class="w-12 h-0.5 bg-energy-500 mx-auto mt-4"></div>
+      </div>
+
+      <dl class="space-y-6">
+        {c.faqs.map(({ q, a }) => (
+          <div class="border border-gray-200 rounded-2xl p-6 hover:border-energy-300 transition-colors">
+            <dt class="text-base font-semibold text-gray-900 mb-3">{q}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{a}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   </section>
 
