@@ -15,7 +15,7 @@ const t = useTranslations(lang);
 
 // 获取所有新闻
 const allNews = await getCollection('news');
-const newsItem = allNews.find((n) => n.data.slug === slug);
+const newsItem = allNews.find((n) => n.id.split('/')[0] === slug);
 
 // 如果找不到新闻，返回 404
 if (!newsItem) {
@@ -42,7 +42,7 @@ const excerpt = getLocalizedContent(newsItem.data.excerpt || {}, lang) || '';
 
 // 获取相关新闻（同分类）
 const relatedNews = allNews
-  .filter((n) => n.data.category === newsItem.data.category && n.data.slug !== slug)
+  .filter((n) => n.data.category === newsItem.data.category && n.id.split('/')[0] !== slug)
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 3);
 
@@ -161,7 +161,7 @@ const youtubeId = newsItem.data.videoUrl ? getYouTubeId(newsItem.data.videoUrl) 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {relatedNews.map((item) => (
             <a
-              href={`/${lang}/news/${item.data.slug}`}
+              href={`/${lang}/news/${item.id.split('/')[0]}`}
               class="group bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">

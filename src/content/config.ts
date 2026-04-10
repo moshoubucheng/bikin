@@ -12,8 +12,8 @@ const propertiesCollection = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
-      slug: z.string(),
       title: multilingualText,
+      description: multilingualText.optional(),
       price: z.number(),
       currency: z.enum(['CNY', 'JPY', 'USD']).default('CNY'),
       location: multilingualText,
@@ -32,7 +32,6 @@ const newsCollection = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
-      slug: z.string(),
       title: multilingualText,
       date: z.string(),
       category: z.enum(['tech', 'market', 'company', 'estate']).default('tech'),
@@ -49,7 +48,6 @@ const energyGalleryCollection = defineCollection({
   type: 'data',
   schema: ({ image }) =>
     z.object({
-      slug: z.string(),
       title: multilingualText,
       image: image(),
       category: z.enum(['station', 'exhibition', 'equipment', 'partners']).default('station'),
