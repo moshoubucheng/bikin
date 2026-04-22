@@ -8,26 +8,37 @@ const t = useTranslations(lang);
 
 const content = {
   zh: {
-    heroDesc: '全球氢经济的真正瓶颈不在燃料电池本身，而在氢源供应。美锦能源以 ISCC 认证绿色甲醇为核心载体，通过现场重整制氢 + PEMFC 发电架构，为日本及全球的数据中心、工厂、航运、化工企业提供兆瓦级零碳能源解决方案。',
-    aboutP1: '美錦エネルギー株式会社立足日本市场，背靠中国美锦能源集团（深交所上市，代码 000723）——中国最大的独立商品焦和炼焦煤生产商之一、氢能全产业链布局的头部企业。集团旗下飞驰科技是中国领先的氢燃料电池商用车制造商，产品已出口至以色列、智利等全球市场。',
-    aboutP2: '核心产能支撑：集团旗下山西锦源生物质科技投资建设的宁夏灵武绿色甲醇一体化项目，签约投资约 100 亿元人民币（含新能源配套总投资约 110 亿元），规划年产 30 万吨 ISCC 认证绿色甲醇。项目由法液空（Air Liquide）提供世界级气化与合成技术，维尔利集团（WELLE）提供生物质预处理能力，计划 2028 年底至 2029 年初首期投产。',
-    aboutP3: '项目采用"生物质气化"技术路线，以农作物秸秆、畜禽粪污副产沼气、能源作物等 RED II Annex IX Part A 先进生物质原料为基础，构建"耐盐碱黑玉米种植 — 花青素生物炼制 — 畜禽粪污资源化 — 源网荷储一体化微电网 — 生物质气化绿色甲醇"五大支柱循环经济生态系统。全生命周期碳强度目标低于 20 gCO₂eq/MJ，相对化石基准减排超过 80%。',
+    heroDesc: '燃料电池已集体迈入成熟期，氢源供给才是真正的瓶颈。美锦能源日本整合 ISCC 认证绿色甲醇 + 现场蒸汽重整 + PEMFC 燃料电池，为日本及全球的数据中心、工厂、航运、化工企业提供兆瓦级零碳电力的端到端解决方案。',
+
+    aboutP1: '美锦能源日本株式会社（Meijin Energy Japan）立足日本大阪，作为「绿色甲醇 × 燃料电池 零碳电力方案商」，将 ISCC 认证绿色甲醇、现场蒸汽重整制氢、PEMFC 燃料电池发电集成为端到端的零碳电力解决方案，服务数据中心、工厂、航运与化工等终端客户。',
+    aboutP2: '背靠中国美锦能源集团（深交所上市，代码 000723）——中国最大的独立商品焦和炼焦煤生产商之一、氢能全产业链头部企业，为方案提供供应链、资金与产业经验的深度支撑。集团旗下飞驰科技是中国领先的氢燃料电池商用车制造商，产品已出口至以色列、智利等全球市场。',
+    aboutP3: '我们采用多源采购弹性策略，与已获 ISCC EU / PLUS 双认证或认证在途的中国绿色甲醇头部项目群建立长期合作；叠加对日本 GX CfD、GX-ETS、消防法、建筑基准法合规要求的深度理解，为客户交付「燃料 — 设备 — 工程 — 运营 — 合规」五维一体的零碳电力服务。',
 
     identityTitle: '绿色甲醇的三重市场身份',
     identityDesc: '绿色甲醇不是单一市场的产品，而是具备船用燃料、化工原料、液态储氢载体三重战略身份，构成氢能时代最重要的能源基础设施之一。',
     identity1Tag: '船用替代燃料',
-    identity1Desc: 'IMO 2050 净零排放与欧盟 FuelEU Maritime 驱动下，马士基、达飞、日本三大船公司（NYK/MOL/K Line）已订购甲醇双燃料船超过 140 艘。灵武项目可作为东亚绿色甲醇加注网络的重要节点。',
+    identity1Desc: 'IMO 2050 净零排放与欧盟 FuelEU Maritime 驱动下，全球甲醇双燃料船订单已突破 140 艘；横滨港、神户港等日本港口已启动绿色甲醇加注基础设施建设，东亚正加速形成绿色甲醇加注网络。',
     identity2Tag: '化工基础原料',
-    identity2Desc: '甲醇是全球年消费量超 1 亿吨的大宗化工品，下游覆盖烯烃（MTO/MTP）、醋酸、甲醛、MTBE、DMC 等众多化工产品。欧盟 CBAM 推进下，绿色甲醇对传统化石甲醇的替代需求呈现结构性增长。',
+    identity2Desc: '甲醇是全球年消费量超 1.8 亿吨的大宗化工品，下游覆盖烯烃（MTO/MTP）、醋酸、甲醛、MTBE、DMC 等众多化工产品。欧盟 CBAM 推进下，绿色甲醇对传统化石甲醇的替代需求呈现结构性增长。',
     identity3Tag: '液态储氢载体',
     identity3Desc: '1 吨甲醇经现场重整可产出约 170 公斤氢气。常温常压储运、可直接利用现有化工基础设施；在日本 54% 以下浓度水溶液免除《消防法》与《毒劇物取締法》危化品申报，规避了压缩氢 / 液氢方案的核心痛点。',
+
+    supplyTitle: '中国 ISCC 认证绿色甲醇供给生态',
+    supplyDesc: '截至 2026 年第一季度，中国已获 ISCC 认证或认证在途的绿色甲醇项目已形成三梯队成熟度结构，覆盖生物质气化与电制甲醇两条技术路线。美锦能源日本仅选择具备认证或明确认证时间表的项目建立组合采购协议，以多源弹性对冲单一项目风险。',
+    supplyTier1Tag: '第一梯队 · 已量产 + 已认证',
+    supplyTier1Desc: '头部项目已连续多年获得 ISCC EU 与 ISCC PLUS 双认证，实现规模化量产。是目前亚洲唯一已进入规模化商业化运营的绿色甲醇供给，可立即满足日本市场交付需求。',
+    supplyTier2Tag: '第二梯队 · 在建 + 已认证或即将认证',
+    supplyTier2Desc: '多个 10 万吨级项目已完成 ISCC EU + PLUS 全流程或原料端认证，2025–2027 年陆续投产。2026 年春节前首单上海港绿色甲醇加注已完成。',
+    supplyTier3Tag: '第三梯队 · 规划 + 认证流程启动',
+    supplyTier3Desc: '多个 10 万吨至 50 万吨级大型项目已进入规划与 ISCC 认证申请阶段，覆盖内蒙古、新疆、宁夏等可再生能源富集区，2027–2030 年陆续形成产能。',
+    supplyNote: '所有合作项目均须具备 ISCC 认证或明确的认证时间表。通过多供应方组合采购，客户年需求覆盖率达 150–200%，规避单一依赖风险。',
 
     sol1Desc: '通过「ISCC 认证绿色甲醇供应 + 甲醇蒸汽重整制氢 + 质子交换膜燃料电池（PEMFC）发电」的端到端架构，为数据中心、工厂等大型设施提供不依赖大电网的兆瓦级零碳基载电力。250 kW 单模组并联可扩展至数十兆瓦，兼容日本主要 OEM 的燃料电池定置电源系统（250 kW–3 MW 功率范围）。',
     sol1Points: ['甲醇常温常压储运，安全性远优于锂电池和高压氢气', '重整温度仅 200–300°C，数分钟内达满负荷出力', '250 kW 单模组，并联扩展至数十兆瓦，灵活适配需求'],
     sol2Desc: '以绿色甲醇重整制氢 + PEMFC 系统替代传统柴油发电机，消除燃料储存安全隐患和废气污染，实现真正的零碳备用电源。系统 10 秒内启动响应，同时可参与电网平衡（Balancing Market），为运营商创造额外收益。',
     sol2Points: ['10 秒内启动响应，满足数据中心严格的 SLA 要求', '可参与电网平衡市场，创造额外收益', '适配日本主要 OEM 燃料电池定置电源系统'],
-    sol3Desc: '为客户打通日本《氢能社会推进法》下 GX CfD 补贴申请全流程：从 METI 的事业计划认定到 JOGMEC 的补贴拨付，提供 ISCC PLUS 碳认证追溯、绿证及绿电 PPA 交易链路对接，帮助运营商将补贴后度电成本降至低于商业网电价格。',
-    sol3Points: ['从 METI 事业计划认定到 JOGMEC 补贴拨付全程护航', 'ISCC PLUS 认证可溯源碳中和合规报告', '补贴后度电成本约 $0.147–0.157 /kWh'],
+    sol3Desc: '为客户打通日本经产省 2026 年起 5 年 2,100 亿日元脱碳投资补助（最高 50%）与《氢能社会推进法》GX CfD 补贴（3 万亿日元 / 15 年）的全流程申报：从 METI 的事业计划认定到 JOGMEC 的补贴拨付，提供 ISCC PLUS 碳认证追溯、绿证及绿电 PPA 交易链路对接，帮助客户将补贴后度电成本降至低于商业网电价格。',
+    sol3Points: ['2,100 亿日元脱碳补助 + GX CfD 双线申报支持', 'ISCC PLUS 认证可溯源碳中和合规报告', '补贴后度电成本约 $0.147–0.157 /kWh'],
 
     compareTitle: '氢源方案综合对比',
     compareDesc: '作为燃料电池发电系统的氢源方案，主流技术路径有三种。对于工厂、数据中心、中型船舶等 250 kW 至数兆瓦规模的中等应用场景，甲醇重整制氢是成本最优、基础设施适配性最好、法规合规性最灵活的技术路径。',
@@ -44,45 +55,62 @@ const content = {
       ['氢气到厂成本', '60–80 元/kg', '100+ 元/kg', '等效 25–35 元/kg'],
     ],
 
-    why1Desc: '母集团灵武项目规划年产 30 万吨 ISCC PLUS 认证绿色甲醇，位列国内前五大绿色甲醇项目。叠加法液空世界级气化技术、源 - 网 - 荷 - 储一体化可再生能源微电网、300 公里半径秸秆收储网络，出厂成本目标 3,500–4,500 元/吨，显著低于国际市场绿色甲醇售价（6,000–8,000 元/吨）。',
+    why1Desc: '建立多源采购协议组合，对接中国已获 ISCC EU / PLUS 双认证或认证在途的头部绿色甲醇供给，单一项目延期或调整不影响整体供应。背靠深交所上市美锦能源集团（000723），母集团信用与产业链资源提供底层保障。',
     why2Desc: '美锦方案兼容日本主要 OEM 的燃料电池定置电源系统，覆盖 250 kW 至 3 MW 功率范围，专门面向工厂、数据中心、办公楼等大型设施。10 秒内启动响应、紧凑型设计、灵活规模可扩展性，使其成为中等规模分布式电源的理想选择。',
     why3Desc: '扎根大阪，熟稔日本电力市场规则、GX 政策、《消防法》危化品管理及《建筑基准法》合规要求，提供从方案设计到 GX 补贴申报的无缝本土化服务。',
-    why4Desc: 'GX CfD 补贴总额 3 万亿日元、期限 15 年。日本 GX 体系以碳强度（CI）为核心指标，不要求欧盟式纯绿溯源——美锦方案完全符合 JOGMEC 补贴资格。叠加 2026 年 GX-ETS 碳交易及 2028 年化石燃料碳附加费，经济优势持续放大。',
+    why4Desc: '经产省 2026 年起 5 年投入 2,100 亿日元，对 100% 脱碳电力的工厂与数据中心提供最高 50% 投资补贴；GX CfD 总额 3 万亿日元、期限 15 年；2026 年 GX-ETS 碳交易及 2028 年化石燃料碳附加费陆续生效——客户可叠加享受多重政策红利。',
     why5Desc: '相比传统解决商动辄数年的周期，美锦以模块化集装箱式部署方案，从方案确认到首批电力输出，目标周期压缩至数月级别。对于急于上线的 AI 数据中心客户，时间就是一切。',
-    why6Desc: '项目采用分阶段 ISCC 认证策略：2028–29 年完成 ISCC PLUS 首次认证（日本及非欧盟市场），2029–30 年扩展 ISCC EU 认证（欧盟航运市场），2031 年后探索 ISCC CORSIA 认证（航空 SAF 市场）。目标碳强度 <20 gCO₂eq/MJ，显著高于 ISCC 最低 65% 减排门槛。',
+    why6Desc: '集团旗下飞驰科技是中国领先的氢燃料电池商用车制造商，产品已出口以色列、智利等全球市场，为本方案提供集团内氢能产业实战经验与工程人才储备。',
 
-    roadmapTitle: 'ISCC 认证路线图',
-    roadmapDesc: '基于"先日本、后欧盟、再航空"的阶梯式拓展策略，确保每一阶段认证都与实际商业化进程匹配。最终碳强度目标 < 20 gCO₂eq/MJ，相对化石甲醇基准（94 gCO₂eq/MJ）减排 > 80%。',
+    coopTitle: '四种合作模式 · 从采购联盟到生态共建',
+    coopDesc: '根据客户的战略意图、资源投入能力与风险偏好，提供阶梯式合作架构。短期可采用模式 A 快速启动，中长期演进至模式 B/C/D 的深度绑定。',
+    coopModels: [
+      { id: 'A', title: '战略采购联盟', desc: '与 3–5 家 ISCC 认证供给方签订框架性采购协议，总采购量覆盖客户年需求的 150–200%；启动成本低、灵活性高、无股权绑定，适合初期试水。' },
+      { id: 'B', title: '产能预订与战略储备', desc: '10–15 年战略采购协议 + 产能预订金（相当于 1–2 年采购额），锁定供给方 20–40% 年产能。供应稳定性大幅提升，接近「准自有产能」。' },
+      { id: 'C', title: '跨境合资企业', desc: '共同设立贸易型 / 运营型 / 生产型合资公司，共同投资、共享利润、共担风险，利益深度绑定，适合有强烈协同意愿的战略合作方。' },
+      { id: 'D', title: '全链条生态共建', desc: '围绕上游生产、中游重整与燃料电池、下游应用，以及金融、政策、人才等配套资源，建立 10 年以上长期战略伙伴关系，共同面向全球市场。' },
+    ],
+
+    roadmapTitle: '三阶段商业路线图',
+    roadmapDesc: '按「易到难、小到大、内到外」的逻辑，分阶段拓展应用场景。每一阶段的核心客户类型、技术成熟度、时间窗口均与市场与政策节奏精准匹配。',
     roadmapPhases: [
-      { time: '2026–2027', label: 'Phase 1', title: '范围研究与基础建设', desc: '联合法液空技术团队开展 ISCC PLUS Scoping Study，完成全生命周期碳强度建模与供应链可追溯体系设计。' },
-      { time: '2027–2028', label: 'Phase 2', title: '供应链合规与预审', desc: '建立秸秆原料数字化收储体系，完成质量平衡（Mass Balance）管理平台开发，第三方认证机构预审计。' },
-      { time: '2028–2029', label: 'Phase 3', title: 'ISCC PLUS 首次认证', desc: '完成首次 ISCC PLUS 正式认证，面向日本及非欧盟市场启动商业化供应。' },
-      { time: '2029–2030', label: 'Phase 4', title: 'ISCC EU 扩展认证', desc: '在 ISCC PLUS 基础上扩展 ISCC EU 认证，进入欧盟 FuelEU Maritime 航运燃料市场。' },
-      { time: '2031+', label: 'Phase 5', title: 'ISCC CORSIA 探索', desc: '研究甲醇到喷气燃料（MtJ）工艺可行性，进入国际航空可持续燃料（SAF）上游市场。' },
+      { time: '2026–2028', label: 'Stage 1', title: '日本工厂内部能源转型', desc: '以日系制造业工厂为首批试点用户，部署「进口 ISCC 绿色甲醇 + 现场重整 + FC 定置电源」示范项目，为规模化推广积累技术经验与品牌背书。' },
+      { time: '2028–2031', label: 'Stage 2', title: '日本数据中心与大型商业设施', desc: '契合经产省 2,100 亿日元脱碳补贴政策窗口，服务日本数据中心运营商、大型办公楼、化工企业等脱碳压力较大的客户群。' },
+      { time: '2030+', label: 'Stage 3', title: '东亚与全球市场拓展', desc: '将经过日本本土验证的解决方案推广至韩国、中国台湾、东南亚日资工厂，以及澳大利亚、中东、欧洲部分市场。' },
+    ],
+
+    svcTitle: '五维一体 · 端到端服务能力',
+    svcDesc: '作为绿色甲醇 × 燃料电池零碳电力方案商，我们为客户打通「燃料 — 设备 — 工程 — 运营 — 合规」五个维度，交付可直接签约「零碳电力服务协议」的完整解决方案。',
+    services: [
+      { tag: '01', title: '战略研究与产业洞察', desc: '持续跟踪中国绿色甲醇供应链、日本氢能市场需求、国际认证体系与关键技术路线，为客户提供产业决策级的深度洞察。' },
+      { tag: '02', title: '供应方甄选与尽职调查', desc: '从中国 ISCC 认证或认证在途的头部项目群中，按技术、商业、财务、合规、社会责任五维深度尽调，筛选最匹配客户需求的 3–5 家候选。' },
+      { tag: '03', title: '跨境贸易运营与合规', desc: '协调中国港口到日本港口的物流、通关、仓储、金融，满足 ISCC 可追溯性、CBAM、日本进口合规等多重法规要求。' },
+      { tag: '04', title: '技术集成与系统交付', desc: '联合 FC 与重整设备工程团队，提供从设计、EPC、采购、施工到运营服务、性能保障的全流程技术集成能力。' },
+      { tag: '05', title: '长期战略伙伴关系', desc: '氢能是 10 年以上的战略周期，而非一次性交易。我们承诺与合作方共同演进，持续适配客户需求、技术路径、政策框架的变化。' },
     ],
 
     tableRows: [
-      ['绿色甲醇产能', '30 万吨 / 年（ISCC PLUS 认证规划）'],
-      ['项目投资', '签约约 100 亿元人民币（含新能源配套总投资约 110 亿元）'],
-      ['技术合作方', '法液空（气化 / 合成）+ 维尔利集团（生物质预处理）'],
-      ['首期投产', '2028 年底至 2029 年初'],
       ['氢气产率', '1 吨甲醇 ≈ 170 kg 氢气（工业收率）'],
       ['系统综合能效', '32–40%（含热电联产可达 80%+）'],
-      ['碳强度目标', '< 20 gCO₂eq/MJ（相对化石基准减排 > 80%）'],
-      ['出厂成本目标', '3,500–4,500 元 / 吨（约 $480–620 / 吨）'],
+      ['单模组容量', '250 kW（可并联至数十兆瓦）'],
+      ['启动响应', '10 秒内满负荷输出'],
+      ['氢气到厂成本', '甲醇重整 ¥25–35/kg，约为压缩氢（¥60–80）一半'],
       ['中国至日本海运', '5–10 天近海短途航线'],
-      ['日本 GX CfD 补贴', '3 万亿日元规模，15 年期'],
+      ['日本脱碳投资补助', '2,100 亿日元 / 5 年（最高 50%）'],
+      ['GX CfD 补贴池', '3 万亿日元 / 15 年'],
       ['补贴后度电成本', '约 $0.147–0.157 / kWh（低于商业网电价格）'],
-      ['ISCC 认证路径', 'ISCC PLUS（2028–29）→ ISCC EU（2029–30）→ ISCC CORSIA（2031+）'],
+      ['适用规模', '250 kW 至数十 MW（工厂、数据中心、中型船舶）'],
+      ['认证体系', 'ISCC EU / PLUS / CORSIA + 日本 FIT'],
+      ['碳强度目标', '< 20 gCO₂eq/MJ（相对化石基准减排 > 80%）'],
     ],
-    ctaDesc: '面向数据中心、工厂、航运、化工企业及 ESG 投资者的定制化绿色能源解决方案咨询',
-    metaTitle: '绿色甲醇 × 现场重整制氢 × PEMFC | 日本及全球零碳能源解决方案 — 美錦エネルギー',
-    metaDescription: '美錦エネルギー以 ISCC 认证绿色甲醇为核心载体，通过现场重整制氢 + PEMFC 发电架构，为日本及全球的数据中心、工厂、航运、化工企业提供兆瓦级零碳能源解决方案。母集团灵武项目年产 30 万吨，法液空 / 维尔利技术合作，碳强度 <20 gCO₂eq/MJ，ISCC PLUS → EU → CORSIA 分阶段认证。',
+    ctaDesc: '面向数据中心、工厂、航运、化工企业及 ESG 投资者的定制化零碳电力解决方案咨询',
+    metaTitle: '绿色甲醇 × 燃料电池 零碳电力方案商 | 日本及全球端到端集成 — 美锦能源日本',
+    metaDescription: '美锦能源日本株式会社是绿色甲醇 × 燃料电池零碳电力方案商。整合中国 ISCC 认证绿色甲醇供给、甲醇蒸汽重整、PEMFC 燃料电池，为日本及全球的数据中心、工厂、航运、化工企业提供兆瓦级零碳电力端到端解决方案。背靠美锦能源集团（深交所 000723），对接日本 2,100 亿日元脱碳补贴与 GX CfD 政策红利。',
     faqTitle: '常见问题',
     faqs: [
       {
-        q: '美锦的绿色甲醇采用什么技术路线？',
-        a: '项目采用"生物质气化"技术路线，以农作物秸秆、畜禽粪污副产沼气、能源作物等 RED II Annex IX Part A 先进生物质原料为基础。由法液空（Air Liquide）提供世界级气化与合成技术，维尔利集团（WELLE）提供生物质预处理能力。规划年产 30 万吨 ISCC 认证绿色甲醇，2028 年底至 2029 年初首期投产。',
+        q: '美锦能源日本的核心定位是什么？',
+        a: '我们是「绿色甲醇 × 燃料电池 零碳电力方案商」，立足日本大阪，整合中国 ISCC 认证绿色甲醇供给、现场蒸汽重整制氢、PEMFC 燃料电池发电，为数据中心、工厂、航运、化工企业提供端到端的兆瓦级零碳电力解决方案。背靠深交所上市美锦能源集团（000723）与集团旗下飞驰科技的氢能产业经验。',
       },
       {
         q: '甲醇重整制氢 + PEMFC 发电系统如何工作？',
@@ -93,44 +121,55 @@ const content = {
         a: '甲醇常温常压液态储运，等效氢含量密度约 100 kg/m³，高于压缩氢气（40 kg/m³）和液氢（71 kg/m³）；无运输半径限制；可直接利用现有化工基础设施；在日本 54% 以下浓度水溶液免除《消防法》危化品申报。氢气等效到厂成本 25–35 元 /kg，显著低于压缩氢（60–80 元 /kg）和液氢（100+ 元 /kg）。',
       },
       {
-        q: '绿色甲醇的应用场景有哪些？',
-        a: '绿色甲醇具备三重市场身份：（1）船用替代燃料——对接 IMO 2050 净零与欧盟 FuelEU Maritime；（2）化工基础原料——覆盖烯烃、醋酸、甲醛、MTBE 等下游产品；（3）液态储氢载体——为燃料电池定置电源提供燃料。适用客户包括数据中心运营商、大型工厂、航运公司、化工企业等。',
+        q: '绿色甲醇的供给从哪里来？是否存在单一项目依赖风险？',
+        a: '我们与中国已获 ISCC EU / PLUS 双认证或认证在途的头部绿色甲醇项目群建立组合采购协议，采购覆盖范围通常为客户年需求的 150–200%，单一项目延期或调整不影响整体供应。截至 2026 年第一季度，中国 ISCC 认证绿色甲醇供给已形成三梯队成熟度结构：第一梯队已规模化量产，第二梯队 2025–2027 年陆续投产，第三梯队 2027–2030 年形成增量产能。',
       },
       {
-        q: '项目的认证路径和碳强度目标如何？',
-        a: '采用分阶段 ISCC 认证策略：2028–29 完成 ISCC PLUS 首次认证（日本及非欧盟市场）→ 2029–30 扩展 ISCC EU 认证（欧盟 FuelEU Maritime）→ 2031 后探索 ISCC CORSIA 认证（航空 SAF）。全生命周期碳强度目标 < 20 gCO₂eq/MJ，相对化石甲醇基准（94 gCO₂eq/MJ）减排 > 80%，显著高于 ISCC 最低 65% 减排门槛。',
+        q: '日本经产省 2,100 亿日元脱碳补贴对客户意味着什么？',
+        a: '经产省宣布自 2026 年度起 5 年内投入 2,100 亿日元，对使用 100% 脱碳电力的工厂和数据中心提供最高 50% 的投资补贴。我方案以 ISCC 认证绿色甲醇为燃料，现场重整 + PEMFC 发电全过程零碳排放，完全符合该补贴资格；叠加 GX CfD 补贴（3 万亿日元 / 15 年）、GX-ETS 碳交易及 2028 年化石燃料碳附加费，经济优势持续放大。',
+      },
+      {
+        q: '合作模式有哪些？如何与客户需求匹配？',
+        a: '我们提供四种阶梯式合作架构：A 战略采购联盟（框架采购协议、低启动成本）；B 产能预订与战略储备（10–15 年锁定供给、准自有产能）；C 跨境合资企业（贸易 / 运营 / 生产型 JV，利益深度绑定）；D 全链条生态共建（10 年以上战略伙伴关系）。典型演进路径为短期 A → 中期 B → 长期 C/D。',
       },
       {
         q: '为什么日本 AI 数据中心需要这套解决方案？',
-        a: '东京和大阪电网新接入等待期长达 5–10 年，而 AI 数据中心电力需求迫切。美锦方案通过甲醇现场重整 + PEMFC 发电，无需等待电网接入即可获得兆瓦级零碳电力，同时符合日本 GX CfD 补贴（3 万亿日元 / 15 年）资格，补贴后度电成本约 $0.147–0.157 / kWh，低于商业网电价格。',
-      },
-      {
-        q: '方案交付周期有多长？',
-        a: '采用模块化集装箱式部署方案，从方案确认到首批电力输出目标压缩至数月级别，远快于传统方案数年的建设周期。对于急于上线的 AI 数据中心及工厂客户，时间就是核心竞争力。',
+        a: '东京和大阪电网新接入等待期长达 5–10 年，而 AI 数据中心电力需求迫切。本方案通过甲醇现场重整 + PEMFC 发电，无需等待电网接入即可获得兆瓦级零碳电力，模块化集装箱式部署可将从方案确认到首批电力输出的周期压缩至数月级别。同时符合日本 2,100 亿日元脱碳补贴与 GX CfD 资格，补贴后度电成本约 $0.147–0.157 / kWh，低于商业网电价格。',
       },
     ],
   },
   ja: {
-    heroDesc: 'グローバル水素経済の真のボトルネックは燃料電池本体ではなく、水素源の供給にあります。美錦エネルギーは ISCC 認証グリーンメタノールを中核キャリアとし、現場改質水素製造＋ PEMFC 発電アーキテクチャにより、日本と世界のデータセンター、工場、海運、化学企業にメガワット級ゼロカーボンエネルギーソリューションを提供します。',
-    aboutP1: '美錦エネルギー株式会社は日本市場を拠点とし、中国の美錦エネルギーグループ（深証上場、証券コード 000723）を母体としています。グループは中国最大規模の独立系冶金コークス・原料炭生産企業の一つであり、水素エネルギー全産業チェーンをカバーするリーディングカンパニーです。グループ傘下の飛馳科技は中国トップの水素燃料電池商用車メーカーで、製品はイスラエル、チリなどのグローバル市場に輸出されています。',
-    aboutP2: 'コア生産能力：グループ傘下の山西錦源生物質科技が投資建設する寧夏霊武グリーンメタノール一体化プロジェクトは、契約投資額約 100 億元（新エネルギー配套を含めた総投資額約 110 億元）、年産 30 万トンの ISCC 認証グリーンメタノールを計画。法液空（Air Liquide）が世界クラスのガス化・合成技術を、ヴェオリアグループ（WELLE）がバイオマス前処理能力を提供し、2028 年末から 2029 年初にかけて第一期稼働予定です。',
-    aboutP3: 'プロジェクトは「バイオマスガス化」技術ルートを採用し、農作物残渣、畜産糞尿由来バイオガス、エネルギー作物等 RED II Annex IX Part A 先進バイオマス原料をベースに、「耐塩アルカリ黒トウモロコシ栽培 — アントシアニン生物精製 — 畜産糞尿資源化 — 源・網・荷・貯一体化マイクログリッド — バイオマスガス化グリーンメタノール」の五大支柱循環経済エコシステムを構築。ライフサイクル炭素強度目標は 20 gCO₂eq/MJ 未満、化石基準比 80% 超の削減を達成します。',
+    heroDesc: '燃料電池は集団的に成熟期に入り、真のボトルネックは水素源供給です。美錦エネルギーは ISCC 認証グリーンメタノール + 現場水蒸気改質 + PEMFC 燃料電池を統合し、日本と世界のデータセンター、工場、海運、化学企業にメガワット級ゼロカーボン電力のエンドツーエンド・ソリューションを提供します。',
+
+    aboutP1: '美錦エネルギー株式会社（Meijin Energy Japan）は日本・大阪を拠点とする「グリーンメタノール × 燃料電池 ゼロカーボン電力ソリューションプロバイダー」です。ISCC 認証グリーンメタノール、現場水蒸気改質水素製造、PEMFC 燃料電池発電をエンドツーエンドのゼロカーボン電力ソリューションに統合し、データセンター、工場、海運、化学企業等の最終ユーザーに提供します。',
+    aboutP2: '中国の美錦エネルギーグループ（深証上場、証券コード 000723）を母体とし、中国最大規模の独立系冶金コークス・原料炭生産企業の一つであり、水素エネルギー全産業チェーンのリーディングカンパニーとして、サプライチェーン、資金、産業経験による深層的なバックアップを提供します。グループ傘下の飛馳科技は中国トップの水素燃料電池商用車メーカーで、製品はイスラエル、チリ等グローバル市場に輸出されています。',
+    aboutP3: '当社は複数ソース調達戦略を採用し、中国で ISCC EU / PLUS 二重認証を取得済みまたは認証プロセス進行中の主要グリーンメタノール・プロジェクト群と長期提携関係を構築。日本の GX CfD、GX-ETS、消防法、建築基準法コンプライアンスへの深い理解を合わせ、「燃料 — 機器 — エンジニアリング — 運営 — コンプライアンス」の五次元一体型ゼロカーボン電力サービスを提供します。',
 
     identityTitle: 'グリーンメタノールの三つの戦略的アイデンティティ',
     identityDesc: 'グリーンメタノールは単一市場の製品ではなく、船舶代替燃料、化学基礎原料、液体水素キャリアという三つの戦略的アイデンティティを備え、水素エネルギー時代の最も重要なエネルギーインフラの一つを構成します。',
     identity1Tag: '船舶代替燃料',
-    identity1Desc: 'IMO 2050 ネットゼロと EU FuelEU Maritime 規制を受け、マースク、CMA CGM、日本船三社（NYK/MOL/川崎汽船）はメタノール二元燃料船を計 140 隻以上発注。霊武プロジェクトは東アジアのグリーンメタノール補給ネットワークの重要な結節点となり得ます。',
+    identity1Desc: 'IMO 2050 ネットゼロと EU FuelEU Maritime の推進により、世界のメタノール二元燃料船発注は 140 隻を超え、横浜港・神戸港等の日本港湾でグリーンメタノール補給インフラの整備が開始、東アジアにおける補給ネットワークが急速に形成されつつあります。',
     identity2Tag: '化学基礎原料',
-    identity2Desc: 'メタノールは年間消費量 1 億トンを超える大宗化学品であり、下流はオレフィン（MTO/MTP）、酢酸、ホルムアルデヒド、MTBE、DMC 等多数の化学品に及びます。EU CBAM 推進下、従来の化石メタノールに対するグリーンメタノールの代替需要は構造的に増加しています。',
+    identity2Desc: 'メタノールは年間消費量 1.8 億トンを超える大宗化学品であり、下流はオレフィン（MTO/MTP）、酢酸、ホルムアルデヒド、MTBE、DMC 等多数の化学品に及びます。EU CBAM 推進下、従来の化石メタノールに対するグリーンメタノールの代替需要は構造的に増加しています。',
     identity3Tag: '液体水素キャリア',
     identity3Desc: 'メタノール 1 トンは現場改質により約 170 kg の水素を生成。常温常圧での貯蔵・輸送、既存化学インフラの直接活用が可能。日本では 54% 以下の水溶液は消防法・毒劇物取締法の危険物申告が免除され、圧縮水素・液体水素方式の核心的課題を回避します。',
+
+    supplyTitle: '中国 ISCC 認証グリーンメタノール供給エコシステム',
+    supplyDesc: '2026 年第一四半期時点、中国の ISCC 認証取得済みまたは認証プロセス進行中のグリーンメタノール・プロジェクトは三つの成熟度階層を形成し、バイオマスガス化と電力由来メタノールの両技術ルートをカバーします。美錦エネルギーは認証済みまたは明確な認証スケジュールを有するプロジェクトのみを対象に、複数供給者との組合せ調達協定を構築し、単一プロジェクト依存リスクを回避します。',
+    supplyTier1Tag: '第一階層 · 量産稼働＋認証取得済み',
+    supplyTier1Desc: '主要プロジェクトは ISCC EU と ISCC PLUS の二重認証を連続取得し、規模化量産を実現。現時点でアジア唯一の規模化商業運転中グリーンメタノール供給源であり、日本市場への即時供給が可能です。',
+    supplyTier2Tag: '第二階層 · 建設中＋認証済みまたは近日取得',
+    supplyTier2Desc: '複数の 10 万トン規模プロジェクトが ISCC EU + PLUS の全プロセス認証または原料段階認証を取得し、2025–2027 年に順次稼働。2026 年春節前には上海港初のグリーンメタノール補給も完了しています。',
+    supplyTier3Tag: '第三階層 · 計画中＋認証プロセス開始',
+    supplyTier3Desc: '10 万～50 万トン規模の大型プロジェクトが計画および ISCC 認証申請段階に入り、内モンゴル、新疆、寧夏等の再生可能エネルギー豊富地域をカバー、2027–2030 年に順次産能形成。',
+    supplyNote: '提携対象プロジェクトは ISCC 認証取得済みまたは明確な認証スケジュールを有することを必須条件とし、複数供給者との組合せ調達により顧客年間需要の 150–200% をカバー、単一依存リスクを回避します。',
 
     sol1Desc: '「ISCC 認証グリーンメタノール供給＋メタノール水蒸気改質水素製造＋ PEM 燃料電池（PEMFC）発電」のエンドツーエンドアーキテクチャにより、データセンターや工場等大型施設にメガワット級ゼロカーボンベース電力を供給します。250 kW を 1 モジュールとし、並列接続で数十 MW 級に拡張可能、日本主要 OEM の燃料電池定置電源システム（250 kW〜3 MW 出力レンジ）と互換性があります。',
     sol1Points: ['常温常圧でのメタノール貯蔵・輸送、リチウム電池や高圧水素より安全', '改質温度 200〜300°C、数分でフル出力到達', '250 kW 単モジュール、並列接続で数十 MW にスケール、需要に柔軟対応'],
     sol2Desc: 'グリーンメタノール改質水素製造＋ PEMFC システムで従来のディーゼル発電機を代替。燃料貯蔵リスクと排気汚染を解消し、真のゼロカーボン・バックアップ電源を実現。システムは 10 秒以内に起動し、系統調整市場（バランシングマーケット）にも参加可能で、事業者に追加収益を創出します。',
     sol2Points: ['10 秒以内に起動応答、データセンターの厳しい SLA 要件に対応', '系統調整市場への参加で追加収益を創出', '日本主要 OEM の燃料電池定置電源システムに対応'],
-    sol3Desc: '水素社会推進法に基づく GX CfD 補助金申請の全プロセスをサポート。METI の事業計画認定から JOGMEC の補助金支払いまで、ISCC PLUS 炭素認証トレーサビリティ、グリーン証書、グリーン電力 PPA 取引リンクを提供し、補助金後の電力コストを商業系統電力価格以下に抑えます。',
-    sol3Points: ['METI の事業計画認定から JOGMEC の補助金支払いまで完全サポート', 'ISCC PLUS 認証による追跡可能なカーボンニュートラル・コンプライアンスレポート', '補助金後の電力コスト約 $0.147〜0.157 / kWh'],
+    sol3Desc: '経産省が 2026 年度から 5 年間で 2,100 億円を投入する脱炭素投資補助（100% 脱炭素電力使用工場・データセンター向け最大 50% 補助）、および水素社会推進法に基づく GX CfD 補助金（3 兆円／15 年）申請の全プロセスをサポート。METI の事業計画認定から JOGMEC の補助金支払いまで、ISCC PLUS 炭素認証トレーサビリティ、グリーン証書、グリーン電力 PPA 取引リンクを提供し、補助金後の電力コストを商業系統電力価格以下に抑えます。',
+    sol3Points: ['2,100 億円脱炭素補助＋ GX CfD 補助金のダブル申請支援', 'ISCC PLUS 認証による追跡可能なカーボンニュートラル・コンプライアンスレポート', '補助金後の電力コスト約 $0.147〜0.157 / kWh'],
 
     compareTitle: '水素源ソリューション総合比較',
     compareDesc: '燃料電池発電システムの水素源として、主流技術は三つ存在します。工場、データセンター、中型船舶等 250 kW から数 MW 規模の中規模アプリケーションにおいて、メタノール改質水素製造はコスト、インフラ適合性、規制コンプライアンス柔軟性のいずれも最も優れた技術パスです。',
@@ -147,45 +186,62 @@ const content = {
       ['水素到着コスト', '60〜80 元/kg', '100+ 元/kg', '等価 25〜35 元/kg'],
     ],
 
-    why1Desc: '母グループの霊武プロジェクトは年産 30 万トンの ISCC PLUS 認証グリーンメタノールを計画、国内グリーンメタノールプロジェクトの上位 5 位以内に位置します。法液空の世界クラスガス化技術、源・網・荷・貯一体化再生可能エネルギーマイクログリッド、300 km 半径の残渣回収ネットワークを加え、出荷コスト目標 3,500〜4,500 元/トンは、国際グリーンメタノール市場価格（6,000〜8,000 元/トン）を大きく下回ります。',
+    why1Desc: '中国の ISCC EU / PLUS 二重認証取得済みまたは認証プロセス進行中の主要グリーンメタノール供給源との複数ソース調達協定を構築、単一プロジェクトの遅延や調整が全体供給に影響しない弾力性を確保。深証上場の美錦エネルギーグループ（000723）の信用と産業チェーンリソースが基盤を支えます。',
     why2Desc: '美錦のソリューションは日本主要 OEM の燃料電池定置電源システムと互換性があり、250 kW〜3 MW の出力範囲をカバー、工場、データセンター、オフィスビル等大型施設向けに最適化されています。10 秒以内の起動応答、コンパクト設計、柔軟なスケーラビリティにより、中規模分散電源の理想的な選択肢となります。',
     why3Desc: '大阪を拠点に、日本の電力市場規制、GX 政策、消防法の危険物管理、建築基準法のコンプライアンスに精通。方案設計から GX 補助金申請まで、シームレスなローカルサービスを提供します。',
-    why4Desc: 'GX CfD 補助金は総額 3 兆円、期間 15 年。日本 GX 体系は炭素強度（CI）を核心指標とし、欧州式の純グリーン溯源を要求しません。美錦の方案は JOGMEC 補助金資格を完全に満たし、2026 年 GX-ETS 炭素取引と 2028 年化石燃料炭素賦課金の追加で経済優位性は拡大し続けます。',
-    why5Desc: '従来のソリューションプロバイダーが数年かかるプロジェクト期間に比べ、美錦はモジュール式コンテナ型展開により、方案確定から最初の電力出力まで数ヶ月レベルを目標としています。AI データセンターにとって、時間はすべてです。',
-    why6Desc: '段階的 ISCC 認証戦略を採用：2028〜29 年に ISCC PLUS 初回認証（日本及び非 EU 市場）、2029〜30 年に ISCC EU 認証拡張（EU 海運市場）、2031 年以降に ISCC CORSIA 認証探索（航空 SAF 市場）。目標炭素強度 < 20 gCO₂eq/MJ は、ISCC 最低 65% 削減基準を大きく上回ります。',
+    why4Desc: '経産省は 2026 年度から 5 年間で 2,100 億円を投入、100% 脱炭素電力を使用する工場・データセンターに最大 50% の投資補助を実施。GX CfD 補助金総額 3 兆円・期間 15 年、2026 年 GX-ETS 炭素取引、2028 年化石燃料炭素賦課金と段階的に展開——顧客は複合的な政策メリットを享受可能です。',
+    why5Desc: '従来のソリューションプロバイダーが数年かかるプロジェクト期間に比べ、美錦はモジュール式コンテナ型展開により、方案確定から最初の電力出力まで数ヶ月レベルを目標。AI データセンターにとって、時間はすべてです。',
+    why6Desc: 'グループ傘下の飛馳科技は中国トップの水素燃料電池商用車メーカーで、イスラエル、チリ等へのグローバル輸出実績を有し、本ソリューションにグループ内の水素産業実戦経験とエンジニアリング人材を提供します。',
 
-    roadmapTitle: 'ISCC 認証ロードマップ',
-    roadmapDesc: '「まず日本、次に EU、そして航空」という段階的拡大戦略に基づき、各フェーズの認証が実際の商業化進展と整合するよう設計。最終炭素強度目標 < 20 gCO₂eq/MJ、化石メタノール基準（94 gCO₂eq/MJ）比 80% 超の削減を達成します。',
+    coopTitle: '四つの協業モデル · 調達連携から生態共創まで',
+    coopDesc: '顧客の戦略意図、リソース投入能力、リスク選好度に応じ、段階的な協業アーキテクチャを提供します。短期はモデル A で迅速に開始、中長期はモデル B/C/D の深層連携へと発展可能です。',
+    coopModels: [
+      { id: 'A', title: '戦略調達アライアンス', desc: 'ISCC 認証供給者 3–5 社との枠組み調達協定、年間需要の 150–200% をカバー。低コスト・高柔軟性・株式拘束なし、初期試験運用に最適。' },
+      { id: 'B', title: '産能予約と戦略備蓄', desc: '10–15 年の戦略調達協定＋産能予約金（1–2 年分の調達額相当）により供給者の 20–40% 年産能を確保。供給安定性は大幅向上し、「準自社産能」に近接。' },
+      { id: 'C', title: '越境合弁事業', desc: '貿易型／運営型／生産型の合弁会社を共同設立、共同投資・利益共有・リスク共担で利益を深層的に連結。強い協業意欲を持つ戦略パートナー向け。' },
+      { id: 'D', title: '全チェーン生態共創', desc: '上流生産、中流改質・燃料電池、下流応用と、金融・政策・人材等の支援リソースを含む 10 年以上の長期戦略パートナーシップを構築、グローバル市場へ共同展開。' },
+    ],
+
+    roadmapTitle: '三段階の商業ロードマップ',
+    roadmapDesc: '「易から難へ、小から大へ、内から外へ」のロジックに沿い、段階的に応用シーンを拡大。各段階の顧客タイプ、技術成熟度、時間ウィンドウは市場と政策のリズムと精密に整合します。',
     roadmapPhases: [
-      { time: '2026〜2027', label: 'Phase 1', title: 'スコーピング研究と基盤整備', desc: '法液空技術チームと連携して ISCC PLUS Scoping Study を実施、ライフサイクル炭素強度モデリングとサプライチェーントレーサビリティ体系を設計。' },
-      { time: '2027〜2028', label: 'Phase 2', title: 'サプライチェーンコンプライアンスと予備審査', desc: '残渣原料のデジタル回収体系を構築、質量平衡（Mass Balance）管理プラットフォームを開発、第三者認証機関による予備監査を実施。' },
-      { time: '2028〜2029', label: 'Phase 3', title: 'ISCC PLUS 初回認証', desc: 'ISCC PLUS 正式認証を初めて取得し、日本及び非 EU 市場向けに商業供給を開始。' },
-      { time: '2029〜2030', label: 'Phase 4', title: 'ISCC EU 認証拡張', desc: 'ISCC PLUS を基盤に ISCC EU 認証を取得、EU FuelEU Maritime 海運燃料市場に参入。' },
-      { time: '2031+', label: 'Phase 5', title: 'ISCC CORSIA 探索', desc: 'メタノール to 航空燃料（MtJ）工程の実現可能性を研究、国際航空の持続可能燃料（SAF）上流市場に参入。' },
+      { time: '2026–2028', label: 'Stage 1', title: '日本工場のエネルギー転換', desc: '日系製造業工場を初期試験ユーザーとし、「輸入 ISCC グリーンメタノール＋現場改質＋ FC 定置電源」のデモプロジェクトを展開、規模化推進に向けた技術・ブランド実績を蓄積。' },
+      { time: '2028–2031', label: 'Stage 2', title: '日本データセンターと大型商業施設', desc: '経産省 2,100 億円脱炭素補助の政策ウィンドウに合致、日本のデータセンター運営者、大型オフィスビル、化学企業等の脱炭素圧力が高い顧客にサービス提供。' },
+      { time: '2030+', label: 'Stage 3', title: '東アジアおよびグローバル市場展開', desc: '日本本土で検証されたソリューションを韓国、台湾、東南アジアの日系工場、およびオーストラリア、中東、欧州の一部市場へ拡大。' },
+    ],
+
+    svcTitle: '五次元一体 · エンドツーエンド・サービス能力',
+    svcDesc: 'グリーンメタノール × 燃料電池ゼロカーボン電力ソリューションプロバイダーとして、「燃料 — 機器 — エンジニアリング — 運営 — コンプライアンス」の五次元を打通し、顧客が直接「ゼロカーボン電力サービス協定」を締結可能な完全ソリューションを提供します。',
+    services: [
+      { tag: '01', title: '戦略研究と産業インサイト', desc: '中国グリーンメタノール・サプライチェーン、日本水素エネルギー市場需要、国際認証体系、重要技術路線の動向を継続的に追跡、顧客に産業意思決定レベルのインサイトを提供。' },
+      { tag: '02', title: '供給者選定とデューデリジェンス', desc: '中国の ISCC 認証取得済みまたは認証プロセス進行中の主要プロジェクト群から、技術・商業・財務・コンプライアンス・社会責任の五次元深層精査により、顧客需要に最適な 3–5 社の候補を抽出。' },
+      { tag: '03', title: '越境貿易運営とコンプライアンス', desc: '中国港湾から日本港湾までの物流、通関、倉庫、金融を統括調整、ISCC トレーサビリティ、CBAM、日本輸入コンプライアンス等の多重法規要件を満たします。' },
+      { tag: '04', title: '技術統合とシステム納品', desc: 'FC および改質設備エンジニアリングチームと連携、設計、EPC、調達、施工から運営サービス、性能保証まで全プロセスの技術統合能力を提供。' },
+      { tag: '05', title: '長期戦略パートナーシップ', desc: '水素エネルギーは 10 年以上の戦略サイクルであり、一回限りの取引ではありません。当社は顧客ニーズ、技術路線、政策枠組みの変化に合わせ、継続的に共進化することをお約束します。' },
     ],
 
     tableRows: [
-      ['グリーンメタノール生産能力', '30 万トン/年（ISCC PLUS 認証予定）'],
-      ['プロジェクト投資', '契約額約 100 億元（新エネルギー配套を含む総投資額約 110 億元）'],
-      ['技術パートナー', '法液空（ガス化/合成）＋ ヴェオリアグループ（バイオマス前処理）'],
-      ['第一期稼働', '2028 年末〜2029 年初'],
       ['水素収率', 'メタノール 1 トン ≈ 170 kg 水素（工業収率）'],
       ['システム総合効率', '32〜40%（熱電併給で 80%+ 達成可能）'],
-      ['炭素強度目標', '< 20 gCO₂eq/MJ（化石基準比 80% 超削減）'],
-      ['出荷コスト目標', '3,500〜4,500 元/トン（約 $480〜620/トン）'],
+      ['単モジュール容量', '250 kW（並列接続で数十 MW まで拡張可）'],
+      ['起動応答', '10 秒以内にフル出力'],
+      ['水素到着コスト', 'メタノール改質 ¥25〜35/kg、圧縮水素（¥60〜80）の約半分'],
       ['中国〜日本海上輸送', '5〜10 日の近海航路'],
-      ['日本 GX CfD 補助金', '3 兆円規模、15 年間'],
+      ['日本脱炭素投資補助', '2,100 億円 / 5 年（最大 50%）'],
+      ['GX CfD 補助金プール', '3 兆円 / 15 年'],
       ['補助金後の電力コスト', '約 $0.147〜0.157 / kWh（系統電力より低い）'],
-      ['ISCC 認証パス', 'ISCC PLUS（2028〜29）→ ISCC EU（2029〜30）→ ISCC CORSIA（2031+）'],
+      ['適用規模', '250 kW〜数十 MW（工場、データセンター、中型船舶）'],
+      ['認証体系', 'ISCC EU / PLUS / CORSIA ＋ 日本 FIT'],
+      ['炭素強度目標', '< 20 gCO₂eq/MJ（化石基準比 80% 超削減）'],
     ],
-    ctaDesc: 'データセンター、工場、海運、化学企業、ESG 投資家向けのカスタマイズド・グリーンエネルギーソリューションをご提案します',
-    metaTitle: 'グリーンメタノール × 現場改質水素製造 × PEMFC | 日本・グローバル向けゼロカーボンエネルギー — 美錦エネルギー',
-    metaDescription: '美錦エネルギーは ISCC 認証グリーンメタノールを中核キャリアとし、現場改質水素製造＋ PEMFC 発電アーキテクチャにより、日本及び世界のデータセンター、工場、海運、化学企業にメガワット級ゼロカーボンエネルギーソリューションを提供。母グループ霊武プロジェクトは年産 30 万トン、法液空／ヴェオリアとの技術協業、炭素強度 <20 gCO₂eq/MJ、ISCC PLUS → EU → CORSIA 段階的認証。',
+    ctaDesc: 'データセンター、工場、海運、化学企業、ESG 投資家向けのカスタマイズド・ゼロカーボン電力ソリューションをご提案します',
+    metaTitle: 'グリーンメタノール × 燃料電池 ゼロカーボン電力ソリューションプロバイダー | 日本・グローバル エンドツーエンド統合 — 美錦エネルギー',
+    metaDescription: '美錦エネルギー株式会社はグリーンメタノール × 燃料電池ゼロカーボン電力ソリューションプロバイダーです。中国 ISCC 認証グリーンメタノール供給、メタノール水蒸気改質、PEMFC 燃料電池を統合し、日本・グローバルのデータセンター、工場、海運、化学企業にメガワット級ゼロカーボン電力のエンドツーエンド・ソリューションを提供。母体の美錦エネルギーグループ（深証 000723）を背景に、日本 2,100 億円脱炭素補助と GX CfD 政策メリットに対応。',
     faqTitle: 'よくある質問',
     faqs: [
       {
-        q: '美錦のグリーンメタノールはどのような技術ルートを採用していますか？',
-        a: 'プロジェクトは「バイオマスガス化」技術ルートを採用し、農作物残渣、畜産糞尿由来バイオガス、エネルギー作物等 RED II Annex IX Part A 先進バイオマス原料をベースとします。法液空（Air Liquide）が世界クラスのガス化・合成技術を、ヴェオリアグループ（WELLE）がバイオマス前処理能力を提供。年産 30 万トンの ISCC 認証グリーンメタノールを計画し、2028 年末から 2029 年初に第一期稼働予定です。',
+        q: '美錦エネルギーのコア・ポジショニングは何ですか？',
+        a: '当社は「グリーンメタノール × 燃料電池 ゼロカーボン電力ソリューションプロバイダー」です。日本・大阪を拠点とし、中国 ISCC 認証グリーンメタノール供給、現場水蒸気改質水素製造、PEMFC 燃料電池発電を統合し、データセンター、工場、海運、化学企業にメガワット級ゼロカーボン電力のエンドツーエンド・ソリューションを提供。深証上場の美錦エネルギーグループ（000723）と傘下の飛馳科技による水素産業経験が背景にあります。',
       },
       {
         q: 'メタノール改質水素製造＋ PEMFC 発電システムはどのように機能しますか？',
@@ -196,44 +252,55 @@ const content = {
         a: 'メタノールは常温常圧液体で貯蔵・輸送が可能、等価水素含量密度は約 100 kg/m³ で圧縮水素（40 kg/m³）や液体水素（71 kg/m³）を上回ります。輸送半径の制約がなく、既存化学インフラを直接活用可能。日本では 54% 以下水溶液で消防法・毒劇物取締法の危険物申告が免除されます。水素等価到着コストは 25〜35 元/kg で、圧縮水素（60〜80 元/kg）、液体水素（100+ 元/kg）を大きく下回ります。',
       },
       {
-        q: 'グリーンメタノールの用途はどのようなものがありますか？',
-        a: 'グリーンメタノールは三つの市場アイデンティティを持ちます：(1) 船舶代替燃料——IMO 2050 ネットゼロと EU FuelEU Maritime に対応；(2) 化学基礎原料——オレフィン、酢酸、ホルムアルデヒド、MTBE 等下流製品をカバー；(3) 液体水素キャリア——燃料電池定置電源の燃料。対象顧客はデータセンター運営者、大型工場、海運会社、化学企業等です。',
+        q: 'グリーンメタノールの供給源はどこですか？単一プロジェクト依存のリスクはありますか？',
+        a: '当社は中国の ISCC EU / PLUS 二重認証取得済みまたは認証プロセス進行中の主要グリーンメタノール・プロジェクト群と組合せ調達協定を構築、調達範囲は通常顧客年間需要の 150–200% をカバーし、単一プロジェクトの遅延や調整が全体供給に影響しない設計です。2026 年第一四半期時点、中国の ISCC 認証グリーンメタノール供給は三階層構造を形成、第一階層は既に規模化量産、第二階層は 2025–2027 年に順次稼働、第三階層は 2027–2030 年に増分産能を形成します。',
       },
       {
-        q: '認証パスと炭素強度目標はどうなっていますか？',
-        a: '段階的 ISCC 認証戦略を採用：2028〜29 に ISCC PLUS 初回認証（日本・非 EU 市場）→ 2029〜30 に ISCC EU 認証拡張（EU FuelEU Maritime）→ 2031 年以降に ISCC CORSIA 認証探索（航空 SAF）。ライフサイクル炭素強度目標 < 20 gCO₂eq/MJ、化石メタノール基準（94 gCO₂eq/MJ）比 80% 超の削減で、ISCC 最低 65% 削減基準を大きく上回ります。',
+        q: '日本経産省 2,100 億円脱炭素補助は顧客にとって何を意味しますか？',
+        a: '経産省は 2026 年度から 5 年間で 2,100 億円を投入、100% 脱炭素電力を使用する工場・データセンターに最大 50% の投資補助を実施します。当社のソリューションは ISCC 認証グリーンメタノールを燃料とし、現場改質＋ PEMFC 発電の全プロセスがゼロカーボン排出であり、この補助金の完全適格要件を満たします。GX CfD 補助金（3 兆円 / 15 年）、GX-ETS 炭素取引、2028 年化石燃料炭素賦課金と合わせ、経済優位性は拡大し続けます。',
+      },
+      {
+        q: 'どのような協業モデルがありますか？顧客のニーズにどう対応しますか？',
+        a: '四つの段階的協業アーキテクチャを提供します：A 戦略調達アライアンス（枠組み調達協定、低コスト）、B 産能予約と戦略備蓄（10–15 年供給確保、準自社産能）、C 越境合弁事業（貿易 / 運営 / 生産型 JV、利益深層連結）、D 全チェーン生態共創（10 年以上の戦略パートナーシップ）。典型的な発展パスは短期 A → 中期 B → 長期 C/D です。',
       },
       {
         q: 'なぜ日本の AI データセンターにこのソリューションが必要ですか？',
-        a: '東京・大阪の系統接続新規申込の待機期間は 5〜10 年に及ぶ一方、AI データセンターの電力需要は即時的です。美錦のメタノール現場改質＋ PEMFC 発電ソリューションは系統接続を待たずにメガワット級ゼロカーボン電力を供給、日本 GX CfD 補助金（3 兆円／15 年）の適格要件を満たし、補助金後の電力コスト約 $0.147〜0.157 /kWh は商業系統電力価格を下回ります。',
-      },
-      {
-        q: '納期はどのくらいですか？',
-        a: 'モジュール式コンテナ型展開により、方案確定から最初の電力出力まで数ヶ月を目標とし、従来ソリューションの数年と比べ大幅に短縮。AI データセンターや工場顧客にとって、時間こそが核心的競争力です。',
+        a: '東京・大阪の系統接続新規申込の待機期間は 5〜10 年に及ぶ一方、AI データセンターの電力需要は即時的です。本ソリューションはメタノール現場改質＋ PEMFC 発電により系統接続を待たずにメガワット級ゼロカーボン電力を供給、モジュール式コンテナ型展開により方案確定から最初の電力出力まで数ヶ月レベルを目標。日本 2,100 億円脱炭素補助と GX CfD 補助金の適格要件を満たし、補助金後の電力コスト約 $0.147〜0.157 /kWh は商業系統電力価格を下回ります。',
       },
     ],
   },
   en: {
-    heroDesc: "The real bottleneck of the global hydrogen economy isn't the fuel cell — it's hydrogen supply. Meijin Energy delivers megawatt-scale zero-carbon energy solutions to data centers, factories, shipping, and chemical industries across Japan and globally, built on ISCC-certified green methanol as the core carrier and on-site reforming + PEMFC power generation architecture.",
-    aboutP1: "Meijin Energy Co., Ltd. operates from Japan, backed by China's Meijin Energy Group — one of China's largest independent met coke and coking coal producers with full hydrogen value-chain coverage (Shenzhen Exchange: 000723). The group's Feichi Technology is China's leading hydrogen fuel cell commercial vehicle maker, with exports to Israel, Chile, and beyond.",
-    aboutP2: "Core capacity foundation: the group's Shanxi Jinyuan Biomass Technology is investing in the Ningxia Lingwu Green Methanol Integrated Project — contracted investment of ~CNY 10 billion (total investment ~CNY 11 billion including renewable infrastructure), designed to produce 300,000 tons/year of ISCC-certified green methanol. Air Liquide provides world-class gasification and synthesis technology; WELLE Group supplies biomass preprocessing capability. Phase 1 is scheduled to come online late 2028 to early 2029.",
-    aboutP3: 'The project follows a pure biomass gasification technology pathway, using RED II Annex IX Part A advanced feedstocks — agricultural residues, livestock-manure biogas, and energy crops — as inputs. It forms a five-pillar circular economy ecosystem: saline-alkali black corn cultivation, anthocyanin bio-refining, livestock-manure resource utilization, integrated source-grid-load-storage renewable microgrid, and biomass-gasification green methanol. Lifecycle carbon intensity target: <20 gCO₂eq/MJ — >80% reduction vs. fossil baseline.',
+    heroDesc: "Fuel cells have reached collective maturity — the real bottleneck is hydrogen supply. Meijin Energy integrates ISCC-certified green methanol with on-site steam reforming and PEMFC fuel cells into end-to-end zero-carbon power solutions, delivering megawatt-scale power to data centers, factories, shipping, and chemical industries across Japan and globally.",
+
+    aboutP1: "Meijin Energy Co., Ltd. (美錦エネルギー株式会社, Meijin Energy Japan) operates from Osaka as a Green Methanol × Fuel Cell Zero-Carbon Power Solutions Provider. We integrate ISCC-certified green methanol, on-site steam reforming, and PEMFC fuel cell generation into an end-to-end zero-carbon power solution for data center, factory, shipping, and chemical customers.",
+    aboutP2: "Backed by China's Meijin Energy Group (Shenzhen Exchange: 000723) — one of China's largest independent met coke and coking coal producers with full hydrogen value-chain coverage — providing deep supply-chain, capital, and industrial experience support. The group's Feichi Technology is China's leading hydrogen fuel cell commercial vehicle maker, with exports to Israel, Chile, and beyond.",
+    aboutP3: "We employ a multi-source procurement strategy, establishing long-term partnerships with China's leading green methanol projects that hold ISCC EU / PLUS dual certification or are actively certifying. Combined with deep expertise in Japan's GX CfD, GX-ETS, Fire Services Act, and Building Standards Act compliance, we deliver a five-dimensional integrated service — fuel, equipment, engineering, operations, compliance — for zero-carbon power.",
 
     identityTitle: 'Three Strategic Identities of Green Methanol',
     identityDesc: 'Green methanol is not a single-market commodity. It holds three strategic identities simultaneously — marine alternative fuel, chemical feedstock, and liquid hydrogen carrier — making it one of the most important energy infrastructure layers of the hydrogen era.',
     identity1Tag: 'Marine Alternative Fuel',
-    identity1Desc: 'Driven by IMO 2050 net-zero and EU FuelEU Maritime regulations, Maersk, CMA CGM, and Japan\'s three major shipping lines (NYK/MOL/K Line) have ordered 140+ methanol dual-fuel vessels. The Lingwu project can serve as a critical node in the East Asian green methanol bunkering network.',
+    identity1Desc: 'Driven by IMO 2050 net-zero and EU FuelEU Maritime, global orders for methanol dual-fuel vessels exceed 140 ships. Yokohama and Kobe ports have begun building green methanol bunkering infrastructure, and an East Asian bunkering network is rapidly taking shape.',
     identity2Tag: 'Chemical Feedstock',
-    identity2Desc: 'Methanol is a commodity chemical with global annual consumption exceeding 100 million tons, feeding downstream olefins (MTO/MTP), acetic acid, formaldehyde, MTBE, DMC and more. As the EU CBAM mechanism advances, demand for green methanol to displace fossil methanol will grow structurally.',
+    identity2Desc: 'Methanol is a commodity chemical with global annual consumption exceeding 180 million tons, feeding downstream olefins (MTO/MTP), acetic acid, formaldehyde, MTBE, DMC and more. As the EU CBAM mechanism advances, demand for green methanol to displace fossil methanol will grow structurally.',
     identity3Tag: 'Liquid Hydrogen Carrier',
     identity3Desc: 'One ton of methanol yields ~170 kg of hydrogen via on-site reforming. Ambient-temperature/pressure storage directly leverages existing chemical infrastructure; in Japan, solutions below 54% concentration are exempt from Fire Services Act and Poisonous & Deleterious Substances Control Act hazmat filing — bypassing the core pain points of compressed-H₂ and liquid-H₂ approaches.',
+
+    supplyTitle: "China's ISCC-Certified Green Methanol Supply Ecosystem",
+    supplyDesc: "As of Q1 2026, China's ISCC-certified or actively-certifying green methanol projects have formed a three-tier maturity structure covering both biomass gasification and e-methanol pathways. Meijin Energy partners only with projects holding certification or a definitive certification schedule, combining multiple suppliers to eliminate single-project dependency risk.",
+    supplyTier1Tag: 'Tier 1 · In Production + Certified',
+    supplyTier1Desc: 'Leading projects hold consecutive years of ISCC EU and ISCC PLUS dual certification and have achieved scaled production — currently the only commercially-operating green methanol supply at scale in Asia, immediately deployable for the Japan market.',
+    supplyTier2Tag: 'Tier 2 · Under Construction + Certified or Near-Certified',
+    supplyTier2Desc: 'Multiple 100,000-ton-class projects have completed full-process ISCC EU + PLUS or feedstock-stage certification and are coming online between 2025 and 2027. The first green methanol bunkering at Shanghai port was completed before Spring Festival 2026.',
+    supplyTier3Tag: 'Tier 3 · Planning Stage + Certification Initiated',
+    supplyTier3Desc: 'Several 100,000–500,000-ton-class large projects have entered planning and ISCC certification application phase, spanning Inner Mongolia, Xinjiang, and Ningxia renewable-rich regions, with capacity coming online between 2027 and 2030.',
+    supplyNote: 'All partner projects must hold ISCC certification or a definitive certification schedule. Multi-supplier portfolio procurement covers 150–200% of client annual demand, eliminating single-source dependency risk.',
 
     sol1Desc: "An end-to-end architecture of ISCC-certified green methanol supply → on-site steam reforming → PEMFC power generation delivers megawatt-scale zero-carbon baseload power to data centers, factories, and other large facilities without grid dependency. Each 250 kW module parallels into tens-of-megawatt arrays, compatible with major Japanese OEM fuel cell stationary power systems (250 kW–3 MW range).",
     sol1Points: ['Ambient-pressure methanol storage — safer than large batteries or high-pressure H₂', 'Reforming at just 200–300°C; full output reached within minutes', '250 kW per module; parallel arrays scale to tens of MW with flexible sizing'],
     sol2Desc: "Fully replace diesel generators with green methanol reforming + PEMFC systems — eliminating fuel-storage hazards and exhaust emissions for a genuine zero-carbon backup solution. Under 10-second startup response; participate in the balancing market for additional revenue streams.",
     sol2Points: ['Sub-10-second startup meeting stringent data center SLAs', 'Balancing market participation for additional revenue', 'Compatible with major Japanese OEM fuel cell stationary power systems'],
-    sol3Desc: "Full-service support for Japan's GX CfD subsidy applications under the Hydrogen Society Promotion Act — from METI project certification to JOGMEC disbursement — with ISCC PLUS carbon traceability, green certificates, and green-power PPA trading links. Brings post-subsidy LCOE below commercial grid rates.",
-    sol3Points: ['End-to-end support from METI certification to JOGMEC disbursement', 'ISCC PLUS-certified traceable carbon-neutral compliance reporting', 'Post-subsidy LCOE ~$0.147–0.157/kWh'],
+    sol3Desc: "Full-service support for Japan's ¥210 billion five-year decarbonization subsidy (up to 50% investment support for factories and data centers using 100% decarbonized power) and the GX CfD subsidy (¥3 trillion / 15 years) under the Hydrogen Society Promotion Act. From METI project certification to JOGMEC disbursement — with ISCC PLUS carbon traceability, green certificates, and green-power PPA trading links — bringing post-subsidy LCOE below commercial grid rates.",
+    sol3Points: ['Dual-subsidy support: ¥210B decarbonization + GX CfD', 'ISCC PLUS-certified traceable carbon-neutral compliance reporting', 'Post-subsidy LCOE ~$0.147–0.157/kWh'],
 
     compareTitle: 'Hydrogen Source Solutions: A Comparative Analysis',
     compareDesc: 'Three mainstream technology paths exist as hydrogen sources for fuel cell power systems. For mid-scale applications from 250 kW to several MW (factories, data centers, mid-sized vessels), methanol reforming offers the best cost, infrastructure compatibility, and regulatory flexibility.',
@@ -250,45 +317,62 @@ const content = {
       ['Delivered H₂ Cost', '¥60–80/kg', '¥100+/kg', 'Equivalent ¥25–35/kg'],
     ],
 
-    why1Desc: "The parent group's Lingwu project plans 300,000 tons/year of ISCC PLUS-certified green methanol — among China's top 5 green methanol projects. Combined with Air Liquide's world-class gasification technology, integrated source-grid-load-storage renewable microgrid, and 300 km-radius straw sourcing network, the ex-works cost target of ¥3,500–4,500/ton is materially below international green methanol pricing (¥6,000–8,000/ton).",
+    why1Desc: "Multi-source procurement agreements with China's ISCC EU / PLUS-certified or actively-certifying leading green methanol projects ensure that any single-project delay or adjustment does not disrupt overall supply. Underpinned by the credit and value-chain resources of Meijin Energy Group, listed on the Shenzhen Exchange (000723).",
     why2Desc: "Meijin's solution is compatible with major Japanese OEM fuel cell stationary power systems, covering the 250 kW–3 MW range — purpose-built for factories, data centers, office buildings, and other large facilities. Sub-10-second startup response, compact design, and flexible scalability make it the ideal choice for mid-scale distributed generation.",
     why3Desc: 'Osaka-based team fluent in Japan grid regulations, GX green transformation policy, Fire Services Act hazmat management, and Building Standards Act compliance — delivering seamless local service from solution design through GX subsidy filing.',
-    why4Desc: "GX CfD subsidy pool: ¥3 trillion over 15 years. Japan's GX framework measures carbon intensity (CI) — not European-style pure-green provenance. Meijin's solution fully qualifies for JOGMEC subsidies, with economics further strengthened by GX-ETS carbon trading (2026) and fossil fuel carbon surcharge (2028).",
+    why4Desc: "Japan's METI is deploying ¥210 billion over five years starting FY2026, with up to 50% investment subsidies for factories and data centers using 100% decarbonized power. Combined with the GX CfD pool (¥3 trillion / 15 years), GX-ETS carbon trading (2026), and fossil-fuel carbon surcharge (2028), customers stack multiple policy tailwinds.",
     why5Desc: "While incumbents take years, Meijin's modular containerized deployment targets months from contract to first power output — critical for AI data center clients where time-to-market is everything.",
-    why6Desc: "Staged ISCC certification strategy: ISCC PLUS first certification in 2028–29 (Japan and non-EU markets) → ISCC EU expansion in 2029–30 (EU shipping market) → ISCC CORSIA exploration post-2031 (aviation SAF market). Target carbon intensity <20 gCO₂eq/MJ — well above the ISCC 65% minimum reduction threshold.",
+    why6Desc: "The group's Feichi Technology is China's leading hydrogen fuel cell commercial vehicle maker, with global exports to Israel, Chile, and beyond — bringing group-level hydrogen industry battle-tested experience and engineering talent to this solution.",
 
-    roadmapTitle: 'ISCC Certification Roadmap',
-    roadmapDesc: 'A staged "Japan first → EU next → aviation later" expansion strategy ensures each certification phase aligns with commercial rollout. Final carbon intensity target: <20 gCO₂eq/MJ — >80% reduction vs. the fossil methanol baseline (94 gCO₂eq/MJ).',
+    coopTitle: 'Four Cooperation Models · From Procurement Alliance to Ecosystem Co-Build',
+    coopDesc: "Staged cooperation architecture matches each client's strategic intent, resource commitment, and risk appetite. Short-term kick-off with Model A; progression to Models B/C/D for deeper long-term integration.",
+    coopModels: [
+      { id: 'A', title: 'Strategic Procurement Alliance', desc: 'Framework procurement agreements with 3–5 ISCC-certified suppliers, 150–200% annual-demand coverage. Low startup cost, high flexibility, no equity binding — ideal for initial market entry.' },
+      { id: 'B', title: 'Capacity Reservation & Strategic Reserve', desc: '10–15 year strategic procurement agreement + capacity reservation deposit (1–2 years of procurement value) lock in 20–40% of supplier capacity. Supply stability approaches "quasi-captive capacity".' },
+      { id: 'C', title: 'Cross-Border Joint Venture', desc: 'Co-establish trading / operational / production JVs with shared investment, profit, and risk — deep interest alignment for strategic partners with strong synergy intent.' },
+      { id: 'D', title: 'Full-Chain Ecosystem Co-Build', desc: '10+ year strategic partnership across upstream production, midstream reforming & fuel cells, downstream applications — plus finance, policy, and talent resources — jointly addressing the global market.' },
+    ],
+
+    roadmapTitle: 'Three-Stage Commercial Roadmap',
+    roadmapDesc: 'A "simple-to-complex, small-to-large, domestic-to-global" expansion logic. Each stage matches customer type, technology maturity, and time window to the market and policy rhythm with precision.',
     roadmapPhases: [
-      { time: '2026–2027', label: 'Phase 1', title: 'Scoping Study & Foundation', desc: "Joint ISCC PLUS Scoping Study with Air Liquide's technical team; complete lifecycle carbon intensity modeling and supply-chain traceability design." },
-      { time: '2027–2028', label: 'Phase 2', title: 'Supply Chain Compliance & Pre-Audit', desc: 'Establish digital straw feedstock sourcing system, complete mass-balance management platform, engage third-party certifier for pre-audit.' },
-      { time: '2028–2029', label: 'Phase 3', title: 'First ISCC PLUS Certification', desc: 'Obtain first formal ISCC PLUS certification; commence commercial supply to Japan and non-EU markets.' },
-      { time: '2029–2030', label: 'Phase 4', title: 'ISCC EU Expansion', desc: 'Extend from ISCC PLUS to ISCC EU certification; enter the EU FuelEU Maritime shipping fuel market.' },
-      { time: '2031+', label: 'Phase 5', title: 'ISCC CORSIA Exploration', desc: 'Research methanol-to-jet (MtJ) feasibility; enter upstream international aviation sustainable fuel (SAF) market.' },
+      { time: '2026–2028', label: 'Stage 1', title: 'Japanese Factory Energy Transition', desc: 'Japanese manufacturing factories as initial pilot users. Deploy "imported ISCC green methanol + on-site reforming + FC stationary power" demonstration projects to accumulate technical and brand credibility for scaled rollout.' },
+      { time: '2028–2031', label: 'Stage 2', title: 'Japanese Data Centers & Large Commercial Facilities', desc: "Align with METI's ¥210 billion decarbonization subsidy policy window, serving Japanese data center operators, large office buildings, and chemical companies under decarbonization pressure." },
+      { time: '2030+', label: 'Stage 3', title: 'East Asia & Global Market Expansion', desc: 'Extend Japan-validated solutions to South Korea, Taiwan, Southeast Asian Japanese-owned factories, and parts of Australia, the Middle East, and Europe.' },
+    ],
+
+    svcTitle: 'Five-Dimensional End-to-End Service Capability',
+    svcDesc: 'As a Green Methanol × Fuel Cell Zero-Carbon Power Solutions Provider, we integrate fuel, equipment, engineering, operations, and compliance into a complete solution clients can sign as a single "Zero-Carbon Power Service Agreement".',
+    services: [
+      { tag: '01', title: 'Strategic Research & Industry Insight', desc: "Continuous tracking of China's green methanol supply chain, Japan's hydrogen market demand, international certification regimes, and key technology pathways — delivering decision-grade industry insight to clients." },
+      { tag: '02', title: 'Supplier Vetting & Due Diligence', desc: "From China's ISCC-certified or actively-certifying leading projects, screen 3–5 best-fit candidates per client requirements across five dimensions: technical, commercial, financial, compliance, and social responsibility." },
+      { tag: '03', title: 'Cross-Border Trade Operations & Compliance', desc: 'Coordinate logistics, customs, warehousing, and finance from Chinese to Japanese ports — meeting ISCC traceability, CBAM, and Japan import compliance requirements end-to-end.' },
+      { tag: '04', title: 'Technology Integration & System Delivery', desc: 'Partner with FC and reforming equipment engineering teams to deliver full-process integration: design, EPC, procurement, construction, operations service, and performance guarantee.' },
+      { tag: '05', title: 'Long-Term Strategic Partnership', desc: "Hydrogen energy is a 10+ year strategic cycle, not a one-off transaction. We commit to co-evolving with clients as their needs, technology paths, and policy frameworks shift." },
     ],
 
     tableRows: [
-      ['Green Methanol Capacity', '300,000 tons/year (ISCC PLUS certification planned)'],
-      ['Project Investment', '~CNY 10 billion contracted (~CNY 11 billion total including renewables)'],
-      ['Technology Partners', 'Air Liquide (gasification/synthesis) + WELLE Group (biomass preprocessing)'],
-      ['Phase 1 Online', 'Late 2028 to early 2029'],
       ['Hydrogen Yield', '1 ton methanol ≈ 170 kg H₂ (industrial yield)'],
       ['System Efficiency', '32–40% (up to 80%+ with cogeneration)'],
-      ['Carbon Intensity Target', '<20 gCO₂eq/MJ (>80% reduction vs fossil baseline)'],
-      ['Ex-Works Cost Target', '¥3,500–4,500/ton (~$480–620/ton)'],
+      ['Module Capacity', '250 kW (parallel arrays scale to tens of MW)'],
+      ['Startup Response', 'Under 10 seconds to full load'],
+      ['Delivered H₂ Cost', 'Methanol reforming ¥25–35/kg — about half of compressed H₂ (¥60–80)'],
       ['China→Japan Shipping', '5–10 days coastal route'],
-      ['Japan GX CfD Subsidy', '¥3 trillion pool, 15-year term'],
+      ['Japan Decarbonization Subsidy', '¥210B over 5 years (up to 50% investment subsidy)'],
+      ['GX CfD Subsidy Pool', '¥3 trillion, 15-year term'],
       ['Post-Subsidy LCOE', '~$0.147–0.157/kWh (below grid rate)'],
-      ['ISCC Certification Path', 'ISCC PLUS (2028–29) → ISCC EU (2029–30) → ISCC CORSIA (2031+)'],
+      ['Applicable Scale', '250 kW to tens of MW (factories, data centers, mid-size vessels)'],
+      ['Certification Regime', 'ISCC EU / PLUS / CORSIA + Japan FIT'],
+      ['Carbon Intensity Target', '<20 gCO₂eq/MJ (>80% reduction vs fossil baseline)'],
     ],
-    ctaDesc: 'Customized green energy consulting for data centers, factories, shipping companies, chemical industries, and ESG investors',
-    metaTitle: 'Green Methanol × On-Site Reforming × PEMFC | Japan & Global Zero-Carbon Energy — Meijin Energy',
-    metaDescription: 'Meijin Energy delivers megawatt-scale zero-carbon energy solutions across Japan and globally — for data centers, factories, shipping, and chemicals — anchored on ISCC-certified green methanol with on-site reforming + PEMFC architecture. Parent Lingwu project: 300,000 t/yr, Air Liquide & WELLE tech partnerships, <20 gCO₂eq/MJ carbon intensity, staged ISCC PLUS → EU → CORSIA certification.',
+    ctaDesc: 'Customized zero-carbon power consulting for data centers, factories, shipping companies, chemical industries, and ESG investors',
+    metaTitle: 'Green Methanol × Fuel Cell Zero-Carbon Power Solutions Provider | Japan & Global End-to-End Integration — Meijin Energy',
+    metaDescription: "Meijin Energy Co., Ltd. is a Green Methanol × Fuel Cell Zero-Carbon Power Solutions Provider. We integrate China's ISCC-certified green methanol supply, methanol steam reforming, and PEMFC fuel cells into end-to-end megawatt-scale zero-carbon power solutions for data centers, factories, shipping, and chemicals — in Japan and globally. Backed by Meijin Energy Group (Shenzhen: 000723); aligned with Japan's ¥210 billion decarbonization subsidy and GX CfD policy window.",
     faqTitle: 'Frequently Asked Questions',
     faqs: [
       {
-        q: "What is Meijin's green methanol technology pathway?",
-        a: "The project uses a pure biomass gasification pathway, with RED II Annex IX Part A advanced feedstocks (agricultural residues, livestock-manure biogas, energy crops). Air Liquide provides world-class gasification and synthesis technology; WELLE Group supplies biomass preprocessing. Planned capacity: 300,000 tons/year of ISCC-certified green methanol, with Phase 1 online late 2028 to early 2029.",
+        q: "What is Meijin Energy's core positioning?",
+        a: "We are a Green Methanol × Fuel Cell Zero-Carbon Power Solutions Provider, based in Osaka. We integrate ISCC-certified green methanol from China, on-site steam reforming, and PEMFC fuel cell generation into end-to-end megawatt-scale zero-carbon power solutions for data centers, factories, shipping, and chemical industries. Backed by Meijin Energy Group (Shenzhen: 000723) and its subsidiary Feichi Technology's hydrogen industry expertise.",
       },
       {
         q: 'How does the methanol reforming + PEMFC system work?',
@@ -299,20 +383,20 @@ const content = {
         a: "Methanol stores and transports as an ambient liquid with ~100 kg/m³ H₂-equivalent density — higher than compressed H₂ (40 kg/m³) or liquid H₂ (71 kg/m³). No transport radius limit; leverages existing chemical infrastructure; in Japan, solutions below 54% concentration are exempt from hazmat filing under the Fire Services Act. Delivered H₂-equivalent cost is ¥25–35/kg, materially below compressed H₂ (¥60–80/kg) and liquid H₂ (¥100+/kg).",
       },
       {
-        q: 'What are the application scenarios for green methanol?',
-        a: "Green methanol holds three market identities: (1) Marine alternative fuel, aligned with IMO 2050 net-zero and EU FuelEU Maritime; (2) Chemical feedstock, covering olefins, acetic acid, formaldehyde, MTBE and other downstream products; (3) Liquid hydrogen carrier, fueling fuel cell stationary power generators. Target customers span data center operators, large factories, shipping companies, and chemical producers.",
+        q: 'Where does the green methanol come from? Is there single-project dependency risk?',
+        a: "We maintain portfolio procurement agreements with China's ISCC EU / PLUS-certified or actively-certifying leading green methanol projects, typically covering 150–200% of customer annual demand — so no single-project delay disrupts overall supply. As of Q1 2026, China's ISCC-certified green methanol supply is structured in three maturity tiers: Tier 1 at scaled production, Tier 2 coming online 2025–2027, Tier 3 adding incremental capacity 2027–2030.",
       },
       {
-        q: 'What are the certification path and carbon intensity targets?',
-        a: 'Staged ISCC certification: ISCC PLUS first certification in 2028–29 (Japan and non-EU markets) → ISCC EU expansion in 2029–30 (EU FuelEU Maritime) → ISCC CORSIA exploration post-2031 (aviation SAF). Lifecycle carbon intensity target: <20 gCO₂eq/MJ — >80% reduction vs. fossil methanol baseline (94 gCO₂eq/MJ), well above the ISCC 65% minimum threshold.',
+        q: "What does Japan's ¥210 billion decarbonization subsidy mean for customers?",
+        a: "METI has announced ¥210 billion over five years starting FY2026, providing up to 50% investment subsidy for factories and data centers using 100% decarbonized power. Our solution uses ISCC-certified green methanol as fuel; on-site reforming + PEMFC generation is zero-carbon end-to-end, fully qualifying for this subsidy. Stacked with GX CfD (¥3 trillion / 15 years), GX-ETS carbon trading, and the 2028 fossil-fuel carbon surcharge, the economic advantage compounds.",
+      },
+      {
+        q: 'What cooperation models are offered, and how do they match client needs?',
+        a: "Four staged cooperation architectures: A — Strategic Procurement Alliance (framework agreements, low-cost entry); B — Capacity Reservation (10–15 year supply lock-in, quasi-captive capacity); C — Cross-Border JV (trading / ops / production, deep interest alignment); D — Full-Chain Ecosystem (10+ year strategic partnership). Typical progression: short-term A → mid-term B → long-term C/D.",
       },
       {
         q: 'Why do Japan AI data centers need this solution?',
-        a: "Grid connection wait times in Tokyo and Osaka stretch 5–10 years, while AI data center demand cannot wait. Meijin's on-site methanol reforming + PEMFC solution delivers megawatt-scale zero-carbon power without grid dependency, fully qualifies for Japan's GX CfD subsidy pool (¥3 trillion / 15 years), and reaches post-subsidy LCOE of ~$0.147–0.157/kWh — below commercial grid rates.",
-      },
-      {
-        q: 'How quickly can the system be deployed?',
-        a: 'Modular containerized deployment targets months from contract to first power output — far faster than the years-long timelines of traditional grid-connected solutions. For AI data center and factory clients under time pressure, this delivery speed is the core competitive edge.',
+        a: "Grid connection wait times in Tokyo and Osaka stretch 5–10 years, while AI data center demand cannot wait. Our on-site methanol reforming + PEMFC solution delivers megawatt-scale zero-carbon power without grid dependency; modular containerized deployment targets months from contract to first power output. Fully qualifies for Japan's ¥210 billion decarbonization subsidy and GX CfD eligibility; post-subsidy LCOE of ~$0.147–0.157/kWh is below commercial grid rates.",
       },
     ],
   },
@@ -330,7 +414,7 @@ const c = content[lang];
       "@type": "Service",
       "@id": `${Astro.url.origin}/#green-methanol-energy-service`,
       "url": `${Astro.url.origin}${Astro.url.pathname}`,
-      "name": lang === 'zh' ? '绿色甲醇 × 现场重整制氢 × PEMFC 零碳能源解决方案' : lang === 'ja' ? 'グリーンメタノール × 現場改質水素 × PEMFC ゼロカーボンエネルギーソリューション' : 'Green Methanol × On-Site Reforming × PEMFC Zero-Carbon Energy Solution',
+      "name": lang === 'zh' ? '绿色甲醇 × 燃料电池 零碳电力方案' : lang === 'ja' ? 'グリーンメタノール × 燃料電池 ゼロカーボン電力ソリューション' : 'Green Methanol × Fuel Cell Zero-Carbon Power Solution',
       "provider": {
         "@type": "Organization",
         "@id": `${Astro.url.origin}/#organization`
@@ -344,17 +428,17 @@ const c = content[lang];
         "audienceType": lang === 'zh' ? '数据中心运营商、工厂、航运公司、化工企业、ESG 投资者' : lang === 'ja' ? 'データセンター運営者、工場、海運会社、化学企業、ESG 投資家' : 'Data center operators, factories, shipping companies, chemical industries, ESG investors'
       },
       "description": lang === 'zh'
-        ? '以 ISCC 认证绿色甲醇为核心载体的零碳能源解决方案。通过"生物质气化 → 甲醇 → 现场重整制氢 → 质子交换膜燃料电池（PEMFC）发电"端到端架构，为数据中心、工厂、航运、化工企业提供兆瓦级零碳基载电力。母集团灵武项目年产 30 万吨 ISCC PLUS 认证绿色甲醇（法液空 + 维尔利技术合作），2028-29 年首期投产。单模组 250 kW，多模组并联可扩展至数十兆瓦，兼容日本主要 OEM 燃料电池定置电源系统，符合 GX CfD 补贴资格。'
+        ? '美錦エネルギー株式会社是绿色甲醇 × 燃料电池零碳电力方案商。整合中国 ISCC 认证绿色甲醇供给、甲醇蒸汽重整、PEMFC 燃料电池，为数据中心、工厂、航运、化工企业提供兆瓦级零碳电力端到端解决方案。多源采购协议覆盖客户年需求 150–200%，单模组 250 kW 并联可扩展至数十兆瓦，兼容日本主要 OEM 燃料电池定置电源系统（250 kW–3 MW），符合 GX CfD 与经产省 2,100 亿日元脱碳补贴资格。'
         : lang === 'ja'
-        ? 'ISCC 認証グリーンメタノールを中核キャリアとするゼロカーボンエネルギーソリューション。「バイオマスガス化→メタノール→現場改質水素→ PEM 燃料電池発電」のエンドツーエンドアーキテクチャで、データセンター、工場、海運、化学企業にメガワット級ゼロカーボンベース電力を提供。母グループ霊武プロジェクトは年産 30 万トン（法液空＋ヴェオリア技術提携）、2028-29 年第一期稼働。250 kW 単モジュールを並列接続して数十 MW 級に拡張、日本主要 OEM 燃料電池定置電源に対応、GX CfD 補助金適格。'
-        : 'A zero-carbon energy solution anchored on ISCC-certified green methanol. An end-to-end architecture of biomass gasification → methanol → on-site reforming → PEMFC power generation delivers megawatt-scale zero-carbon baseload power to data centers, factories, shipping, and chemicals. Parent Lingwu project: 300,000 t/yr ISCC PLUS-certified green methanol (Air Liquide + WELLE tech partners), Phase 1 online late 2028–early 2029. 250 kW per module; parallel multi-module arrays scale to tens of MW; compatible with major Japanese OEM fuel cell stationary power systems; GX CfD subsidy eligible.',
+        ? '美錦エネルギー株式会社はグリーンメタノール × 燃料電池ゼロカーボン電力ソリューションプロバイダーです。中国 ISCC 認証グリーンメタノール供給、メタノール水蒸気改質、PEMFC 燃料電池を統合し、データセンター、工場、海運、化学企業にメガワット級ゼロカーボン電力のエンドツーエンド・ソリューションを提供。複数ソース調達協定により顧客年間需要の 150–200% をカバー、250 kW 単モジュールを並列接続で数十 MW 級に拡張、日本主要 OEM 燃料電池定置電源システム（250 kW〜3 MW）に対応、GX CfD および経産省 2,100 億円脱炭素補助の適格要件を満たします。'
+        : "Meijin Energy Co., Ltd. is a Green Methanol × Fuel Cell Zero-Carbon Power Solutions Provider. We integrate China's ISCC-certified green methanol supply with on-site steam reforming and PEMFC fuel cells, delivering end-to-end megawatt-scale zero-carbon power for data centers, factories, shipping, and chemical industries. Multi-source procurement agreements cover 150–200% of client annual demand; 250 kW modules parallel into tens of MW arrays; compatible with major Japanese OEM fuel cell stationary power systems (250 kW–3 MW); qualifies for GX CfD and METI's ¥210B decarbonization subsidy.",
       "serviceType": lang === 'zh' ? '绿色甲醇驱动的零碳分布式电源' : lang === 'ja' ? 'グリーンメタノール駆動のゼロカーボン分散電源' : 'Green-Methanol-Driven Zero-Carbon Distributed Power Generation',
       "inLanguage": lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en',
       "additionalProperty": [
         {
           "@type": "PropertyValue",
           "name": "Fuel",
-          "value": lang === 'zh' ? 'ISCC PLUS 认证绿色甲醇（生物质气化路线）' : lang === 'ja' ? 'ISCC PLUS 認証グリーンメタノール（バイオマスガス化ルート）' : 'ISCC PLUS-certified green methanol (biomass gasification pathway)'
+          "value": lang === 'zh' ? 'ISCC EU / PLUS 认证绿色甲醇（生物质气化与电制甲醇路线）' : lang === 'ja' ? 'ISCC EU / PLUS 認証グリーンメタノール（バイオマスガス化・電力由来メタノール両ルート）' : 'ISCC EU / PLUS-certified green methanol (biomass gasification and e-methanol pathways)'
         },
         {
           "@type": "PropertyValue",
@@ -393,8 +477,13 @@ const c = content[lang];
         },
         {
           "@type": "PropertyValue",
-          "name": "Certification Path",
-          "value": "ISCC PLUS (2028–29) → ISCC EU (2029–30) → ISCC CORSIA (2031+)"
+          "name": "Certification Regime",
+          "value": "ISCC EU / PLUS / CORSIA + Japan FIT"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Supply Model",
+          "value": lang === 'zh' ? '多源组合采购（覆盖客户年需求 150–200%）' : lang === 'ja' ? '複数ソース組合せ調達（顧客年間需要の 150–200% をカバー）' : 'Multi-source portfolio procurement (150–200% of client annual demand)'
         },
         {
           "@type": "PropertyValue",
@@ -540,31 +629,31 @@ const c = content[lang];
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <div class="text-2xl font-bold text-energy-700 mb-1">30 万t/年</div>
-            <div class="text-sm text-gray-500">{lang === 'zh' && 'ISCC 认证绿色甲醇'}{lang === 'ja' && 'ISCC 認証グリーンメタノール'}{lang === 'en' && 'ISCC-Certified Green Methanol'}</div>
+            <div class="text-2xl font-bold text-energy-700 mb-1">{lang === 'en' ? '¥210B' : '2,100 億円'}</div>
+            <div class="text-sm text-gray-500">{lang === 'zh' && '日本脱碳投资补助（5年最高50%）'}{lang === 'ja' && '日本脱炭素投資補助（5年最大50%）'}{lang === 'en' && 'Japan Decarbonization Subsidy (5-yr, up to 50%)'}</div>
           </div>
           <div class="bg-slate-50 rounded-2xl p-6">
             <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
             </div>
-            <div class="text-2xl font-bold text-slate-700 mb-1">&lt; 20</div>
-            <div class="text-sm text-gray-500">{lang === 'zh' && 'gCO₂eq/MJ 碳强度目标'}{lang === 'ja' && 'gCO₂eq/MJ 炭素強度目標'}{lang === 'en' && 'gCO₂eq/MJ CI Target'}</div>
+            <div class="text-2xl font-bold text-slate-700 mb-1">250 kW<span class="text-base">–3 MW</span></div>
+            <div class="text-sm text-gray-500">{lang === 'zh' && '燃料电池定置电源功率区间'}{lang === 'ja' && '燃料電池定置電源出力レンジ'}{lang === 'en' && 'FC Stationary Power Range'}</div>
           </div>
           <div class="bg-cyan-50 rounded-2xl p-6">
             <div class="w-10 h-10 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <div class="text-lg font-bold text-cyan-700 mb-1 leading-snug">{lang === 'zh' ? '法液空 + 维尔利' : lang === 'ja' ? '法液空＋ヴェオリア' : 'Air Liquide + WELLE'}</div>
-            <div class="text-sm text-gray-500">{lang === 'zh' && '世界级技术合作方'}{lang === 'ja' && '世界クラス技術パートナー'}{lang === 'en' && 'World-Class Tech Partners'}</div>
+            <div class="text-lg font-bold text-cyan-700 mb-1 leading-snug">ISCC EU / PLUS</div>
+            <div class="text-sm text-gray-500">{lang === 'zh' && '多源认证供给（CORSIA 路径在研）'}{lang === 'ja' && '複数ソース認証供給（CORSIA 路線検討中）'}{lang === 'en' && 'Multi-source certified supply (CORSIA in study)'}</div>
           </div>
           <div class="bg-green-50 rounded-2xl p-6">
             <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
             <div class="text-2xl font-bold text-green-700 mb-1">000723</div>
@@ -593,7 +682,6 @@ const c = content[lang];
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <!-- Identity 1: Marine Fuel -->
         <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-energy-200 hover:shadow-lg transition-all duration-300">
           <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -604,7 +692,6 @@ const c = content[lang];
           <p class="text-gray-600 text-sm leading-relaxed">{c.identity1Desc}</p>
         </div>
 
-        <!-- Identity 2: Chemical Feedstock -->
         <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-energy-200 hover:shadow-lg transition-all duration-300">
           <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -615,7 +702,6 @@ const c = content[lang];
           <p class="text-gray-600 text-sm leading-relaxed">{c.identity2Desc}</p>
         </div>
 
-        <!-- Identity 3: Hydrogen Carrier -->
         <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-energy-200 hover:shadow-lg transition-all duration-300">
           <div class="w-12 h-12 bg-energy-100 rounded-xl flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-energy-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -626,6 +712,56 @@ const c = content[lang];
           <p class="text-gray-600 text-sm leading-relaxed">{c.identity3Desc}</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CHINA ISCC GREEN METHANOL SUPPLY ECOSYSTEM
+  ═══════════════════════════════════════════ -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-energy-100 text-energy-700 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-4">
+          SUPPLY ECOSYSTEM
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-snug">
+          {c.supplyTitle}
+        </h2>
+        <p class="text-gray-600 leading-relaxed">
+          {c.supplyDesc}
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl p-8 border-2 border-energy-200 bg-gradient-to-br from-energy-50 to-white">
+          <div class="inline-flex items-center gap-2 bg-energy-600 text-white text-[11px] font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4">
+            TIER 1
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-3 leading-snug">{c.supplyTier1Tag}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{c.supplyTier1Desc}</p>
+        </div>
+
+        <div class="rounded-2xl p-8 border-2 border-cyan-200 bg-gradient-to-br from-cyan-50 to-white">
+          <div class="inline-flex items-center gap-2 bg-cyan-600 text-white text-[11px] font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4">
+            TIER 2
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-3 leading-snug">{c.supplyTier2Tag}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{c.supplyTier2Desc}</p>
+        </div>
+
+        <div class="rounded-2xl p-8 border-2 border-slate-200 bg-gradient-to-br from-slate-50 to-white">
+          <div class="inline-flex items-center gap-2 bg-slate-600 text-white text-[11px] font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4">
+            TIER 3
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-3 leading-snug">{c.supplyTier3Tag}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{c.supplyTier3Desc}</p>
+        </div>
+      </div>
+
+      <p class="mt-8 text-center text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-energy-500 align-middle mr-2"></span>
+        {c.supplyNote}
+      </p>
     </div>
   </section>
 
@@ -645,7 +781,6 @@ const c = content[lang];
 
       <div class="grid lg:grid-cols-3 gap-8">
 
-        <!-- Solution 1 -->
         <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
           <div class="bg-gradient-to-br from-energy-600 to-energy-800 p-8">
             <div class="flex items-start justify-between mb-6">
@@ -677,7 +812,6 @@ const c = content[lang];
           </div>
         </div>
 
-        <!-- Solution 2 -->
         <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
           <div class="bg-gradient-to-br from-slate-700 to-slate-900 p-8">
             <div class="flex items-start justify-between mb-6">
@@ -709,7 +843,6 @@ const c = content[lang];
           </div>
         </div>
 
-        <!-- Solution 3 -->
         <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
           <div class="bg-gradient-to-br from-green-600 to-emerald-800 p-8">
             <div class="flex items-start justify-between mb-6">
@@ -858,7 +991,7 @@ const c = content[lang];
         <div class="group bg-white hover:bg-energy-50 rounded-2xl p-7 transition-colors duration-200 border border-gray-100">
           <div class="w-12 h-12 bg-energy-100 group-hover:bg-energy-200 rounded-xl flex items-center justify-center mb-5 transition-colors duration-200">
             <svg class="w-6 h-6 text-energy-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </div>
           <h3 class="text-lg font-bold text-gray-900 mb-3">{t('energy.why6.title')}</h3>
@@ -870,13 +1003,44 @@ const c = content[lang];
   </section>
 
   <!-- ═══════════════════════════════════════════
-       ISCC CERTIFICATION ROADMAP
+       FOUR COOPERATION MODELS
   ═══════════════════════════════════════════ -->
   <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-energy-100 text-energy-700 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-4">
+          COOPERATION MODELS
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-snug">
+          {c.coopTitle}
+        </h2>
+        <p class="text-gray-600 leading-relaxed">
+          {c.coopDesc}
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {c.coopModels.map((m, i) => (
+          <div class={`rounded-2xl p-7 border border-gray-100 bg-gradient-to-b ${i === 0 ? 'from-energy-50 to-white' : i === 1 ? 'from-cyan-50 to-white' : i === 2 ? 'from-purple-50 to-white' : 'from-slate-50 to-white'} hover:shadow-lg transition-shadow duration-300`}>
+            <div class={`inline-flex items-center justify-center w-11 h-11 rounded-xl text-white font-bold text-lg mb-5 ${i === 0 ? 'bg-energy-600' : i === 1 ? 'bg-cyan-600' : i === 2 ? 'bg-purple-600' : 'bg-slate-600'}`}>
+              {m.id}
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3 leading-snug">{m.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{m.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       THREE-STAGE COMMERCIAL ROADMAP
+  ═══════════════════════════════════════════ -->
+  <section class="py-24 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14 max-w-3xl mx-auto">
         <div class="inline-flex items-center gap-2 bg-energy-100 text-energy-700 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-4">
-          CERTIFICATION ROADMAP
+          COMMERCIAL ROADMAP
         </div>
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-snug">
           {c.roadmapTitle}
@@ -887,7 +1051,6 @@ const c = content[lang];
       </div>
 
       <div class="relative">
-        <!-- Vertical timeline line on md+ -->
         <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-energy-200 via-energy-300 to-energy-200 -translate-x-1/2"></div>
 
         <div class="space-y-8 md:space-y-12">
@@ -907,6 +1070,35 @@ const c = content[lang];
             </div>
           ))}
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FIVE-DIMENSIONAL END-TO-END SERVICE CAPABILITY
+  ═══════════════════════════════════════════ -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-energy-100 text-energy-700 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-4">
+          SERVICE CAPABILITIES
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-snug">
+          {c.svcTitle}
+        </h2>
+        <p class="text-gray-600 leading-relaxed">
+          {c.svcDesc}
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-5">
+        {c.services.map((s) => (
+          <div class="bg-gradient-to-br from-energy-50/50 to-white rounded-2xl p-6 border border-gray-100 hover:border-energy-200 hover:shadow-md transition-all duration-300">
+            <div class="text-xs font-semibold tracking-widest uppercase text-energy-600 mb-3">{s.tag}</div>
+            <h3 class="text-base font-bold text-gray-900 mb-3 leading-snug">{s.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
