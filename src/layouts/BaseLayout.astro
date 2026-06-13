@@ -35,8 +35,8 @@ const seoTitle = settings?.seo?.defaultTitle?.[lang] || settings?.seo?.defaultTi
 const seoDescription = settings?.seo?.defaultDescription?.[lang] || settings?.seo?.defaultDescription?.zh || '';
 
 // 默认 SEO 值
-const defaultTitle = seoTitle || '集团官网 - 氢能源与不动产';
-const defaultDescription = seoDescription || '致力于氢能源技术创新与高端不动产投资';
+const defaultTitle = seoTitle || '集团官网 - 零碳能源与不动产';
+const defaultDescription = seoDescription || '致力于零碳能源技术创新与高端不动产投资';
 
 // Organization alternateName: collect non-current-language name variants
 const allCompanyNames = [
@@ -129,7 +129,6 @@ const themeClasses = {
         <div class="flex items-center justify-between h-16">
           <!-- Logo - Responsive: Icon only on mobile, Icon + Text on desktop -->
           <a href={`/${lang}/`} class="flex items-center gap-2 shrink-0">
-            <img src="/logo-icon.svg" alt="" class="h-8 w-8" aria-hidden="true" />
             <span class="hidden sm:inline text-lg font-semibold text-gray-900 whitespace-nowrap">{companyName}</span>
           </a>
 
@@ -241,7 +240,6 @@ const themeClasses = {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div class="flex items-center gap-2 mb-4">
-              <img src="/logo-icon.svg" alt="" class="h-6 w-6 brightness-0 invert" aria-hidden="true" />
               <h3 class="text-lg font-semibold">{companyName}</h3>
             </div>
             <p class="text-gray-400 text-sm">

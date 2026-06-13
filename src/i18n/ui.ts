@@ -14,7 +14,7 @@ export const ui = {
   zh: {
     // 导航
     'nav.home': '首页',
-    'nav.energy': '氢能源',
+    'nav.energy': '能源事业',
     'nav.estate': '不动产',
     'nav.news': '新闻动态',
     'nav.about': '关于我们',
@@ -22,15 +22,15 @@ export const ui = {
 
     // 首页
     'home.hero.title': '引领未来能源与生活方式',
-    'home.hero.subtitle': '致力于氢能源技术创新与高端不动产投资',
-    'home.energy.title': '氢能源事业',
+    'home.hero.subtitle': '致力于零碳能源技术创新与高端不动产投资',
+    'home.energy.title': '能源事业',
     'home.energy.desc': '以 ISCC 认证绿色甲醇为核心载体，通过现场重整制氢 + PEMFC 发电，为数据中心、工厂、航运、化工企业提供零碳能源',
     'home.energy.cta': '了解更多',
     'home.estate.title': '不动产投资',
     'home.estate.desc': '专注日本优质不动产资产的投资与经营管理',
     'home.estate.cta': '了解更多',
     'home.about.title': '关于我们',
-    'home.about.desc': '我们是一家专注于氢能源技术创新与高端不动产投资的综合性企业集团。凭借前瞻性的战略眼光和专业的运营团队，我们致力于为客户创造可持续的价值。',
+    'home.about.desc': '我们是一家专注于零碳能源技术创新与高端不动产投资的综合性企业集团。凭借前瞻性的战略眼光和专业的运营团队，我们致力于为客户创造可持续的价值。',
 
     // 氢能源
     'energy.hero.title': '为AI时代，注入零碳动力。',
@@ -138,7 +138,7 @@ export const ui = {
   ja: {
     // ナビゲーション
     'nav.home': 'ホーム',
-    'nav.energy': '水素エネルギー',
+    'nav.energy': 'エネルギー事業',
     'nav.estate': '不動産',
     'nav.news': 'ニュース',
     'nav.about': '会社概要',
@@ -146,15 +146,15 @@ export const ui = {
 
     // ホームページ
     'home.hero.title': '未来のエネルギーとライフスタイルをリード',
-    'home.hero.subtitle': '水素エネルギー技術革新と高級不動産投資に注力',
-    'home.energy.title': '水素エネルギー事業',
+    'home.hero.subtitle': 'ゼロカーボンエネルギー技術革新と高級不動産投資に注力',
+    'home.energy.title': 'エネルギー事業',
     'home.energy.desc': 'ISCC 認証グリーンメタノールを核に、現場改質水素製造＋ PEMFC 発電でデータセンター・工場・海運・化学企業にゼロカーボンエネルギーを提供',
     'home.energy.cta': '詳細を見る',
     'home.estate.title': '不動産投資',
     'home.estate.desc': '日本における優良不動産資産の投資・経営・管理に特化',
     'home.estate.cta': '詳細を見る',
     'home.about.title': '私たちについて',
-    'home.about.desc': '私たちは、水素エネルギー技術革新と高級不動産投資に特化した総合企業グループです。先見性のある戦略的視点と専門的な運営チームにより、お客様に持続可能な価値を創造することに努めています。',
+    'home.about.desc': '私たちは、ゼロカーボンエネルギー技術革新と高級不動産投資に特化した総合企業グループです。先見性のある戦略的視点と専門的な運営チームにより、お客様に持続可能な価値を創造することに努めています。',
 
     // 水素エネルギー
     'energy.hero.title': 'AI時代に、ゼロカーボンの動力を注入する。',
@@ -262,7 +262,7 @@ export const ui = {
   en: {
     // Navigation
     'nav.home': 'Home',
-    'nav.energy': 'Hydrogen Energy',
+    'nav.energy': 'Energy',
     'nav.estate': 'Real Estate',
     'nav.news': 'News',
     'nav.about': 'About Us',
@@ -270,15 +270,15 @@ export const ui = {
 
     // Homepage
     'home.hero.title': 'Leading Future Energy & Lifestyle',
-    'home.hero.subtitle': 'Committed to hydrogen energy innovation and premium real estate investment',
-    'home.energy.title': 'Hydrogen Energy',
+    'home.hero.subtitle': 'Committed to zero-carbon energy innovation and premium real estate investment',
+    'home.energy.title': 'Energy',
     'home.energy.desc': 'ISCC-certified green methanol with on-site reforming + PEMFC — zero-carbon energy for data centers, factories, shipping, and chemicals',
     'home.energy.cta': 'Learn More',
     'home.estate.title': 'Real Estate Investment',
     'home.estate.desc': 'Focused on quality real estate investment and asset management in Japan',
     'home.estate.cta': 'Learn More',
     'home.about.title': 'About Us',
-    'home.about.desc': 'We are a comprehensive enterprise group focused on hydrogen energy technology innovation and premium real estate investment. With forward-thinking strategic vision and professional operations team, we are committed to creating sustainable value for our clients.',
+    'home.about.desc': 'We are a comprehensive enterprise group focused on zero-carbon energy technology innovation and premium real estate investment. With forward-thinking strategic vision and professional operations team, we are committed to creating sustainable value for our clients.',
 
     // Hydrogen Energy
     'energy.hero.title': 'Empowering the AI Era with Zero-Carbon Energy.',
